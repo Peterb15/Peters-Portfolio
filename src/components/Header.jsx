@@ -1,26 +1,16 @@
 import React from 'react';
 
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
-    <header className="bg-white shadow p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold">Peter Burke</h1>
-      <nav>
-        <ul className="flex gap-4">
-          <li><a href="#home" className="hover:underline">Home</a></li>
-          <li><a href="#projects" className="hover:underline">Projects</a></li>
-          <li><a href="#about" className="hover:underline">About</a></li>
-          <li><a href="#contact" className="hover:underline">Contact</a></li>
-          <li>
-            <a
-              href="public/ResumeV3.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Resume
-            </a>
-          </li>
-        </ul>
+    <header className="p-4 shadow flex justify-between">
+      <Link to="/" className="text-xl font-bold">Peter Burke</Link>
+      <nav className="space-x-4">
+        <Link to="/projects">Projects</Link>
+        <Link to="/writing">Writing</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
     </header>
   );

@@ -11,6 +11,8 @@ export default function Contact() {
         <li><strong>Email:</strong> <a href="mailto:pebu5033@colorado.edu" className="text-blue-600 underline">pebu5033@colorado.edu</a></li>
         <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/PeterBurke15" target="_blank" className="text-blue-600 underline">PeterBurke15</a></li>
         <li><strong>Portfolio:</strong> <a href="https://peterburke.co" target="_blank" className="text-blue-600 underline">peterburke.co</a></li>
+        <li><strong>Instructables:</strong> <a href="https://www.instructables.com/member/burke_pete15/" target="_blank" className="text-blue-600 underline">https://www.instructables.com/member/burke_pete15/</a></li>
+
       </ul>
     </div>
   );

@@ -22,6 +22,16 @@ export const writing = [
     }
   },
   {
+    id: "shattered-history",
+    title: "Shattered",
+    status: "Completed",
+    type: "Prose/Lore",
+    excerpt: "A history of the world of Pangros, following the Bloody War; but maybe history is not so one-sided...",
+    media: {
+      docs: ["/assets/writing/shattered-history.pdf"]
+    }
+  },
+  {
     id: "cthulhu-journals",
     title: "Cthulhu Journals",
     status: "In Progress",

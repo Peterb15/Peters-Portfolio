@@ -2,23 +2,6 @@
 // src/data/projects.js
 export const projects = [
   {
-    id: "unnautral-selection",
-    title: "Unnautral Selection",
-    status: "In Progress",
-    tags: ["Alt Arcade", "Fabrication", "Physical Computing"],
-    description:
-      "An alternative controller group project exploring evolution through interactive arcade-style gameplay and physical computing.",
-    media: {
-      hero: "/assets/unnautral-selection/hero.jpg",
-      gallery: [
-        "/assets/unnautral-selection/shot1.jpg",
-        "/assets/unnautral-selection/shot2.jpg"
-      ],
-      video: "https://www.youtube.com/embed/example1",
-      docs: ["/assets/unnautral-selection/design-notes.pdf"]
-    }
-  },
-  {
     id: "laugh-bucket",
     title: "The Laugh Bucket",
     status: "Completed",
@@ -72,6 +55,36 @@ export const projects = [
       ],
       docs: ["/assets/reframing-photography/Photobook.pdf"]
     },
+  },
+  {
+    id: "remaking-ren",
+    title: "Remaking the Renaissance",
+    status: "Completed",
+    tags: ["Video Editing", "Creative Writing", "Multimedia"],
+    description:
+      "A multimedia reinterpretation of the Ovidian myth of Narcissus and Echo, examining themes of digital disconnection and algorithmic echo chambers through the lens of a modern text conversation.",
+    media: {
+      hero: "/assets/remaking-ren/renHero.jpeg",
+      video: ["https://www.youtube.com/embed/DX2TOJ5t31g?si=P89CZRwTYTv7H5t7"],
+      docs: ["/assets/remaking-ren/documentation.pdf"]
+    }
+  },
+  {
+    id: "unnautral-selection",
+    title: "Unnautral Selection",
+    status: "In Progress",
+    tags: ["Alt Arcade", "Fabrication", "Physical Computing"],
+    description:
+      "An alternative controller group project exploring evolution through interactive arcade-style gameplay and physical computing.",
+    media: {
+      hero: "/assets/unnautral-selection/hero.jpg",
+      gallery: [
+        "/assets/unnautral-selection/shot1.jpg",
+        "/assets/unnautral-selection/shot2.jpg"
+      ],
+      video: "https://www.youtube.com/embed/example1",
+      docs: ["/assets/unnautral-selection/design-notes.pdf"]
+    }
   },
   {
     id: "shattered-lands",

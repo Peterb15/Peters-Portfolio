@@ -13,9 +13,9 @@ export const writing = [
   },
   {
     id: "artifact-report-184-7",
-    title: "Artifact Report 1847",
+    title: "Report File #1047",
     status: "Completed",
-    type: "Worldbuilding Journal",
+    type: "Short Story",
     excerpt: "A fictional research document surrounding a mysterious ancient device...",
     media: {
       docs: ["/assets/writing/artifact-report-1847.pdf"]
@@ -32,11 +32,23 @@ export const writing = [
     }
   },
   {
-    id: "cthulhu-journals",
-    title: "Cthulhu Journals",
-    status: "In Progress",
-    type: "Game Lore / Diary",
+    id: "awake",
+    title: "Awake",
+    status: "Completed",
+    type: "Short Story",
     excerpt: "An evolving set of character entries exploring descent into madness within an unknowable world.",
-    media: {}
+    media: {
+      doc: ["assets/writing/awake.pdf"]
+    }
+  },
+  {
+    id: "doom-fam",
+    title: "Apocalypse Family",
+    status: "In Progress",
+    type: "Novel",
+    excerpt: "The begins of a post-apocalyptic novel exploring their relationship and journey across the Colorado foothills. While the mother grieves the world she lost, her daughter looks around with wonder at the world around them.",
+    media: {
+      doc: ["assets/writing/doom-fam.pdf"]
+    }
   }
 ];

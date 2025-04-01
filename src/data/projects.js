@@ -70,6 +70,24 @@ export const projects = [
     }
   },
   {
+    id: "D&D Stat Tracker",
+    title: "D&D Stat Tracker",
+    status: "Completed",
+    tags: ["Fabrication", "Physical Computing", "D&D", "Product Design"],
+    description:
+      "A custom-built companion device designed to streamline Dungeons & Dragons sessions by tracking stats and gameplay elements in real-time. Developed in response to frustrations with manual tracking and pacing issues, this project became a functional and personal solution I now use in my own games. The project featured two separate displays—including an OLED with unique code and wiring needs—packed into a compact housing. Challenges included tight layout constraints and managing an intricate wire system. Though the code was simplified by the end, it’s easily adaptable thanks to the modular framework I created.",
+    media: {
+      hero: "/assets/stat-tracker/hero.jpg",
+      gallery: [
+        "/assets/stat-tracker/image1.png",
+        "/assets/stat-tracker/image2.jpg",
+        "/assets/stat-tracker/image3.jpg"
+      ],
+      video: ["https://www.youtube.com/embed/v8IM6B2NaPY?si=011T52JyZtdf3ugu"],
+      docs: ["https://www.instructables.com/Digital-DD-Stat-Tracker/"]
+    }
+  },
+  {
     id: "unnautral-selection",
     title: "Unnautral Selection",
     status: "In Progress",

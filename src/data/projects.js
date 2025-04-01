@@ -22,18 +22,56 @@ export const projects = [
     id: "laugh-bucket",
     title: "The Laugh Bucket",
     status: "Completed",
-    tags: ["Alt Arcade", "Installation", "Physical Computing"],
+    tags: ["Alt Arcade", "Installation", "Physical Computing", "Arduino"],
     description:
       "An interactive audio installation exhibited at the 2024 Whaaat!? Festival using Arduino triggers and NDI audio to let users remix their laughter.",
     media: {
-      hero: "/assets/laugh-bucket/hero.jpg",
+      hero: "/assets/laugh-bucket/fullDisplay.jpg",
       gallery: [
-        "/assets/laugh-bucket/install1.jpg",
-        "/assets/laugh-bucket/install2.jpg"
+        "/assets/laugh-bucket/Image1.jpg",
+        "/assets/laugh-bucket/Image 2.jpg",
+        "/assets/laugh-bucket/image3.jpg",
       ],
-      video: "https://www.youtube.com/embed/example2",
-      docs: ["/assets/laugh-bucket/project-brief.pdf"]
+      video: "https://www.youtube.com/embed/H6jwWfM1DRg?si=MOH6X25X0Y4bXrEM",
     }
+  },
+  {
+    id: "tree-lamp",
+    title: "Wooden Tree Lamp",
+    status: "Completed",
+    tags: [, "Fabrication", "Lasercutting", "3D Modeling", "Product Design"],
+    description:
+      "A creative focused fabrication assignment. Using a 3D modeled tree and then taking vertical slices to create the 2 dimensonal planes for lasercutting. Hollowed for electronics/lights, and mixed with pieces of acrylic to allow light to shine through.",
+    media: {
+      hero: "/assets/tree-lamp/TreeThumbnail.jpg",
+      gallery: [
+        "/assets/tree-lamp/TreeImage1.jpg",
+        "/assets/tree-lamp/TreeImage2.jpg",
+        "/assets/tree-lamp/TreePieces.jpg",
+      ]
+    }
+  },
+  
+  {
+    id: "reframing-photography",
+    title: "Where I Belong: Photo Book",
+  status: "Completed",
+  tags: ["Photography", "Photoshop", "Visual Design"],
+  description:
+    "A visual exploration using Photoshop to alter, frame, and re-contextualize photographs through compositional and digital techniques. Using Photoshop and Lightroom. Using the lyrics of 'I’m Still Here (Jim’s Theme)' by John Rzeznik from the movie Treasure Planet.",
+    media: {
+      hero: "/assets/reframing-photography/frontCover.jpg",
+      gallery: [
+        "/assets/reframing-photography/frontCover.jpg",
+        "/assets/reframing-photography/backCover.jpg",
+        "/assets/reframing-photography/rf-04.jpg",
+        "/assets/reframing-photography/rf-03.jpg",
+        "/assets/reframing-photography/rf-02.jpg",
+        "/assets/reframing-photography/rf-01.jpg"
+
+      ],
+      docs: ["/assets/reframing-photography/Photobook.pdf"]
+    },
   },
   {
     id: "shattered-lands",
@@ -63,26 +101,5 @@ export const projects = [
       hero: "/assets/water-distribution/hero.jpg",
       gallery: ["/assets/water-distribution/diagram.jpg"]
     }
-  },
-  {
-    id: "reframing-photography",
-    title: "Where I Belong: Photo Book",
-  status: "Completed",
-  tags: ["Photography", "Photoshop", "Visual Design"],
-  description:
-    "A visual exploration using Photoshop to alter, frame, and re-contextualize photographs through compositional and digital techniques. Using Photoshop and Lightroom. Using the lyrics of 'I’m Still Here (Jim’s Theme)' by John Rzeznik from the movie Treasure Planet.",
-    media: {
-      hero: "/assets/reframing-photography/frontCover.jpg",
-      gallery: [
-        "/assets/reframing-photography/frontCover.jpg",
-        "/assets/reframing-photography/backCover.jpg",
-        "/assets/reframing-photography/rf-04.jpg",
-        "/assets/reframing-photography/rf-03.jpg",
-        "/assets/reframing-photography/rf-02.jpg",
-        "/assets/reframing-photography/rf-01.jpg"
-
-      ],
-      docs: ["/assets/reframing-photography/Photobook.pdf"]
-    },
   }
 ];

@@ -1,5 +1,6 @@
 import React from "react";
 import { projects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Projects() {
   return (
@@ -11,11 +12,7 @@ export default function Projects() {
       {/*Project Card Components */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <div key={project.id} className="border p-4 rounded shadow">
-            <h2 className="text-xl font-semibold">{project.title}</h2>
-            <p className="text-sm italic text-gray-500">{project.status}</p>
-            <p className="mt-2">{project.description}</p>
-          </div>
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </div>

@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Writing from './pages/Writing';
 import Contact from './pages/Contact';
+import ProjectDetail from "./pages/ProjectDetail";
 
 export default function App() {
   return (
@@ -19,11 +20,13 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/contact" element={<Contact />} />
-        </Routes>
+        </Routes>        
       </main>
+      
 
       <Footer />
     </div>

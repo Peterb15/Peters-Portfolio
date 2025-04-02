@@ -1,4 +1,5 @@
 // src/data/projects.js
+/*
 export const projects = [
   {
     id: "laugh-bucket",
@@ -124,3 +125,4 @@ export const projects = [
     ]
   }
 ];
+*/

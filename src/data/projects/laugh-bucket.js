@@ -1,6 +1,7 @@
 const project = {
   "id": "laugh-bucket",
   "title": "The Laugh Bucket",
+  "tags": ["installation", "alt-arcade", "fabrication", "interactive"],
   "tagline": "An interactive audio installation for spontaneous sound layering and feedback",
   "role": "Lead Designer & Developer",
   "tools": "Arduino, NDI, Audacity, Fabrication",
@@ -47,12 +48,8 @@ const project = {
   "credits": "Supported by the Whaaat!? Lab.",
   "collaborators": [
     {
-      "name": "Alex T.",
+      "name": "Josh Huges",
       "role": "Audio Engineer"
-    },
-    {
-      "name": "Emily H.",
-      "role": "Visual Designer"
     }
   ],
   "externalLinks": [

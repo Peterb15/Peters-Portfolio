@@ -6,43 +6,44 @@ export default function ProjectCard({ project }) {
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="block group rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 w-full"
+      className="block group rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 bg-white"
     >
-      <div className="bg-white h-full flex flex-col sm:flex-row w-full">
-        {/* Hero Image */}
-        {project.media?.hero ? (
-          <img
-            src={project.media.hero}
-            alt={`${project.title} hero`}
-            className="w-full sm:w-1/3 h-48 object-contain bg-gray-100 group-hover:scale-105 transition-transform duration-300"
-          />
-        ) : (
-          <div className="w-full sm:w-1/3 h-48 bg-gray-200 flex items-center justify-center text-gray-500">
-            No Image
-          </div>
+      {/* Hero Image */}
+      {project.heroMedia && (
+        <img
+          src={project.heroMedia}
+          alt={project.title}
+          className="w-full h-48 object-cover"
+        />
+      )}
+
+      {/* Card Content */}
+      <div className="p-4 space-y-1">
+        <h2 className="text-lg font-semibold text-blue-800 group-hover:underline">
+          {project.title}
+        </h2>
+
+        {project.tagline && (
+          <p className="text-sm text-gray-600 italic">{project.tagline}</p>
         )}
+      {/* Tags */}
+      {project.tags && (
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
 
-        {/* Content */}
-        <div className="p-4 flex flex-col flex-grow">
-          <h2 className="text-xl font-semibold text-blue-700 group-hover:underline">
-            {project.title}
-          </h2>
-          <p className="text-sm italic text-gray-500 mb-2">{project.status}</p>
-          <p className="text-sm text-gray-700 flex-grow">{project.description}</p>
-
-          {/* Tags */}
-          {project.tags?.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+        {/* Optional: Show tools or date */}
+        <div className="text-xs text-gray-400 mt-1 flex gap-2">
+          {project.tools && <span>{project.tools}</span>}
+          {project.date && <span>• {project.date}</span>}
         </div>
       </div>
     </Link>

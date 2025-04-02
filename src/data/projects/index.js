@@ -7,9 +7,9 @@ import statTracker from "./stat-tracker";
 
 export const projects = [
   laughBucket,
-  shatteredLands,
-  unnautralSelection,
   treeLamp,
   reframingPhotography,
-  statTracker
+  statTracker,
+  shatteredLands,
+  unnautralSelection,
 ];

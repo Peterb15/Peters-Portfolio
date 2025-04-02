@@ -1,136 +1,126 @@
-
 // src/data/projects.js
 export const projects = [
   {
     id: "laugh-bucket",
     title: "The Laugh Bucket",
-    status: "Completed",
-    tags: ["Alt Arcade", "Installation", "Physical Computing", "Arduino"],
-    description:
-      "An interactive audio installation exhibited at the 2024 Whaaat!? Festival using Arduino triggers and NDI audio to let users remix their laughter.",
-    media: {
-      hero: "/assets/laugh-bucket/fullDisplay.jpg",
-      gallery: [
-        "/assets/laugh-bucket/Image1.jpg",
-        "/assets/laugh-bucket/Image 2.jpg",
-        "/assets/laugh-bucket/image3.jpg",
-      ],
-      video: "https://www.youtube.com/embed/H6jwWfM1DRg?si=MOH6X25X0Y4bXrEM",
-    }
-  },
-  {
-    id: "tree-lamp",
-    title: "Wooden Tree Lamp",
-    status: "Completed",
-    tags: [, "Fabrication", "Lasercutting", "3D Modeling", "Product Design"],
-    description:
-      "A creative focused fabrication assignment. Using a 3D modeled tree and then taking vertical slices to create the 2 dimensonal planes for lasercutting. Hollowed for electronics/lights, and mixed with pieces of acrylic to allow light to shine through.",
-    media: {
-      hero: "/assets/tree-lamp/TreeThumbnail.jpg",
-      gallery: [
-        "/assets/tree-lamp/TreeImage1.jpg",
-        "/assets/tree-lamp/TreeImage2.jpg",
-        "/assets/tree-lamp/TreePieces.jpg",
-      ]
-    }
-  },
-  
-  {
-    id: "reframing-photography",
-    title: "Where I Belong: Photo Book",
-  status: "Completed",
-  tags: ["Photography", "Photoshop", "Visual Design"],
-  description:
-    "A visual exploration using Photoshop to alter, frame, and re-contextualize photographs through compositional and digital techniques. Using Photoshop and Lightroom. Using the lyrics of 'I’m Still Here (Jim’s Theme)' by John Rzeznik from the movie Treasure Planet.",
-    media: {
-      hero: "/assets/reframing-photography/frontCover.jpg",
-      gallery: [
-        "/assets/reframing-photography/frontCover.jpg",
-        "/assets/reframing-photography/backCover.jpg",
-        "/assets/reframing-photography/rf-04.jpg",
-        "/assets/reframing-photography/rf-03.jpg",
-        "/assets/reframing-photography/rf-02.jpg",
-        "/assets/reframing-photography/rf-01.jpg"
-
-      ],
-      docs: ["/assets/reframing-photography/Photobook.pdf"]
-    },
-  },
-  {
-    id: "remaking-ren",
-    title: "Remaking the Renaissance",
-    status: "Completed",
-    tags: ["Video Editing", "Creative Writing", "Multimedia"],
-    description:
-      "A multimedia reinterpretation of the Ovidian myth of Narcissus and Echo, examining themes of digital disconnection and algorithmic echo chambers through the lens of a modern text conversation.",
-    media: {
-      hero: "/assets/remaking-ren/renHero.jpeg",
-      video: ["https://www.youtube.com/embed/DX2TOJ5t31g?si=P89CZRwTYTv7H5t7"],
-      docs: ["/assets/remaking-ren/documentation.pdf"]
-    }
-  },
-  {
-    id: "D&D Stat Tracker",
-    title: "D&D Stat Tracker",
-    status: "Completed",
-    tags: ["Fabrication", "Physical Computing", "D&D", "Product Design"],
-    description:
-      "A custom-built companion device designed to streamline Dungeons & Dragons sessions by tracking stats and gameplay elements in real-time. Developed in response to frustrations with manual tracking and pacing issues, this project became a functional and personal solution I now use in my own games. The project featured two separate displays—including an OLED with unique code and wiring needs—packed into a compact housing. Challenges included tight layout constraints and managing an intricate wire system. Though the code was simplified by the end, it’s easily adaptable thanks to the modular framework I created.",
-    media: {
-      hero: "/assets/stat-tracker/hero.jpg",
-      gallery: [
-        "/assets/stat-tracker/image1.png",
-        "/assets/stat-tracker/image2.jpg",
-        "/assets/stat-tracker/image3.jpg"
-      ],
-      video: ["https://www.youtube.com/embed/v8IM6B2NaPY?si=011T52JyZtdf3ugu"],
-      docs: ["https://www.instructables.com/Digital-DD-Stat-Tracker/"]
-    }
-  },
-  {
-    id: "unnautral-selection",
-    title: "Unnautral Selection",
-    status: "In Progress",
-    tags: ["Alt Arcade", "Fabrication", "Physical Computing"],
-    description:
-      "An alternative controller group project exploring evolution through interactive arcade-style gameplay and physical computing.",
-    media: {
-      hero: "/assets/unnautral-selection/hero.jpg",
-      gallery: [
-        "/assets/unnautral-selection/shot1.jpg",
-        "/assets/unnautral-selection/shot2.jpg"
-      ],
-      video: "https://www.youtube.com/embed/example1",
-      docs: ["/assets/unnautral-selection/design-notes.pdf"]
-    }
+    tagline: "An interactive audio installation for spontaneous sound layering and feedback",
+    role: "Lead Designer & Developer",
+    tools: "Arduino, NDI, Audacity, Fabrication",
+    date: "Nov. 2024",
+    heroMedia: "/assets/laugh-bucket/fullDisplay.jpg",
+    overview:
+      "An interactive installation that let users remix laughter through Arduino-triggered recording and playback, layered using NDI systems. Exhibited at the Whaaat!? Festival at CU Boulder's ATLAS Institute.",
+    myRole: [
+      "Integrated Arduino + NDI systems for real-time audio",
+      "Fabricated installation housing and user interaction elements",
+      "Directed installation presentation at the Whaaat!? Festival"
+    ],
+    processSections: [
+      {
+        title: "Concept & Ideation",
+        content: "Explore chaotic sound play through public interaction — remixing laughter as both personal and shared experience."
+      },
+      {
+        title: "Technical Build",
+        content: "Used Arduino inputs to trigger and layer audio samples through NDI. Each new input was remixed over previous recordings, with visual feedback included."
+      },
+      {
+        title: "Exhibition & Feedback",
+        content: "Presented at the 2024 Whaaat!? Festival. Observed joyful, spontaneous interaction and adapted system based on crowd behavior."
+      }
+    ],
+    gallery: [
+      {
+        src: "/assets/laugh-bucket/Image1.jpg",
+        alt: "Laugh Bucket wiring",
+        caption: "Internal audio routing with Arduino & NDI"
+      },
+      {
+        src: "/assets/laugh-bucket/Image 2.jpg",
+        alt: "Exhibit side view",
+        caption: "Enclosure design from side angle"
+      },
+      {
+        src: "/assets/laugh-bucket/image3.jpg",
+        alt: "Laugh Bucket at Festival",
+        caption: "Interactors during Whaaat!? Festival demo"
+      }
+    ],
+    reflection: "This project helped me explore the intersection of play and physical computing, and how systems can be designed to encourage joy through surprise.",
+    credits: "Supported by the Whaaat!? Lab.",
+    collaborators: [
+      { name: "Alex T.", role: "Audio Engineer" },
+      { name: "Emily H.", role: "Visual Designer" }
+    ],
+    externalLinks: [
+      {
+        href: "https://www.youtube.com/embed/H6jwWfM1DRg?si=MOH6X25X0Y4bXrEM",
+        label: "Watch Project Video"
+      }
+    ]
   },
   {
     id: "shattered-lands",
     title: "The Shattered Lands",
-    status: "In Progress",
-    tags: ["D&D", "Narrative", "Multimedia", "Production"],
-    description:
-      "A collaborative Dungeons & Dragons actual play web series produced by Players Win Ties LLC. Blends collaborative writing, multimedia, and design.",
-    media: {
-      hero: "/assets/shattered-lands/hero.jpg",
-      gallery: [
-        "/assets/shattered-lands/scene1.jpg",
-        "/assets/shattered-lands/scene2.jpg"
-      ],
-      video: "https://www.youtube.com/embed/example3",
-      docs: ["/assets/shattered-lands/series-outline.pdf"]
-    }
+    tagline: "A longform narrative actual play set in a broken world",
+    role: "Showrunner, Director, Writer",
+    tools: "Godot, Premiere, Notion, Google Suite",
+    date: "2023–2025 (Ongoing)",
+    heroMedia: "/assets/shattered-lands/hero.jpg",
+    overview: "A serialized Dungeons & Dragons show blending storytelling, editing, music, and collaboration across disciplines.",
+    myRole: [
+      "Directed story arc and worldbuilding",
+      "Managed a 25-person creative team",
+      "Oversaw editing, publishing, and distribution"
+    ],
+    processSections: [
+      {
+        title: "Creative Vision",
+        content: "Inspired by worlds like Dishonored and Dark Sun, the setting mixes crumbling worlds with weird magic."
+      }
+    ],
+    gallery: [
+      { src: "/assets/shattered-lands/scene1.jpg", alt: "Main cast promo" },
+      { src: "/assets/shattered-lands/scene2.jpg", alt: "Scene storyboard" }
+    ],
+    reflection: "This project continues to sharpen my skills in storytelling, collaboration, and creative production at scale.",
+    credits: "Players Win Ties LLC.",
+    collaborators: [
+      { name: "Cast Team", role: "Story & Roleplay" },
+      { name: "Production Crew", role: "Filming, Editing, Set" }
+    ]
   },
   {
-    id: "water-distribution",
-    title: "Water Distribution System",
-    status: "In Progress",
-    tags: ["Arduino", "Physical Computing", "Fabrication"],
-    description:
-      "A hands-on engineering project using Arduino sensors and enclosures to manage water flow and measure distribution in small-scale systems.",
-    media: {
-      hero: "/assets/water-distribution/hero.jpg",
-      gallery: ["/assets/water-distribution/diagram.jpg"]
-    }
+    id: "unnautral-selection",
+    title: "Unnautral Selection",
+    tagline: "An arcade experience where evolution is interactive and physical",
+    role: "Creative Coder & Designer",
+    tools: "Arduino, Physical Computing, Game Design",
+    date: "2025 (In Progress)",
+    heroMedia: "/assets/unnautral-selection/hero.jpg",
+    overview: "A group project building an evolutionary alt arcade controller that responds to player behavior with visual and mechanical feedback.",
+    myRole: [
+      "Co-designed evolutionary interaction concept",
+      "Built custom controller enclosure",
+      "Coded physical response logic"
+    ],
+    processSections: [
+      {
+        title: "Design & Fabrication",
+        content: "Explored alternate play concepts through modular interaction points and evolving responses."
+      }
+    ],
+    gallery: [
+      { src: "/assets/unnautral-selection/shot1.jpg", alt: "Early enclosure prototype" },
+      { src: "/assets/unnautral-selection/shot2.jpg", alt: "Final build during testing" }
+    ],
+    reflection: "Still in development, but this project has expanded how I think about evolution as a mechanic beyond games.",
+    credits: "Team project for CTD alt.arcade course.",
+    collaborators: [
+      { name: "Group A Team", role: "Code & Assembly" }
+    ],
+    externalLinks: [
+      { href: "/assets/unnautral-selection/design-notes.pdf", label: "Design Notes (PDF)" }
+    ]
   }
 ];

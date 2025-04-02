@@ -38,7 +38,7 @@ export const writing = [
     type: "Short Story",
     excerpt: "An evolving set of character entries exploring descent into madness within an unknowable world.",
     media: {
-      doc: ["assets/writing/awake.pdf"]
+      docs: ["/assets/writing/awake.pdf"]
     }
   },
   {
@@ -48,7 +48,7 @@ export const writing = [
     type: "Novel",
     excerpt: "The begins of a post-apocalyptic novel exploring their relationship and journey across the Colorado foothills. While the mother grieves the world she lost, her daughter looks around with wonder at the world around them.",
     media: {
-      doc: ["assets/writing/doom-fam.pdf"]
+      docs: ["/assets/writing/doom-fam.pdf"]
     }
   }
 ];

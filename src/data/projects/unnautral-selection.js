@@ -20,11 +20,11 @@ const project = {
   ],
   "gallery": [
     {
-      "src": "/assets/unnautral-selection/shot1.jpg",
+      "src": "/assets/unnautral-selection/shot1.jpeg",
       "alt": "Early enclosure prototype"
     },
     {
-      "src": "/assets/unnautral-selection/shot2.jpg",
+      "src": "/assets/unnautral-selection/hero.jpg",
       "alt": "Final build during testing"
     }
   ],

@@ -26,13 +26,23 @@ const project = {
   ],
   "gallery": [
     {
+      
+      "type": "video",
+      "src": "//www.youtube.com/embed/aMWo43-s8-Q?si=v0JxKMRehXlxcS70",
+      "alt": "Demo Video" 
+    },
+    {
+      "type": "image",
       "src": "/assets/unnatural-selection/shot1.jpeg",
       "alt": "Early enclosure prototype"
     },
     {
+      
+      "type": "image",
       "src": "/assets/unnatural-selection/hero.jpg",
       "alt": "Final build during testing"
     }
+
   ],
   "reflection": "Still in development, but this project has pushed my thinking about evolution beyond a conceptual game mechanic. Designing something that physically morphs and reacts has opened new doors in my creative practice—especially in how narrative, behavior, and design intersect.",
   "credits": "Team project for CTD alt.arcade course.",

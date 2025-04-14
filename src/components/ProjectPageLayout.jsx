@@ -72,7 +72,24 @@ const ProjectPageLayout = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {gallery.map((item, i) => (
               <div key={i}>
-                <img src={item.src} alt={item.alt} className="rounded-xl shadow" />
+                {item.type === "video" ? (
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src={item.src}
+                      title={item.title || `Project Video ${i + 1}`}
+                      className="w-full h-full rounded-xl shadow"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt || `Project Image ${i + 1}`}
+                    className="rounded-xl shadow"
+                  />
+                )}
                 {item.caption && (
                   <p className="text-sm text-gray-500 mt-1">{item.caption}</p>
                 )}
@@ -81,6 +98,7 @@ const ProjectPageLayout = ({
           </div>
         </section>
       )}
+
 
       {/* Reflection */}
       {reflection && (

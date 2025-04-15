@@ -6,10 +6,12 @@ import reframingPhotography from "./reframing-photography";
 import statTracker from "./stat-tracker";
 
 export const projects = [
+  shatteredLands,
+  unnautralSelection,
   laughBucket,
   treeLamp,
   reframingPhotography,
-  statTracker,
-  shatteredLands,
-  unnautralSelection,
+  statTracker
 ];
+
+export default projects;

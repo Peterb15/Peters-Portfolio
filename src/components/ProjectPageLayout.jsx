@@ -30,14 +30,21 @@ const ProjectPageLayout = ({
           <span>{date}</span>
         </div>
         {heroMedia && (
-          <div className="mt-6">
+          <div className="mt-6 w-full">
             {typeof heroMedia === "string" ? (
-              <img src={heroMedia} alt={title} className="rounded-xl shadow" />
+              <div className="aspect-[16/9] w-full overflow-hidden rounded-xl shadow">
+                <img
+                  src={heroMedia}
+                  alt={title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             ) : (
               heroMedia
             )}
           </div>
         )}
+
       </section>
 
       {/* Overview */}

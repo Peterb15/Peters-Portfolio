@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
         <img
           src={project.heroMedia}
           alt={project.title}
-          className="w-full h-48 object-cover"
+          className="w-full aspect-[16/9] object-cover rounded-t-lg transition-transform duration-300 group-hover:scale-105"
         />
       )}
 
@@ -26,23 +26,23 @@ export default function ProjectCard({ project }) {
         {project.tagline && (
           <p className="text-sm text-gray-600 italic">{project.tagline}</p>
         )}
-      {/* Tags */}
-      {Array.isArray(project.tags) && project.tags.length > 0 && (
-      <div className="flex flex-wrap gap-2 mt-2">
-        {project.tags.map((tag, i) => (
-          <span
-            key={i}
-            className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-    )}
 
+        {/* Tags */}
+        {Array.isArray(project.tags) && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {project.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
 
-        {/* Optional: Show tools or date */}
-        <div className="text-xs text-gray-400 mt-1 flex gap-2">
+        {/* Tools & Date */}
+        <div className="text-xs text-gray-400 mt-1 flex gap-2 flex-wrap">
           {project.tools && <span>{project.tools}</span>}
           {project.date && <span>• {project.date}</span>}
         </div>

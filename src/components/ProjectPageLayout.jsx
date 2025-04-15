@@ -5,7 +5,7 @@ const ProjectPageLayout = ({
   title,
   tagline,
   role,
-  tools,
+  tags,
   date,
   heroMedia,
   overview,
@@ -59,9 +59,13 @@ const ProjectPageLayout = ({
 
       {/* Process Sections */}
       {processSections.map((section, i) => (
-        <section key={i}>
+        <section key={i} className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
-          <p className="text-gray-700 leading-relaxed">{section.content}</p>
+          {section.content.split("\n\n").map((para, j) => (
+            <p key={j} className="text-gray-700 leading-relaxed mb-4">{para}</p>
+            
+          ))}
+          <hr className="my-8 border-t border-gray-200" />
         </section>
       ))}
 
@@ -124,6 +128,8 @@ const ProjectPageLayout = ({
             </ul>
           </div>
         )}
+        <h3 className="text-lg font-semibold mt-4">Tools</h3>
+        <p className="text-gray-700 leading-relaxed">{tools}</p>
         {externalLinks && (
           <div className="mt-4 text-blue-600 underline">
             {externalLinks.map((link, i) => (

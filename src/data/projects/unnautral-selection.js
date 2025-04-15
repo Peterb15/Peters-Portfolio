@@ -3,7 +3,7 @@ const project = {
   "title": "Unnautral Selection",
   "tagline": "An arcade experience where evolution is interactive and physical",
   "role": "Creative Coder & Designer",
-  "tools": "Arduino, Physical Computing, Game Design, Fabrication",
+  "tags": "Arduino, Physical Computing, Game Design, Fabrication",
   "date": "2025 (In Progress)",
   "heroMedia": "/assets/unnatural-selection/hero.jpg",
   "overview": "Unnatural Selection is a custom-built arcade game that allows “evolution” through real-time, physical interaction. Players spin cylinder components on a creature-like controller—head, torso, and legs—to create unique hybrids. These choices influence how the game responds visually and mechanically, evolving based on player choices.  Try to defeat their opponent in this strange and exciting 2-player fight.",

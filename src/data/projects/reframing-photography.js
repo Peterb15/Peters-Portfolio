@@ -1,61 +1,74 @@
 const project = {
-  "id": "reframing-photography",
-  "title": "Where I Belong: Photo Book",
-  "tagline": "A digital photo book combining image manipulation and emotional narrative",
-  "role": "Photographer, Editor, Designer",
-  "tools": "Photoshop, Lightroom",
-  "date": "2023",
-  "heroMedia": "/assets/reframing-photography/frontCover.jpg",
-  "overview": "A series of manipulated photographs framed around themes of identity, place, and belonging. Inspired by the lyrics of 'I\u2019m Still Here (Jim\u2019s Theme)' from Treasure Planet.",
-  "myRole": [
-    "Shot, selected, and edited all photography",
-    "Designed and formatted book layout",
-    "Experimented with color and collage"
+  id: "reframing-photography",
+  title: "Where I Belong: Photo Book",
+  category: "minor",
+  status: "Completed",
+  tagline: "A digital photo book combining image manipulation and emotional narrative",
+  role: "Photographer, Editor, Designer",
+  tags: "Multimedia, Photography, Digital Design",
+  date: "2023",
+  heroMedia: "/assets/reframing-photography/frontCover.jpg",
+
+  overview:
+    "Where I Belong is a digital photo book that blends personal photography with manipulated imagery to explore themes of identity, place, and transformation. Inspired by the lyrics of 'I'm Still Here (Jim's Theme)' from *Treasure Planet*, the project traces a visual narrative of isolation, memory, and the quiet search for belonging. The work combines color shifts, collage, and visual rhythm to evoke emotional movement across spreads.",
+
+  myRole: [
+    "Shot, selected, and edited all original photography",
+    "Designed the layout and pacing of the digital book",
+    "Used color grading, light manipulation, and compositing to create narrative tension"
   ],
-  "processSections": [
+
+  processSections: [
     {
-      "title": "Concept",
-      "content": "Explored personal themes of belonging through imagery, blending photographic composition with storytelling."
+      title: "Concept Development",
+      content:
+        "The project began as a visual response to the feeling of not fitting in—drawing on lyrics and memories to construct a visual diary. Each photo was chosen not only for aesthetic value, but for its emotional tone, helping build a sequence that feels like a journey rather than just a collection."
     },
     {
-      "title": "Editing Techniques",
-      "content": "Used layering, contrast, and light manipulation to create visual mood shifts across spreads."
+      title: "Editing & Composition",
+      content:
+        "Layering, collage, and dramatic contrast were used to guide the viewer's eye and emotional response. Spreads shift between quiet moments and surreal manipulation, inviting the reader to reflect on their own experiences of home, longing, and identity."
     }
   ],
-  "gallery": [
+
+  gallery: [
     {
-      "src": "/assets/reframing-photography/frontCover.jpg",
-      "alt": "Front cover",
-      "caption": "Opening of the book"
+      src: "/assets/reframing-photography/frontCover.jpg",
+      alt: "Front cover",
+      caption: "Opening of the book"
     },
     {
-      "src": "/assets/reframing-photography/backCover.jpg",
-      "alt": "Back cover",
-      "caption": "Book conclusion imagery"
+      src: "/assets/reframing-photography/backCover.jpg",
+      alt: "Back cover",
+      caption: "Closing imagery"
     },
     {
-      "src": "/assets/reframing-photography/rf-04.jpg",
-      "alt": "Spread 1"
+      src: "/assets/reframing-photography/rf-04.jpg",
+      alt: "Spread 1"
     },
     {
-      "src": "/assets/reframing-photography/rf-03.jpg",
-      "alt": "Spread 2"
+      src: "/assets/reframing-photography/rf-03.jpg",
+      alt: "Spread 2"
     },
     {
-      "src": "/assets/reframing-photography/rf-02.jpg",
-      "alt": "Spread 3"
+      src: "/assets/reframing-photography/rf-02.jpg",
+      alt: "Spread 3"
     },
     {
-      "src": "/assets/reframing-photography/rf-01.jpg",
-      "alt": "Spread 4"
+      src: "/assets/reframing-photography/rf-01.jpg",
+      alt: "Spread 4"
     }
   ],
-  "reflection": "This project taught me how visual rhythm and mood can drive narrative just as much as text.",
-  "credits": "Created for Visual Design Studio course.",
-  "externalLinks": [
+
+  reflection:
+    "This project taught me how visual rhythm, pacing, and color can drive narrative just as powerfully as written text. It deepened my understanding of photo editing as a storytelling tool—and how emotion can be communicated through texture, silence, and contrast as much as image content.",
+
+  credits: "Created for Visual Design Studio course at CU Boulder.",
+
+  externalLinks: [
     {
-      "href": "/assets/reframing-photography/Photobook.pdf",
-      "label": "View Full Photo Book"
+      href: "/assets/reframing-photography/Photobook.pdf",
+      label: "View Full Photo Book"
     }
   ]
 };

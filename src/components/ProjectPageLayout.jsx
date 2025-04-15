@@ -16,6 +16,7 @@ const ProjectPageLayout = ({
   credits,
   collaborators,
   externalLinks,
+  tools,
 }) => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-16">
@@ -25,8 +26,6 @@ const ProjectPageLayout = ({
         <p className="text-lg text-gray-600 italic">{tagline}</p>
         <div className="flex justify-center space-x-4 text-sm text-gray-500">
           <span>{role}</span>
-          <span>•</span>
-          <span>{tools}</span>
           <span>•</span>
           <span>{date}</span>
         </div>
@@ -48,29 +47,30 @@ const ProjectPageLayout = ({
       </section>
 
       {/* My Role */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-2">My Role</h2>
-        <ul className="list-disc list-inside text-gray-700">
-          {myRole.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </section>
+      {Array.isArray(myRole) && myRole.length > 0 && (
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">My Role</h2>
+          <ul className="list-disc list-inside text-gray-700">
+            {myRole.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Process Sections */}
-      {processSections.map((section, i) => (
+      {Array.isArray(processSections) && processSections.length > 0 && processSections.map((section, i) => (
         <section key={i} className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
           {section.content.split("\n\n").map((para, j) => (
             <p key={j} className="text-gray-700 leading-relaxed mb-4">{para}</p>
-            
           ))}
           <hr className="my-8 border-t border-gray-200" />
         </section>
       ))}
 
       {/* Gallery */}
-      {gallery && gallery.length > 0 && (
+      {Array.isArray(gallery) && gallery.length > 0 && (
         <section>
           <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -103,7 +103,6 @@ const ProjectPageLayout = ({
         </section>
       )}
 
-
       {/* Reflection */}
       {reflection && (
         <section>
@@ -116,7 +115,8 @@ const ProjectPageLayout = ({
       <section>
         <h2 className="text-2xl font-semibold mb-2">Credits & Tools</h2>
         <p className="text-gray-700 leading-relaxed">{credits}</p>
-        {collaborators && collaborators.length > 0 && (
+
+        {Array.isArray(collaborators) && collaborators.length > 0 && (
           <div className="mt-2">
             <h3 className="text-lg font-semibold mt-4">Collaborators</h3>
             <ul className="list-disc list-inside text-gray-700">
@@ -128,8 +128,30 @@ const ProjectPageLayout = ({
             </ul>
           </div>
         )}
-        <h3 className="text-lg font-semibold mt-4">Tools</h3>
-        <p className="text-gray-700 leading-relaxed">{tools}</p>
+
+        {tools && (
+          <>
+            <h3 className="text-lg font-semibold mt-4">Tools</h3>
+            <p className="text-gray-700 leading-relaxed">{tools}</p>
+          </>
+        )}
+
+        {Array.isArray(tags) && tags.length > 0 && (
+          <>
+            <h3 className="text-lg font-semibold mt-4">Tags</h3>
+            <div className="flex flex-wrap gap-2 mt-1">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-200 text-sm text-gray-800 px-3 py-1 rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+
         {externalLinks && (
           <div className="mt-4 text-blue-600 underline">
             {externalLinks.map((link, i) => (

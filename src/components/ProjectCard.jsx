@@ -27,18 +27,19 @@ export default function ProjectCard({ project }) {
           <p className="text-sm text-gray-600 italic">{project.tagline}</p>
         )}
       {/* Tags */}
-      {project.tags && (
-        <div className="flex flex-wrap gap-2 mt-2">
-          {project.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+      {Array.isArray(project.tags) && project.tags.length > 0 && (
+      <div className="flex flex-wrap gap-2 mt-2">
+        {project.tags.map((tag, i) => (
+          <span
+            key={i}
+            className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+
 
         {/* Optional: Show tools or date */}
         <div className="text-xs text-gray-400 mt-1 flex gap-2">

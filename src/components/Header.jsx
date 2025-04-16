@@ -10,6 +10,7 @@ export default function Header() {
         <Link to="/projects">Projects</Link>
         <Link to="/writing">Writing</Link>
         <Link to="/about">About</Link>
+        <Link to="/resume">Resume / CV</Link>
         <Link to="/contact">Contact</Link>
       </nav>
     </header>

@@ -27,7 +27,7 @@ export default function FeaturedProjectsCarousel() {
     <section className="bg-white py-8">
       <div className="max-w-5xl mx-auto px-4 space-y-4">
         {/* Section Heading */}
-        <h2 className="text-xl md:text-2xl font-semibold text-center text-gray-800">
+        <h2 className="text-xl md:text-2xl font-semibold text-center text-gray-800 mt-2 mb-6">
           Featured Projects
         </h2>
 

@@ -35,17 +35,17 @@ const project = {
     {
       src: "/assets/tree-lamp/TreeImage1.jpg",
       alt: "Tree Lamp lit",
-      caption: "Assembled lamp under lighting test"
+      caption: "Fully assembled lamp illuminated by its embedded LEDs."
     },
     {
       src: "/assets/tree-lamp/TreeImage2.jpg",
-      alt: "Unlit side view",
+      alt: "Side view highlighting the interlocking wood slices in profile.",
       caption: "Wood slices from an angle"
     },
     {
       src: "/assets/tree-lamp/TreePieces.jpg",
       alt: "Disassembled pieces",
-      caption: "Sliced components before assembly"
+      caption: "All vertical cross‑sections laid out prior to construction."
     }
   ],
 
@@ -54,7 +54,7 @@ const project = {
 
   collaborators: [
     {
-      name: "Anika Nelse",
+      name: "Anika Nelson",
       role: "Artist"
     }
   ],

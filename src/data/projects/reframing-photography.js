@@ -35,28 +35,32 @@ const project = {
     {
       src: "/assets/reframing-photography/frontCover.jpg",
       alt: "Front cover",
-      caption: "Opening of the book"
+      caption: "Opening page of photo book"
     },
     {
       src: "/assets/reframing-photography/backCover.jpg",
       alt: "Back cover",
-      caption: "Closing imagery"
+      caption: "Back page of photo book "
     },
     {
       src: "/assets/reframing-photography/rf-04.jpg",
-      alt: "Spread 1"
+      alt: "Spread 1",
+      caption: "High‑contrast imagery evoking solitude and place."
     },
     {
       src: "/assets/reframing-photography/rf-03.jpg",
-      alt: "Spread 2"
+      alt: "Spread 2",
+      caption: "Layered photographs and textures telling a fragmented story."
     },
     {
       src: "/assets/reframing-photography/rf-02.jpg",
-      alt: "Spread 3"
+      alt: "Spread 3",
+      caption: "Sequential imagery guiding the viewer through shifting landscapes."
     },
     {
       src: "/assets/reframing-photography/rf-01.jpg",
-      alt: "Spread 4"
+      alt: "Spread 4",
+      caption: "Final spread blending portraiture and environmental context."
     }
   ],
 

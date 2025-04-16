@@ -39,73 +39,87 @@ const project = {
     {
       type: "image",
       src: "/assets/shattered-lands/hero.jpg",
-      alt: "Main cast promo"
+      alt: "Main cast promo",
+      caption: "Player promo photo"
     },
     {
       type: "video",
       src: "https://www.youtube.com/embed/_ISNdi2AbFA?rel=0", // Replace with actual episode or teaser link
-      title: "Last Bastion Battle Set Part 1"
+      title: "Last Bastion Battle Set Part 1",
+      caption: "Video of Last Bastion battle set"
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image2.JPG",
-      alt: "i2"
+      alt: "i2",
+      caption: "Detailed look at the hand‑painted miniature islands."
     },
 
     {
       type: "video",
       src: "https://youtube.com/embed/eR39_auGNQc?rel=0", // Replace with actual episode or teaser link
-      title: "Episode 1 Preview"
+      title: "Episode 1 Preview",
+      caption: "Video of the Last Bastion battle set (lights)"
     },
     {
       type: "image",
       src: "/assets/shattered-lands/hero1.jpg",
-      alt: "Scene storyboard"
+      alt: "Scene storyboard",
+      caption: "Early art mapping out narrative beats and camera angles."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image3.jpg",
-      alt: "i3"
+      alt: "i3",
+      caption: "Behind‑the‑scenes view of live play filming."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image11.jpg",
-      alt: "Scene storyboard11"
+      alt: "Scene storyboard11",
+      caption: "Illustrated map showing terrain features and storm patterns."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image5.jpg",
-      alt: "i5"
+      alt: "i5",
+      caption: "Workspace with brushes, pigments, and terrain pieces."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image4.jpg",
-      alt: "Si4"
+      alt: "Si4",
+      caption: "Sculpted model used to plan set elevations."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image7.jpg",
-      alt: "Si7"
+      alt: "Si7",
+      caption: "Equipment setup capturing player interactions."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image8.jpg",
-      alt: "i8"
+      alt: "i8",
+      caption: "Preview of the motion graphic intro roll."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image9.jpg",
-      alt: "i9"
+      alt: "i9",
+      caption: "Screenshots comparing warm vs. cool storm palettes."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image10.jpg",
-      alt: "Scene storyboard10"
+      alt: "Scene storyboard10",
+      caption: "Digital map used between episodes for narrative flow."
     },
     {
       type: "image",
       src: "/assets/shattered-lands/image12.jpg",
-      alt: "Scene storyboard12"
+      alt: "Scene storyboard12",
+      caption: "Photographed meeting reviewing set and story details."
     },
   ],
 

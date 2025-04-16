@@ -10,6 +10,7 @@ import About from './pages/About';
 import Writing from './pages/Writing';
 import Contact from './pages/Contact';
 import ProjectDetail from "./pages/ProjectDetail";
+import ResumePage from "./pages/ResumePage";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/resume" element={<ResumePage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>        
       </main>

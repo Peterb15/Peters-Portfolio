@@ -6,8 +6,7 @@ export default function About() {
       <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">About Me</h1>
 
       <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        I’m Peter Burke — an interdisciplinary designer and storyteller working at the intersection of technology and the arts.
-        I specialize in combining physical computing, creative writing, and multimedia design to build imaginative, emotionally resonant experiences.
+      I’m a designer and storyteller who blends creative vision with hands‑on technical work. I love using fabrication, physical computing, and multimedia to craft collaborative experiences—from interactive installations to narrative-driven games—and bring ideas to life through design thinking and world‑building.
       </p>
 
       <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">

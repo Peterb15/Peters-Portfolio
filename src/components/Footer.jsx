@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer id="contact" className="p-4 text-center bg-white border-t">
-      <p>Contact me: <a href="mailto:pebu5033@colorado.edu" className="underline">pebu5033@colorado.edu</a></p>
+      <p>Contact me: <a href="mailto:pebu5033@colorado.edu" className="underline">burke.pete15@gmail.com</a></p>
       <p>
         <a
           href="public/ResumeFinal2025.pdf"

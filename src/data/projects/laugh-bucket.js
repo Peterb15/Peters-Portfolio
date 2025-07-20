@@ -49,7 +49,7 @@ const project = {
       "type": "image",
       "src": "/assets/laugh-bucket/image3.jpg",
       "alt": "Laugh Bucket at Festival",
-      "caption": "Interactors during Whaaat!? Festival demo"
+      "caption": "Patrons using the Laugh Bucket during Whaaat!? Festival demo"
     }
   ],
   "reflection": "This project deepened my interest in physical computing as a medium for shared joy. I became fascinated by how interactions developed and evolved throughout the festival. It also challenged my fabrication skills to build enclosures that were not only functional, but aesthetically pleasing.",

@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --pb-bg:#0E0E0E;
+  --pb-ivory:#E2E2E2;
+  --pb-purple:#4B1E6C;
+  --pb-copper:#C47C2D;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--pb-bg);
+  color: var(--pb-ivory);
+}
+
+/* Optional: crisp type on dark */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Optional: dropcap utility for About later */
+.dropcap::first-letter {
+  font-family: "Fleisch","UnifrakturCook",serif;
+  font-size: 3.25rem;
+  line-height: 1;
+  margin-right: .35rem;
+  color: var(--pb-purple);
+}

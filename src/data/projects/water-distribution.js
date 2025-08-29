@@ -120,8 +120,6 @@ const project = {
       href: "http://bit.ly/4kTTK9B",
       label: "View Hacking the Apocalypse: Book 1: Water"
     },
-    
-
     {
       href: "https://github.com/Hacking-The-Apocalypse/2025-spring-SmartDistribution",
       label: "GitHub Repository"

@@ -12,23 +12,17 @@ export default function ResumePage() {
           pebu5033@colorado.edu • <a href="https://linkedin.com/in/PeterBurke15" className="underline">LinkedIn</a> • <a href="https://peterburke.co" className="underline">peterburke.co</a>
         </div>
       </header>
-
-      {/* Skills */}
+      {/* Education */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-700">
+        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <div className="space-y-4 text-gray-800">
           <div>
-            <h3 className="font-medium mb-1">Software</h3>
-            <p>Illustrator • InDesign • Photoshop • After Effects • Premiere • Blender • Dimensions • Ableton • Godot • Arduino IDE • SketchUp</p>
+            <p className="font-medium">B.S. Creative Technology &amp; Design<br /><span className="text-sm text-gray-500">ATLAS Institute, CU Boulder</span></p>
           </div>
           <div>
-            <h3 className="font-medium mb-1">Coding</h3>
-            <p>C++ • C# • GDScript • HTML • CSS • Java</p>
+            <p className="font-medium">B.A. English (Creative Writing)<br /><span className="text-sm text-gray-500">College of Arts &amp; Sciences, CU Boulder</span></p>
           </div>
-          <div>
-            <h3 className="font-medium mb-1">Creative & Technical</h3>
-            <p>Physical Computing • Fabrication • Game Dev • Web Design • 3D Modeling • Animation • Audio/Video Editing • Product Design • 3D Printing • Laser Cutting</p>
-          </div>
+          <p className="text-sm text-gray-500 mt-2">GPA: 3.7 • Expected Graduation: Spring 2026</p>
         </div>
       </section>
 
@@ -36,6 +30,16 @@ export default function ResumePage() {
       <section>
         <h2 className="text-2xl font-semibold mb-4">Experience</h2>
         <div className="space-y-8 text-gray-800">
+
+          <div>
+            <h3 className="text-lg font-medium">Makerspace Technician<br /><span className="text-sm text-gray-500">Aug 2025 – Present · BTU Lab, CU Boulder</span></h3>
+            <ul className="list-disc list-inside mt-2">
+              <li>Facilitated orientations and provided technical support in the    ATLAS’s public makerspace.</li>
+              <li>Answered questions on 3D Printing, Laser Cutting, Woodworking, and electronics.</li>
+              <li>Assisted with machine maintenance and stock management.</li>
+            </ul>
+          </div>
+
           <div>
             <h3 className="text-lg font-medium">Writer / Content Creator<br /><span className="text-sm text-gray-500">May 2024 – Present · Environmental Center, CU Boulder</span></h3>
             <ul className="list-disc list-inside mt-2">
@@ -74,7 +78,24 @@ export default function ResumePage() {
           </div>
         </div>
       </section>
-
+      {/* Skills */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-700">
+          <div>
+            <h3 className="font-medium mb-1">Software</h3>
+            <p>Illustrator • InDesign • Photoshop • After Effects • Premiere • Blender • Dimensions • Ableton • Godot • Arduino IDE • SketchUp</p>
+          </div>
+          <div>
+            <h3 className="font-medium mb-1">Coding</h3>
+            <p>C++ • C# • GDScript • HTML • CSS • Java</p>
+          </div>
+          <div>
+            <h3 className="font-medium mb-1">Creative & Technical</h3>
+            <p>Physical Computing • Fabrication • Game Dev • Web Design • 3D Modeling • Animation • Audio/Video Editing • Product Design • 3D Printing • Laser Cutting</p>
+          </div>
+        </div>
+      </section>
       {/* Projects */}
       <section>
         <h2 className="text-2xl font-semibold mb-4">Projects</h2>
@@ -103,19 +124,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* Education */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Education</h2>
-        <div className="space-y-4 text-gray-800">
-          <div>
-            <p className="font-medium">B.S. Creative Technology &amp; Design<br /><span className="text-sm text-gray-500">ATLAS Institute, CU Boulder</span></p>
-          </div>
-          <div>
-            <p className="font-medium">B.A. English (Creative Writing)<br /><span className="text-sm text-gray-500">College of Arts &amp; Sciences, CU Boulder</span></p>
-          </div>
-          <p className="text-sm text-gray-500 mt-2">GPA: 3.7 • Expected Graduation: Spring 2026</p>
-        </div>
-      </section>
+      
     </section>
   );
 }

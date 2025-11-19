@@ -10,7 +10,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-blackletter text-6xl sm:text-7xl md:text-8xl leading-none"
+          className="font-blackletter text-6xl sm:text-7xl md:text-9xl leading-none"
         >
           Peter Burke
         </motion.h1>
@@ -31,7 +31,7 @@ export default function Hero() {
           <a href="#projects" className="px-5 py-3 border border-pb-copper/70 rounded-md hover:shadow-copper transition-shadow">
             View My Work
           </a>
-          <a href="#about" className="px-5 py-3 border border-pb-copper/30 rounded-md hover:border-pb-copper">
+          <a href="#projects" className="px-5 py-3 border border-pb-copper/70 rounded-md hover:shadow-copper transition-shadow">
             About Me
           </a>
         </motion.div>

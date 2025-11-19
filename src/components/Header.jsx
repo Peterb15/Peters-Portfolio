@@ -18,8 +18,8 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/30 backdrop-blur supports-[backdrop-filter]:bg-black/30">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="font-display tracking-wide text-[15px] text-pb-copper">
-          PETER BURKE
+        <Link to="/" className="font-blackletter text-xl   leading-none">
+          Peter Burke
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">

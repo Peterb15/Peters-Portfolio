@@ -53,9 +53,23 @@ export default {
         }
       },
       fontFamily: {
+        // Body text
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
-        blackletter: ['"Fleisch"', '"UnifrakturCook"', 'serif'],
+        
+        // Main headings - JAF Lapture Display
+        display: ['jaf-lapture-display', 'Inter', 'sans-serif'],
+  
+        
+        // Subheadings - JAF Lapture Subhead
+        accent: ['jaf-lapture-subhead', 'Inter', 'sans-serif'],
+        
+        // Special decorative elements - P22 Morris Golden
+        decorative: ['"P22 Morris Golden"', 'serif'],
+      },
+      fontWeight: {
+        // Custom weights for JAF Lapture Display
+        'display-extrabold': '800',
+        'display-black': '900',
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
@@ -76,6 +90,11 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'gradient-wave': 'gradient-wave 4s ease-in-out infinite',
+        'glitch-1': 'glitch-1 2s infinite linear alternate-reverse',
+        'glitch-2': 'glitch-2 2s infinite linear alternate-reverse',
+        'typewriter-highlight': 'typewriter-highlight 3s ease-out forwards',
+        'neon-flicker': 'neon-flicker 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -113,6 +132,36 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-1000px 0' },
           '100%': { backgroundPosition: '1000px 0' },
+        },
+        'gradient-wave': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'glitch-1': {
+          '0%, 100%': { clipPath: 'polygon(0 0, 100% 0, 100% 35%, 0 35%)' },
+          '25%': { clipPath: 'polygon(0 65%, 100% 65%, 100% 100%, 0 100%)' },
+          '50%': { clipPath: 'polygon(0 0, 100% 0, 100% 55%, 0 55%)' },
+          '75%': { clipPath: 'polygon(0 45%, 100% 45%, 100% 100%, 0 100%)' },
+        },
+        'glitch-2': {
+          '0%, 100%': { clipPath: 'polygon(0 65%, 100% 65%, 100% 100%, 0 100%)' },
+          '25%': { clipPath: 'polygon(0 0, 100% 0, 100% 35%, 0 35%)' },
+          '50%': { clipPath: 'polygon(0 45%, 100% 45%, 100% 100%, 0 100%)' },
+          '75%': { clipPath: 'polygon(0 0, 100% 0, 100% 55%, 0 55%)' },
+        },
+        'typewriter-highlight': {
+          '0%': { width: '0%', opacity: '0' },
+          '10%': { opacity: '1' },
+          '70%': { width: '100%', opacity: '1' },
+          '100%': { width: '100%', opacity: '0.8' },
+        },
+        'neon-flicker': {
+          '0%, 100%': { opacity: '1', filter: 'brightness(1) blur(0px)' },
+          '10%': { opacity: '0.9', filter: 'brightness(0.9) blur(1px)' },
+          '20%': { opacity: '1', filter: 'brightness(1.1) blur(0px)' },
+          '30%': { opacity: '0.95', filter: 'brightness(0.95) blur(0.5px)' },
+          '40%': { opacity: '1', filter: 'brightness(1.05) blur(0px)' },
+          '50%': { opacity: '0.98', filter: 'brightness(0.98) blur(0.2px)' },
         },
       },
     },

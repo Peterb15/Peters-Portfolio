@@ -1,66 +1,67 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-        
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          
-          {/* About */}
+    <footer className="bg-dark-900 border-t border-pb-line">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {/* Brand */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Peter Burke</h3>
-            <p className="text-sm text-gray-600">
-              Designer & storyteller working at the intersection of technology and the arts.
+            <h3 className="text-xl font-display font-extrabold text-pb-ivory mb-3">Peter Burke</h3>
+            <p className="text-sm font-decorative text-pb-ivory/60">
+              Designer • Storyteller • Technologist
             </p>
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">
-              Connect
-            </h4>
-            <div className="flex flex-wrap gap-3 text-sm">
-              <a 
-                href="mailto:burke.pete15@gmail.com" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Email
-              </a>
-              <span className="text-gray-300">•</span>
-              <a 
-                href="https://linkedin.com/in/PeterBurke15" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                LinkedIn
-              </a>
-              <span className="text-gray-300">•</span>
-              <a 
-                href="https://github.com/Peterb15" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                GitHub
-              </a>
-              <span className="text-gray-300">•</span>
-              <a 
-                href="/ResumeFinal2025.pdf" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Resume
-              </a>
-            </div>
+            <h4 className="text-sm font-accent font-bold text-pb-ivory mb-3">Explore</h4>
+            <ul className="space-y-2">
+              {['Projects', 'Writing', 'About', 'Resume'].map((link) => (
+                <li key={link}>
+                  <Link 
+                    to={`/${link.toLowerCase()}`}
+                    className="text-sm font-sans text-pb-ivory/60 hover:text-accent-500 transition-colors"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <h4 className="text-sm font-accent font-bold text-pb-ivory mb-3">Connect</h4>
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="mailto:burke.pete15@gmail.com"
+                  className="text-sm font-sans text-pb-ivory/60 hover:text-accent-500 transition-colors"
+                >
+                  Email
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://linkedin.com/in/PeterBurke15"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-sans text-pb-ivory/60 hover:text-accent-500 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Peter Burke. All rights reserved.</p>
-          <p>Boulder, Colorado</p>
+        {/* Copyright */}
+        <div className="pt-8 border-t border-pb-line text-center">
+          <p className="text-xs font-decorative text-pb-ivory/40">
+            © {new Date().getFullYear()} Peter Burke. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

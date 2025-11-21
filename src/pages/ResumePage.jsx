@@ -3,17 +3,17 @@ import React from "react";
 
 export default function ResumePage() {
   return (
-    <section className="max-w-4xl mx-auto px-6 py-16 space-y-12">
+    <section className="max-w-4xl mx-auto px-8 py-24 space-y-16">
       {/* Header */}
       <header className="text-center space-y-2">
-        <h1 className="text-4xl font-bold">Peter Burke</h1>
+        <h1 className="text-5xl font-display font-black">Peter Burke</h1>
         <p className="text-lg text-white-700">Creative Technologist & Storyteller</p>
         <div className="text-sm text-white-500">
-          pebu5033@colorado.edu • <a href="https://linkedin.com/in/PeterBurke15" className="underline">LinkedIn</a> • <a href="https://peterburke.co" className="underline">peterburke.co</a>
+          burke.pete15@gmail.com • <a href="https://linkedin.com/in/PeterBurke15" className="underline">LinkedIn</a> • <a href="https://peterburke.co" className="underline">peterburke.co</a>
         </div>
       </header>
       {/* Education */}
-      <section>
+      <section className= "text-center">
         <h2 className="text-2xl font-semibold mb-4">Education</h2>
         <div className="space-y-4 text-white-800">
           <div>

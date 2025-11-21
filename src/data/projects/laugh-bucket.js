@@ -4,7 +4,7 @@ const project = {
   "tags": ["installation", "alt-arcade", "fabrication", "interactive"],
   "tagline": "An interactive audio installation for spontaneous sound layering and feedback",
   "role": "Lead Designer & Developer",
-  "tags": "Arduino, NDI, Audacity, Fabrication",
+  "tools": "Arduino, NDI, Audacity, Fabrication",
   "date": "Nov. 2024",
   "heroMedia": "/assets/laugh-bucket/fullDisplay.jpg",
   "overview": "An interactive installation that let users remix laughter through Arduino-triggered recording and playback, layered using NDI systems. Exhibited at the Whaaat!? Festival 2024 at CU Boulder's ATLAS Institute. The Laugh Bucket invites spontaneous play, allowing users to contribute laughter and hear it transformed into layered sonic chaos.",

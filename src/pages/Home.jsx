@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FeaturedProjectsCarousel from '../components/FeaturedProjectsCarousel';
+import { projects } from '../data/projects';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
 
-  // Track mouse position for parallax effect
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
@@ -18,18 +18,16 @@ export default function Home() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Trigger animations on mount
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
-    <main className="pt-16 md:pt-20 bg-dark-800">
+    <main className="pt-16 md:pt-20 bg-dark-800">  
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Gradient Orbs with Parallax */}
           <div 
             className="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float"
             style={{
@@ -46,7 +44,6 @@ export default function Home() {
             }}
           />
           
-          {/* Animated Grid */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'linear-gradient(#C47C2D 1px, transparent 1px), linear-gradient(90deg, #C47C2D 1px, transparent 1px)',
@@ -54,7 +51,6 @@ export default function Home() {
             }} />
           </div>
 
-          {/* Floating Particles */}
           <div className="absolute inset-0">
             {[...Array(20)].map((_, i) => (
               <div
@@ -74,9 +70,9 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 w-full">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             
-            {/* Badge with shimmer effect */}
+            {/* Badge with P22 Morris Golden */}
             <div 
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/50 backdrop-blur-sm shadow-purple-glow text-sm font-medium text-pb-copper border border-accent-500/30 transition-all duration-700 ${
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/50 backdrop-blur-sm shadow-purple-glow text-sm font-decorative text-pb-copper border border-accent-500/30 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
               }`}
             >
@@ -86,16 +82,16 @@ export default function Home() {
               <span>Designer • Storyteller • Technologist</span>
             </div>
 
-            {/* Main Heading with staggered animation */}
+            {/* Main Heading with JAF Lapture Display */}
             <div className="space-y-4">
               <h1 
-                className={`text-4xl sm:text-5xl md:text-7xl font-bold leading-tight transition-all duration-700 delay-100 ${
+                className={`text-4xl sm:text-5xl md:text-7xl font-display font-black leading-tight transition-all duration-700 delay-100 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
                 <span className="text-pb-ivory">Hi, I'm </span>
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-primary-400 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+                  <span className="relative z-10 bg-gradient-to-r from-primary-400 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-wave bg-[length:200%_100%]">
                     Peter Burke
                   </span>
                   <span className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-accent-500 blur-lg opacity-30 animate-pulse-slow" />
@@ -103,124 +99,76 @@ export default function Home() {
               </h1>
             </div>
 
-            {/* Subheading with fade in */}
+            {/* Subheading with JAF Lapture Subhead */}
             <p 
-              className={`text-base sm:text-lg text-pb-ivory/80 leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-300 ${
+              className={`text-base sm:text-lg font-accent font-normal text-pb-ivory/80 leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              I work at the intersection of technology and the arts—crafting
-              <span className="font-semibold text-accent-500"> interactive installations</span>,
-              <span className="font-semibold text-accent-500"> narrative-driven games</span>, and
-              <span className="font-semibold text-accent-500"> multimedia experiences</span> that blend
-              creative vision with technical precision.
+              I'm a creative technologist passionate about crafting immersive experiences 
+              that blur the lines between digital and physical worlds.
             </p>
 
-            {/* CTA Buttons with hover effects */}
+            {/* CTA Buttons */}
             <div 
-              className={`flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 transition-all duration-700 delay-500 ${
+              className={`flex flex-col sm:flex-row justify-center gap-4 pt-6 transition-all duration-700 delay-500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <Link 
-                to="/projects" 
-                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-pb-ivory rounded-lg font-semibold overflow-hidden transition-all hover:shadow-purple-glow hover:scale-105"
+              <Link
+                to="/projects"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-500 text-dark-900 rounded-lg font-sans font-semibold hover:bg-accent-400 transition-all shadow-copper hover:shadow-glow hover:scale-105"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  View My Work
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-              
-              <Link 
-                to="/about" 
-                className="group px-8 py-4 bg-dark-700/50 backdrop-blur-sm text-pb-ivory rounded-lg font-semibold border border-accent-500/30 hover:border-accent-500 hover:bg-dark-700 transition-all hover:shadow-copper hover:scale-105"
-              >
-                <span className="flex items-center gap-2">
-                  Learn More About Me
-                </span>
-              </Link>
-            </div>
-
-            {/* Stats with counter animation effect */}
-            <div 
-              className={`grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12 transition-all duration-700 delay-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              {[
-                { value: '7+', label: 'Projects' },
-                { value: '2+', label: 'Years Experience' },
-                { value: '25+', label: 'Collaborators' },
-              ].map((stat, i) => (
-                <div 
-                  key={i} 
-                  className="text-center group cursor-default"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-pb-ivory/60 mt-2 group-hover:text-pb-ivory/80 transition-colors">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
-              <div className="flex flex-col items-center gap-2 text-pb-ivory/40">
-                <span className="text-xs uppercase tracking-wider">Scroll</span>
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                View My Work
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </div>
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-dark-700 text-pb-ivory border border-accent-500/30 rounded-lg font-sans font-medium hover:bg-dark-600 hover:border-accent-500/50 transition-all"
+              >
+                Learn More About Me
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-16 md:py-24 bg-dark-700 relative">
-        {/* Decorative line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500 to-transparent" />
-        
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pb-ivory">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-pb-ivory mb-4">
               Featured Projects
             </h2>
-            <p className="text-base sm:text-lg text-pb-ivory/70 max-w-2xl mx-auto">
-              Explore my recent work across interactive installations, game design, and multimedia storytelling.
+            <p className="text-lg font-accent font-normal text-pb-ivory/70 max-w-2xl mx-auto">
+              A selection of my recent work spanning interactive installations, 
+              digital experiences, and experimental storytelling
             </p>
           </div>
-          <FeaturedProjectsCarousel />
+          <FeaturedProjectsCarousel projects={projects} />
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-dark-800 to-dark-900" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNDNDdDMkQiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJWMzZoLTJ6bTAtNGgydjJoLTJ2LTJ6bTAgNGgtMnYyaDJ2LTJ6bTAtMTBoMnYyaC0ydi0yeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-pb-ivory">
+          <h2 className="text-3xl md:text-5xl font-display font-black text-pb-ivory">
             Let's Create Something{' '}
             <span className="bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent">
               Together
             </span>
           </h2>
-          <p className="text-lg text-pb-ivory/70 max-w-2xl mx-auto">
+          <p className="text-lg font-accent font-normal text-pb-ivory/70 max-w-2xl mx-auto">
             I'm always interested in collaborating on projects that push creative and technical boundaries.
           </p>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent-500 text-dark-900 rounded-lg font-semibold hover:bg-accent-400 transition-all shadow-copper hover:shadow-glow hover:scale-105"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent-500 text-dark-900 rounded-lg font-sans font-semibold hover:bg-accent-400 transition-all shadow-copper hover:shadow-glow hover:scale-105"
           >
             Get In Touch
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

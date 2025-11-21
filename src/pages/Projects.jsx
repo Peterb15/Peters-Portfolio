@@ -8,11 +8,16 @@ export default function Projects() {
   console.log("Number of projects:", projects?.length);
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4 text-gray-900">Projects</h1>
-      <p className="mb-6 text-lg text-gray-700">
-        A collection of projects exploring storytelling, technology, physical computing, and multimedia.
-      </p>
+    <div className="p-20 max-w-6xl mx-auto">
+        <div className="mb-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-display font-black text-pb-ivory mb-4">
+            Projects
+          </h1>
+          <p className="text-lg font-accent font-normal text-pb-ivory/70 max-w-2xl mx-auto">
+            A collection of projects spanning interactive experiences, 
+            multimedia storytelling, and experimental design.
+          </p>
+        </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {projects && projects.length > 0 ? (
@@ -29,6 +34,7 @@ export default function Projects() {
             </p>
           </div>
         )}
+        
       </div>
     </div>
   );

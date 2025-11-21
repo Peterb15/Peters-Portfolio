@@ -31,7 +31,7 @@ export default function Hero() {
           <a href="#projects" className="px-5 py-3 border border-pb-copper/70 rounded-md hover:shadow-copper transition-shadow">
             View My Work
           </a>
-          <a href="#projects" className="px-5 py-3 border border-pb-copper/70 rounded-md hover:shadow-copper transition-shadow">
+          <a href="about" className="px-5 py-3 border border-pb-copper/70 rounded-md hover:shadow-copper transition-shadow">
             About Me
           </a>
         </motion.div>

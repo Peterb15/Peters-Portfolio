@@ -1,6 +1,6 @@
 const project = {
-  "id": "unnautral-selection",
-  "title": "Unnautral Selection",
+  id: "unnatural-selection",
+  title: "Unnatural Selection",
   "tagline": "An arcade experience where evolution is interactive and physical",
   "role": "Creative Coder & Designer",
   "tags": "Arduino, Physical Computing, Game Design, Fabrication",

@@ -4,7 +4,7 @@ const project = {
   tagline: "A longform narrative actual play set in a fractured world of storm and magic.",
   role: "Showrunner, Director, Writer, Dungeon Master",
   tagss: "Physical Fabrication, Set Design, Multimedia Production, Collaborative Storytelling",
-  date: "2023–2025 (Ongoing)",
+  date: "2023–2026 (Ongoing)",
   heroMedia: "/assets/shattered-lands/image1.jpg",
 
   overview:

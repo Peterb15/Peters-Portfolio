@@ -2,27 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --pb-bg:#0E0E0E;
-  --pb-ivory:#E2E2E2;
-  --pb-purple:#4B1E6C;
-  --pb-copper:#C47C2D;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dark-50 text-dark-900 antialiased;
+  }
+
+  /* Better focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
 }
 
-html, body, #root {
-  height: 100%;
-  background: var(--pb-bg);
-  color: var(--pb-ivory);
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-soft hover:shadow-soft-lg;
+  }
+
+  .btn-secondary {
+    @apply btn bg-dark-100 text-dark-900 hover:bg-dark-200 active:bg-dark-300 border border-dark-200;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700 active:bg-accent-800 shadow-soft hover:shadow-soft-lg;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden;
+  }
+
+  .card-interactive {
+    @apply card hover:scale-[1.02] cursor-pointer;
+  }
+
+  /* Section Styles */
+  .section {
+    @apply py-16 md:py-24 px-4 sm:px-6;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Typography */
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold text-dark-900 leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-dark-900 leading-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold text-dark-900;
+  }
+
+  .heading-sm {
+    @apply text-xl sm:text-2xl font-semibold text-dark-900;
+  }
+
+  .text-body {
+    @apply text-base sm:text-lg text-dark-600 leading-relaxed;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  /* Decorative Elements */
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-primary-500 before:to-accent-500 before:-z-10;
+  }
 }
 
-/* Optional: crisp type on dark */
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
-/* Optional: dropcap utility for About later */
-.dropcap::first-letter {
-  font-family: "Fleisch","UnifrakturCook",serif;
-  font-size: 3.25rem;
-  line-height: 1;
-  margin-right: .35rem;
-  color: var(--pb-purple);
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }

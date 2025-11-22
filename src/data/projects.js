@@ -3,7 +3,7 @@
 // ============= LAUGH BUCKET =============
 export const laughBucket = {
   id: "laugh-bucket",
-  title: "The Lauugh Bucket",
+  title: "The Laugh Bucket",
   category: "major",
   status: "completed",
   featured: true,

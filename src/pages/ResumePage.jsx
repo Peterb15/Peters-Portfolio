@@ -42,9 +42,18 @@ export default function ResumePage() {
       {/* Experience */}
       <section>
         <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        
         <div className="space-y-8 text-white-800">
           <div>
-            <h3 className="text-lg font-medium">Writer / Content Creator<br /><span className="text-sm text-white-500">May 2024 – Present · Environmental Center, CU Boulder</span></h3>
+            <h3 className="text-lg font-medium">Makerspace Technician<br /><span className="text-sm text-gray-500">Aug 2025 – Present · BTU Lab, CU Boulder</span></h3>
+            <ul className="list-disc list-inside mt-2">
+              <li>Facilitated orientations and provided technical support in the    ATLAS’s public makerspace.</li>
+              <li>Answered questions on 3D Printing, Laser Cutting, Woodworking, and electronics.</li>
+              <li>Assisted with machine maintenance and stock management.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium">Writer / Content Creator<br /><span className="text-sm text-gray-500">May 2024 – Present · Environmental Center, CU Boulder</span></h3>
             <ul className="list-disc list-inside mt-2">
               <li>Produced multimedia content promoting environmental initiatives to CU Boulder’s student community.</li>
               <li>Wrote student‐facing articles emphasizing clarity and accessibility.</li>
@@ -53,7 +62,7 @@ export default function ResumePage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium">Learning Assistant – Text<br /><span className="text-sm text-white-500">Jan 2025 – Present · ATLAS Institute, CU Boulder</span></h3>
+            <h3 className="text-lg font-medium">Learning Assistant – Text<br /><span className="text-sm text-gray-500">Jan 2025 – Present · ATLAS Institute, CU Boulder</span></h3>
             <ul className="list-disc list-inside mt-2">
               <li>Mentored undergraduates in Adobe Illustrator, InDesign, and Dimensions.</li>
               <li>Reviewed student work on packaging, posters, and typographic design.</li>
@@ -62,7 +71,7 @@ export default function ResumePage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium">Zero Waste Event Lead<br /><span className="text-sm text-white-500">Sept 2023 – Present · Environmental Center, CU Boulder</span></h3>
+            <h3 className="text-lg font-medium">Zero Waste Event Lead<br /><span className="text-sm text-gray-500">Sept 2023 – Present · Environmental Center, CU Boulder</span></h3>
             <ul className="list-disc list-inside mt-2">
               <li>Led campus sustainability programs and directed volunteer teams (10–20 people).</li>
               <li>Launched an e‑waste drop‑off system at the ATLAS Lab.</li>
@@ -71,12 +80,12 @@ export default function ResumePage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium">Chief Creative Officer<br /><span className="text-sm text-white-500">May 2023 – Present · Players Win Ties LLC</span></h3>
+            <h3 className="text-lg font-medium">Chief Creative Officer<br /><span className="text-sm text-gray-500">May 2023 – Present · Players Win Ties LLC</span></h3>
             <p className="mt-2">Launched a narrative media studio; led collaborative multimedia projects including The Shattered Lands series.</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium">Kitchen Manager<br /><span className="text-sm text-white-500">Sept 2020 – Feb 2022 · Tip Top Savory Pies LLC</span></h3>
+            <h3 className="text-lg font-medium">Kitchen Manager<br /><span className="text-sm text-gray-500">Sept 2020 – Feb 2022 · Tip Top Savory Pies LLC</span></h3>
             <p className="mt-2">Managed an 8‑person kitchen, optimized production flow, and tracked inventory to meet daily targets.</p>
           </div>
         </div>
@@ -84,7 +93,7 @@ export default function ResumePage() {
       {/* Skills */}
       <section>
         <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-700">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-white-700">
           <div>
             <h3 className="font-medium mb-1">Software</h3>
             <p>Illustrator • InDesign • Photoshop • After Effects • Premiere • Blender • Dimensions • Ableton • Godot • Arduino IDE • SketchUp</p>

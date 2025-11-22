@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 
-const FeaturedProjectsCarousel = ({ projects }) => {
+const FeaturedProjectsCarousel = React.memo(({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [touchStart, setTouchStart] = useState(0);
@@ -234,6 +234,8 @@ const FeaturedProjectsCarousel = ({ projects }) => {
       </div>
     </section>
   );
-};
+});
+
+FeaturedProjectsCarousel.displayName = 'FeaturedProjectsCarousel';
 
 export default FeaturedProjectsCarousel;

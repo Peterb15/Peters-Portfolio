@@ -11,7 +11,7 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="p-8">
-        <h1 className="text-2xl font-bold">Project not found</h1>
+        <h1 className="text-2xl font-accent">Project not found</h1>
         <Link to="/projects" className="text-blue-600 underline">
           ← Back to Projects
         </Link>
@@ -20,8 +20,8 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="p-4">
-      <Link to="/projects" className="text-blue-600 underline mb-6 block">
+    <div className="p-4 mt-20">
+      <Link to="/projects" className="font-display font-extrabold transition-all hover:text-accent-500">
         ← Back to Projects
       </Link>
       <ProjectPageLayout {...project} />

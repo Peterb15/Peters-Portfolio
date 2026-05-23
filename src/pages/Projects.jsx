@@ -28,8 +28,8 @@ export default function Projects() {
           })
         ) : (
           <div className="col-span-2 text-center py-12">
-            <p className="text-gray-600">No projects found.</p>
-            <p className="text-sm text-gray-400 mt-2">
+            <p className="text-dark-300">No projects found.</p>
+            <p className="text-sm text-dark-400 mt-2">
               Check console for debugging info.
             </p>
           </div>

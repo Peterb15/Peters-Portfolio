@@ -10,9 +10,9 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="p-8">
-        <h1 className="text-2xl font-accent">Project not found</h1>
-        <Link to="/projects" className="text-blue-600 underline">
+      <div className="min-h-screen bg-dark-800 p-8">
+        <h1 className="text-2xl font-accent text-pb-ivory">Project not found</h1>
+        <Link to="/projects" className="text-accent-500 hover:text-accent-400 underline transition-colors">
           ← Back to Projects
         </Link>
       </div>

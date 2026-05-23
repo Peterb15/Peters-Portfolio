@@ -22,9 +22,9 @@ const ProjectPageLayout = ({
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-16">
       {/* Hero Section */}
       <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">{title}</h1>
-        <p className="text-lg text-gray-600 italic">{tagline}</p>
-        <div className="flex justify-center space-x-4 text-sm text-gray-500">
+        <h1 className="text-4xl font-bold text-pb-ivory">{title}</h1>
+        <p className="text-lg text-dark-300 italic">{tagline}</p>
+        <div className="flex justify-center space-x-4 text-sm text-dark-400">
           <span>{role}</span>
           <span>•</span>
           <span>{date}</span>
@@ -44,20 +44,19 @@ const ProjectPageLayout = ({
             )}
           </div>
         )}
-
       </section>
 
       {/* Overview */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Overview</h2>
-        <p className="text-gray-700 leading-relaxed">{overview}</p>
+        <h2 className="text-2xl font-semibold text-pb-ivory mb-2">Overview</h2>
+        <p className="text-dark-300 leading-relaxed">{overview}</p>
       </section>
 
       {/* My Role */}
       {Array.isArray(myRole) && myRole.length > 0 && (
         <section>
-          <h2 className="text-2xl font-semibold mb-2">My Role</h2>
-          <ul className="list-disc list-inside text-gray-700">
+          <h2 className="text-2xl font-semibold text-pb-ivory mb-2">My Role</h2>
+          <ul className="list-disc list-inside space-y-1 text-dark-300">
             {myRole.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -68,18 +67,18 @@ const ProjectPageLayout = ({
       {/* Process Sections */}
       {Array.isArray(processSections) && processSections.length > 0 && processSections.map((section, i) => (
         <section key={i} className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
+          <h2 className="text-2xl font-semibold text-pb-ivory mb-2">{section.title}</h2>
           {section.content.split("\n\n").map((para, j) => (
-            <p key={j} className="text-gray-700 leading-relaxed mb-4">{para}</p>
+            <p key={j} className="text-dark-300 leading-relaxed mb-4">{para}</p>
           ))}
-          <hr className="my-8 border-t border-gray-200" />
+          <hr className="my-8 border-t border-dark-600" />
         </section>
       ))}
 
       {/* Gallery */}
       {Array.isArray(gallery) && gallery.length > 0 && (
         <section>
-          <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
+          <h2 className="text-2xl font-semibold text-pb-ivory mb-2">Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {gallery.map((item, i) => (
               <div key={i}>
@@ -102,7 +101,7 @@ const ProjectPageLayout = ({
                   />
                 )}
                 {item.caption && (
-                  <p className="text-sm text-gray-500 mt-1">{item.caption}</p>
+                  <p className="text-sm text-dark-400 mt-1">{item.caption}</p>
                 )}
               </div>
             ))}
@@ -113,23 +112,23 @@ const ProjectPageLayout = ({
       {/* Reflection */}
       {reflection && (
         <section>
-          <h2 className="text-2xl font-semibold mb-2">Reflection</h2>
-          <p className="text-gray-700 leading-relaxed">{reflection}</p>
+          <h2 className="text-2xl font-semibold text-pb-ivory mb-2">Reflection</h2>
+          <p className="text-dark-300 leading-relaxed">{reflection}</p>
         </section>
       )}
 
       {/* Credits & Tools */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Credits & Tools</h2>
-        <p className="text-gray-700 leading-relaxed">{credits}</p>
+        <h2 className="text-2xl font-semibold text-pb-ivory mb-2">Credits & Tools</h2>
+        <p className="text-dark-300 leading-relaxed">{credits}</p>
 
         {Array.isArray(collaborators) && collaborators.length > 0 && (
           <div className="mt-2">
-            <h3 className="text-lg font-semibold mt-4">Collaborators</h3>
-            <ul className="list-disc list-inside text-gray-700">
+            <h3 className="text-lg font-semibold text-pb-ivory mt-4">Collaborators</h3>
+            <ul className="list-disc list-inside text-dark-300 space-y-1">
               {collaborators.map((person, i) => (
                 <li key={i}>
-                  <span className="font-medium">{person.name}</span> — {person.role}
+                  <span className="font-medium text-pb-ivory">{person.name}</span> — {person.role}
                 </li>
               ))}
             </ul>
@@ -138,19 +137,19 @@ const ProjectPageLayout = ({
 
         {tools && (
           <>
-            <h3 className="text-lg font-semibold mt-4">Tools</h3>
-            <p className="text-gray-700 leading-relaxed">{tools}</p>
+            <h3 className="text-lg font-semibold text-pb-ivory mt-4">Tools</h3>
+            <p className="text-dark-300 leading-relaxed">{tools}</p>
           </>
         )}
 
         {Array.isArray(tags) && tags.length > 0 && (
           <>
-            <h3 className="text-lg font-semibold mt-4">Tags</h3>
+            <h3 className="text-lg font-semibold text-pb-ivory mt-4">Tags</h3>
             <div className="flex flex-wrap gap-2 mt-1">
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-gray-200 text-sm text-gray-800 px-3 py-1 rounded-full"
+                  className="bg-dark-600 text-pb-ivory/60 text-sm px-3 py-1 rounded-full border border-dark-500"
                 >
                   {tag}
                 </span>
@@ -159,10 +158,16 @@ const ProjectPageLayout = ({
           </>
         )}
 
-        {externalLinks && (
-          <div className="mt-4 text-blue-600 underline">
+        {Array.isArray(externalLinks) && externalLinks.length > 0 && (
+          <div className="mt-4 space-y-1">
             {externalLinks.map((link, i) => (
-              <a key={i} href={link.href} target="_blank" rel="noopener noreferrer" className="block">
+              <a
+                key={i}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-accent-500 hover:text-accent-400 transition-colors underline"
+              >
                 {link.label}
               </a>
             ))}

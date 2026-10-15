@@ -1,7 +1,7 @@
 ---
 title: Remaking the Renaissance
 short: Remaking the Renaissance
-order: 9
+order: 15
 tier: archive
 year: Class project
 role: Writer · Director · Editor

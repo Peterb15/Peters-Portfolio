@@ -1,6 +1,6 @@
 ---
 title: D&D Stat Tracker
-order: 6
+order: 10
 tier: archive
 year: '2023'
 role: Inventor · Programmer · Fabricator

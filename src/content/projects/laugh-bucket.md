@@ -1,6 +1,6 @@
 ---
 title: The Laugh Bucket
-order: 4
+order: 9
 tier: archive
 year: 'Nov 2024'
 role: Lead Designer · Developer

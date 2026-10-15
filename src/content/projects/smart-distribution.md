@@ -1,6 +1,6 @@
 ---
 title: Smart Distribution
-order: 5
+order: 11
 tier: archive
 year: 'Spring 2025'
 role: System Designer · Fabricator · Web UI

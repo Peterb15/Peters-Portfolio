@@ -1,0 +1,76 @@
+---
+title: One Step Forward
+order: 4
+tier: feature
+color: '#a8661f'
+colorInk: '#fbfaf6'
+year: Spring 2025
+role: Animator · Modeler · Fabricator
+tagline: A worn-down robot rewinds time to get through a sealed door. Animated in Blender, then 3D printed and painted as a physical figure.
+tags: [Animation, Rigging, 3D print, Character]
+scrawl: rewind, then step through
+fan:
+  a: ../../assets/projects/one-step-forward/title-card.jpg
+  b: ../../assets/projects/one-step-forward/physical-robot.jpg
+  c: ../../assets/projects/one-step-forward/film-10.jpg
+heroVideo: /video/robot-hero.mp4
+spec:
+  - { label: Runtime, value: '0:44' }
+  - { label: Renderer, value: 'Cycles' }
+  - { label: Rig, value: 'IK legs · FK arms' }
+  - { label: Physical, value: 'Printed + painted' }
+credits: 'Final project for Computer Animation and ART 1010, CU Boulder, Spring 2025.'
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+
+import poster from '../../assets/projects/one-step-forward/poster.jpg';
+import titleCard from '../../assets/projects/one-step-forward/title-card.jpg';
+import physical from '../../assets/projects/one-step-forward/physical-robot.jpg';
+import f4 from '../../assets/projects/one-step-forward/film-4.jpg';
+import f5 from '../../assets/projects/one-step-forward/film-5.jpg';
+import f6 from '../../assets/projects/one-step-forward/film-6.jpg';
+import f7 from '../../assets/projects/one-step-forward/film-7.jpg';
+import f9 from '../../assets/projects/one-step-forward/film-9.jpg';
+import f10 from '../../assets/projects/one-step-forward/film-10.jpg';
+import f11 from '../../assets/projects/one-step-forward/film-11.jpg';
+import ship from '../../assets/projects/one-step-forward/ship-in-sea.jpg';
+
+<Chapter n="01 · Film" title="One step" light="forward">
+  <p>A worn-down robot wanders the outskirts of a ruined city and reaches a sealed door. It triggers a time-rewinding ability, glitches the barrier backward and steps through. The piece is about memory, decay and forgotten motion, told entirely through how the robot moves.</p>
+  <Clip src="/video/robot-film.mp4" poster={f10} sound autoplay={false} caption="The full short · sound on" />
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={f4} alt="Wide shot of the ruined city outskirts" caption="The outskirts" ratio="16/9" />
+    <Fig img={f6} alt="The robot standing by the stone wall" caption="Approach" ratio="16/9" />
+    <Fig img={f9} alt="The door being rewound open" caption="The rewind" ratio="16/9" />
+  </Row>
+</Chapter>
+
+<Chapter n="02 · Pipeline" title="Built in" light="Blender">
+  <ul>
+    <li>Modeled the robot from primitives and modifiers, with a lot of small mechanical detail</li>
+    <li>Rigged with IK legs, FK arms and control bones for the head and spine</li>
+    <li>Animated blocking → spline → polish, working on the weight of the walk cycle</li>
+    <li>Scattered rubble with Geometry Nodes, weight-painted to keep the path clear</li>
+    <li>Procedural metal, rust and stone materials. HDRI plus area lights, rendered in Cycles, cut in Premiere</li>
+  </ul>
+  <p>The plan was two scenes. Halfway through I cut to one so the approach and the rewind could get real polish. That's the same call I made on Echo a year later.</p>
+  <Row cols="1fr 1fr">
+    <Fig img={poster} alt="Concept board for the steampunk rewind robot" caption="Concept board" ratio="16/10" fit="contain" />
+    <Fig img={titleCard} alt="One Step Forward title card with the robot and a clock" caption="Title card" ratio="16/10" fit="contain" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Physical" title="Off the screen," light="onto the shelf">
+  <p>I combined this with my studio art final: the same robot, 3D printed and hand-painted as a physical figure. Echo's figurines came out of this same move, from the animation rig to an object you can hold.</p>
+  <Row cols="1fr 1.3fr" align="center">
+    <Fig img={physical} alt="The painted 3D-printed robot figure standing against a wall" caption="The printed, painted robot" num="Fig. 08" ratio="3/4" />
+    <Fig img={f11} alt="The robot at the sealed door" caption="The same robot, on screen" ratio="16/9" />
+  </Row>
+</Chapter>
+
+<Chapter n="04 · Also" title="Other" light="Blender work">
+  <Fig img={ship} alt="A sailing ship riding a stormy ocean simulation" caption="Ship in a storm · ocean simulation study" ratio="21/9" />
+</Chapter>

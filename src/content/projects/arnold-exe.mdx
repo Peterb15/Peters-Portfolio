@@ -1,0 +1,55 @@
+---
+title: ARNOLD.EXE
+order: 6
+tier: feature
+color: '#0b0b0c'
+colorInk: '#39ff7a'
+year: Fall 2024
+role: Writer · Game Designer · Developer
+tagline: A branching narrative game. You are an android booting up for the first time, and the engineer who built you wants to know if you came out right.
+tags: [Interactive narrative, Godot, Ink, Playable]
+scrawl: run program? yes / no
+fan:
+  a: ../../assets/projects/arnold-exe/frame-0.jpg
+  b: ../../assets/projects/arnold-exe/frame-4.jpg
+  c: ../../assets/projects/arnold-exe/frame-10.jpg
+spec:
+  - { label: Engine, value: 'Godot 4' }
+  - { label: Script, value: 'Ink' }
+  - { label: Chapter 1, value: 'Alive' }
+  - { label: Play, value: 'In browser' }
+credits: 'Game Development final project, CU Boulder, Fall 2024. Built with Godot 4 and inkgd.'
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import Play from '../../components/Play.astro';
+
+import f0 from '../../assets/projects/arnold-exe/frame-0.jpg';
+import f10 from '../../assets/projects/arnold-exe/frame-10.jpg';
+import f4 from '../../assets/projects/arnold-exe/frame-4.jpg';
+import f6 from '../../assets/projects/arnold-exe/frame-6.jpg';
+import f8 from '../../assets/projects/arnold-exe/frame-8.jpg';
+
+<Chapter n="01 · Play" title="Run" light="program?">
+  <Play src="/play/arnold/index.html" title="ARNOLD.EXE" poster={f0} note="Mouse to choose · W A S D to move when you get legs" />
+  <p>You are ARNOLD, an android waking up in a lab. A voice asks how you're feeling. Answer normally and you pass. Ask the wrong question and Teddy, the engineer who built you, decides you need "a few more adjustments." The game even overrides you if you try to refuse to start. Every choice is written in Ink and runs inside Godot.</p>
+</Chapter>
+
+<Chapter n="02 · Design" title="Writing" light="a machine's first day">
+  <ul>
+    <li>Wrote the branching script in Ink: state flags track whether Arnold stays silent, cheers, or chills, and the dialogue reacts</li>
+    <li>Built the terminal-style interface in Godot: speaker-colored lines (Arnold green, Teddy red), choice buttons, save/load and start over</li>
+    <li>Integrated a playable pixel-art lab so the story can hand control to the player, then take it back</li>
+  </ul>
+  <Row cols="1fr 1fr">
+    <Fig img={f10} alt="Pixel-art lab with Teddy introducing himself" caption="Teddy introduces himself" ratio="16/9" />
+    <Fig img={f4} alt="Terminal dialogue: I'm gonna have to turn you off" caption="Wrong answer" ratio="16/9" />
+  </Row>
+  <Row cols="1fr 1fr">
+    <Fig img={f6} alt="Arnold asks what am I, Teddy says that is a complicated question" caption="“What am I?”" ratio="16/9" />
+    <Fig img={f8} alt="Arnold asks where am I, the voice says you are in my lab" caption="“Where am I?”" ratio="16/9" />
+  </Row>
+  <Clip src="/video/arnold-playthrough.mp4" poster={f0} sound autoplay={false} caption="Full playthrough, for anyone who'd rather watch" />
+</Chapter>

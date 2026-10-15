@@ -1,6 +1,6 @@
 ---
 title: Unnatural Selection
-order: 3
+order: 5
 tier: feature
 color: '#2f9e44'
 colorInk: '#fbfaf6'
@@ -10,8 +10,10 @@ tagline: A two-player arcade fighter where you physically spin your creature's h
 tags: [Arcade, Custom controllers, Physical computing]
 scrawl: spin the body, change the fight
 fan:
+  a: ../../assets/projects/unnatural-selection/frame-5.jpg
   b: ../../assets/projects/unnatural-selection/shot1.jpg
   c: ../../assets/projects/unnatural-selection/hero.jpg
+heroVideo: /video/us-hero.mp4
 spec:
   - { label: Players, value: '2' }
   - { label: Controllers, value: '2 × 3 drums' }
@@ -26,6 +28,11 @@ links:
 import Chapter from '../../components/Chapter.astro';
 import Fig from '../../components/Fig.astro';
 import shot1 from '../../assets/projects/unnatural-selection/shot1.jpg';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import g5 from '../../assets/projects/unnatural-selection/frame-5.jpg';
+import g7 from '../../assets/projects/unnatural-selection/frame-7.jpg';
+import tech from '../../assets/projects/unnatural-selection/frame-9.jpg';
 
 <Chapter n="01 · Play" title="Evolution" light="you do with your hands">
   <p>What if evolution wasn't something that happened to you, but something you physically did? Each player gets a controller with three spinning drums: head, torso and legs. Spin one mid-fight and your creature's body swaps on screen, along with its abilities.</p>
@@ -36,4 +43,13 @@ import shot1 from '../../assets/projects/unnatural-selection/shot1.jpg';
     <li>Fabricated the controllers: cardboard → wood → printed cores with laser-cut panels</li>
   </ul>
   <Fig img={shot1} alt="Unnatural Selection controllers and gameplay" caption="Controllers and gameplay" ratio="16/9" />
+</Chapter>
+
+<Chapter n="02 · Build" title="Spin" light="to evolve">
+  <Clip src="/video/us-video.mp4" poster={g5} sound autoplay={false} caption="Gameplay and technical breakdown" />
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={g5} alt="Gameplay beside a spinning controller" caption="Swap parts mid-fight" ratio="16/9" />
+    <Fig img={g7} alt="Creature fight with controller in frame" caption="Head attacks, torso defends, legs move" ratio="16/9" />
+    <Fig img={tech} alt="Technical footage of the sensor drum" caption="Inside the drum" ratio="16/9" />
+  </Row>
 </Chapter>

@@ -1,6 +1,6 @@
 ---
 title: Tree Lamp
-order: 7
+order: 12
 tier: archive
 year: '2023'
 role: Designer · Fabricator

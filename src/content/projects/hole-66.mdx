@@ -1,0 +1,99 @@
+---
+title: Hole 66
+order: 3
+tier: feature
+color: '#f5c400'
+colorInk: '#0b0b0c'
+year: Fall 2025
+role: Designer · Builder
+tagline: Mini golf, but you drive. A Route 66 hole for the Whaaat!? Festival where players pilot RC trucks carrying the ball through the course.
+tags: [Attraction design, Prototyping, Fabrication, Festival]
+scrawl: get your kicks on hole 66
+fan:
+  a: ../../assets/projects/hole-66/hole-66-sign.jpg
+  b: ../../assets/projects/hole-66/truck-ball.jpg
+  c: ../../assets/projects/hole-66/course-wide.jpg
+heroVideo: /video/hole66-hero.mp4
+spec:
+  - { label: Event, value: 'Whaaat!? Fest 2025' }
+  - { label: Obstacles, value: '3 + highway' }
+  - { label: Vehicles, value: '2 custom trucks' }
+  - { label: Prototype, value: 'Cardboard → wood' }
+credits: 'Designed and built by Peter Burke, with help from Paul Bailey. Made in the Whaaat!? Studio Lab at CU Boulder for the Whaaat!? Festival 2025 mini-golf course.'
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import Play from '../../components/Play.astro';
+
+import notes from '../../assets/projects/hole-66/notes-sketch.jpg';
+import trackSketch from '../../assets/projects/hole-66/track-sketch.jpg';
+import protoCardboard from '../../assets/projects/hole-66/proto-cardboard.jpg';
+import protoCurve from '../../assets/projects/hole-66/proto-curve.jpg';
+import protoTurf from '../../assets/projects/hole-66/proto-turf.jpg';
+import peterBuild from '../../assets/projects/hole-66/peter-build.jpg';
+import truckBall from '../../assets/projects/hole-66/truck-ball.jpg';
+import truckGreen from '../../assets/projects/hole-66/truck-green.jpg';
+import truckWhite from '../../assets/projects/hole-66/truck-white.jpg';
+import sign from '../../assets/projects/hole-66/hole-66-sign.jpg';
+import courseWide from '../../assets/projects/hole-66/course-wide.jpg';
+import courseSign from '../../assets/projects/hole-66/course-sign-wide.jpg';
+import obstacleLogs from '../../assets/projects/hole-66/obstacle-logs.jpg';
+import obstacleTop from '../../assets/projects/hole-66/obstacle-top.jpg';
+import hitTheGas from '../../assets/projects/hole-66/hit-the-gas.jpg';
+import rules from '../../assets/projects/hole-66/rules-sign.jpg';
+import kids from '../../assets/projects/hole-66/festival-kids.jpg';
+
+<Chapter n="01 · Pitch" title="Mini golf," light="but it's RC racing">
+  <p>The studio brief was one hole of a mini-golf course for the Whaaat!? Festival, built around a weird core interaction. Mine: you don't putt the ball, you drive it. The ball rides on top of an RC truck, and you get it through the course without letting it fall off.</p>
+  <p>I prototyped three directions before committing: a golf club rigged with a gyroscope and accelerometer that steered the car by swing, a balance course where the ball rides the car, and a bumper-car version that was basically Rocket League. My testing notes were blunt about the result: the most fun part of every version was ramming cars into things.</p>
+  <Row cols="1fr 1fr">
+    <Fig img={notes} alt="Notebook page with hole notes, materials and border measurements" caption="Hole notes and material math" ratio="4/5" />
+    <Fig img={trackSketch} alt="Pencil sketch of an oval RC track with dimensions" caption="Early track layout" ratio="4/5" />
+  </Row>
+</Chapter>
+
+<Chapter n="02 · Prototype" title="Cardboard" light="first">
+  <p>I wrote a spec with three obstacles (a ramp, a second ramp with a sand trap, and a tilt section that takes precision) and estimated the lumber at 91 square feet: three 4×8 sheets. Before buying any of it, I built the whole thing in interlocking cardboard so I could drive it, crash it and change it.</p>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={protoCardboard} alt="Interlocking cardboard track pieces with wooden blocks" caption="Interlocking cardboard track" ratio="3/4" />
+    <Fig img={protoCurve} alt="Curved cardboard track section on the floor" caption="The curve" ratio="3/4" />
+    <Fig img={protoTurf} alt="Turf and sand-trap shapes laid on cardboard" caption="Turf and sand traps" ratio="3/4" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Build" title="Get your kicks" light="on Hole 66">
+  <p>The theme came from the road: Route 66. The final hole has turf fairways, sand traps, rough-cut log borders, a highway stretch painted "HIT THE GAS", and a finish where you slam into the barrier to launch the ball into a cup. The trucks wear custom 3D-printed bodies.</p>
+  <Row cols="1.4fr 1fr">
+    <Fig img={courseWide} alt="The finished Hole 66 course with log borders and turf" caption="The finished hole" num="Fig. 06" ratio="4/3" />
+    <Fig img={sign} alt="Sign reading Get your kicks on Hole 66 with a Route 66 shield" caption="The sign" ratio="3/4" />
+  </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={obstacleTop} alt="Top-down view of a log obstacle field with cups" caption="The finish: slam the barrier, sink the ball" ratio="1/1" />
+    <Fig img={hitTheGas} alt="Black highway section painted HIT THE GAS between log rails" caption="The highway" mark="rev it up" markAt="tr" ratio="1/1" />
+    <Fig img={obstacleLogs} alt="Logs angled across the turf as obstacles" caption="Log chicane" ratio="1/1" />
+  </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={truckBall} alt="RC truck carrying a golf ball on its roof" caption="The ball rides on the roof" ratio="1/1" />
+    <Fig img={truckGreen} alt="Green 3D-printed truck body" caption="Custom body, green" ratio="1/1" />
+    <Fig img={truckWhite} alt="White 3D-printed truck body" caption="Custom body, white" ratio="1/1" />
+  </Row>
+</Chapter>
+
+<Chapter n="04 · Festival" title="Not how" light="I intended">
+  <p>The rules sign told players: left stick forward and back, right stick turns. Work over the barriers, take it easy on rough terrain, count a stroke every time the ball falls off, then rev it up on the highway and slam into the barrier to finish. The kids at the festival had other ideas.</p>
+  <Row cols="minmax(0,.55fr) 1fr">
+    <Clip src="/video/hole66-play.mp4" poster={kids} ratio="9/16" sound autoplay={false} caption="Festival day" />
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <Fig img={rules} alt="Handwritten rules sign for the hole" caption="The rules (mostly ignored)" ratio="4/3" fit="contain" />
+      <Clip src="/video/hole66-ramming.mp4" ratio="16/9" sound autoplay={false} caption="Ramming, the fun part" />
+    </div>
+  </Row>
+  <Fig img={peterBuild} alt="Peter giving a thumbs up next to the build" caption="Me, mid-build" ratio="16/9" />
+</Chapter>
+
+<Chapter n="05 · Bonus" title="The festival" light="personality test">
+  <p>For the same festival I wrote a short interactive "personality test" in Ink that sorts festival-goers into groups based on how they answer. And whether they hold the door. Play it below.</p>
+  <Play src="/play/personality-test/index.html" title="the test" ratio="4/3" note="Written in Ink · runs in your browser" />
+</Chapter>

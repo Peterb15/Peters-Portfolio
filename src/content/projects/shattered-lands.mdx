@@ -1,0 +1,111 @@
+---
+title: The Shattered Lands
+short: The Shattered Lands
+order: 2
+tier: headliner
+color: '#c2441c'
+colorInk: '#fbfaf6'
+year: 2023 – now · in post
+role: Showrunner · Dungeon Master · Set Designer
+tagline: A D&D actual-play series set in Pangros, a world of broken islands around a cyclone that never stops. I built the world, ran the table, designed the sets and led the crew that filmed it.
+tags: [Worldbuilding, Set design, Production, Actual play]
+scrawl: 25 people, 1 world
+fan:
+  a: ../../assets/projects/shattered-lands/ship-leviathan.jpg
+  b: ../../assets/projects/shattered-lands/mini-atlas.jpg
+  c: ../../assets/projects/shattered-lands/cast-at-set.jpg
+heroVideo: /video/sl-hero.mp4
+heroVideoVertical: true
+spec:
+  - { label: Sessions filmed, value: '8 + solo' }
+  - { label: Footage, value: '~15 hrs' }
+  - { label: Crew at peak, value: '25 · 6 depts' }
+  - { label: Cameras, value: '3–4 + boom' }
+  - { label: Score, value: '8 themes' }
+credits: 'A Players Win Ties production. Sets designed by Peter Burke, built by the Players Win Ties crew. DM screen by Peter Burke and Moe Collins. Minis painted by Mariah Ruff. Character art by AJ Jelekov. Score by Kaeden Tilak. Players: Jacob Monroe, Mariah Ruff, Avery Krier, Rowan Wileke, Kaeden Tilak. Editing: Kaden Geier. Writing: William Tuck, Jason Pasquale. Film crew: Moe Collins, Morgan Burke, William Tuck. Operations: Jacob Monroe.'
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+
+import map from '../../assets/projects/shattered-lands/map-pangros.jpg';
+import artAtlas from '../../assets/projects/shattered-lands/art-atlas.jpg';
+import artIlvana from '../../assets/projects/shattered-lands/art-ilvana.jpg';
+import artMortimer from '../../assets/projects/shattered-lands/art-mortimer.jpg';
+import artQuinn from '../../assets/projects/shattered-lands/art-quinn.jpg';
+import artSalu from '../../assets/projects/shattered-lands/art-salu.jpg';
+import statAtlas from '../../assets/projects/shattered-lands/statcard-atlas.jpg';
+import statMortimer from '../../assets/projects/shattered-lands/statcard-mortimer.jpg';
+import cast from '../../assets/projects/shattered-lands/cast-at-set.jpg';
+import dmScreen from '../../assets/projects/shattered-lands/dm-behind-screen.jpg';
+import overhead from '../../assets/projects/shattered-lands/overhead-wide.jpg';
+import overheadSea from '../../assets/projects/shattered-lands/overhead-sea.jpg';
+import rig from '../../assets/projects/shattered-lands/camera-rig.jpg';
+import empty from '../../assets/projects/shattered-lands/set-empty.jpg';
+import leviathan from '../../assets/projects/shattered-lands/ship-leviathan.jpg';
+import deck from '../../assets/projects/shattered-lands/ship-deck.jpg';
+import seaWide from '../../assets/projects/shattered-lands/ship-sea-wide.jpg';
+import miniAtlas from '../../assets/projects/shattered-lands/mini-atlas.jpg';
+import miniMortimer from '../../assets/projects/shattered-lands/mini-mortimer.jpg';
+import miniParty from '../../assets/projects/shattered-lands/mini-party.jpg';
+import miniCultists from '../../assets/projects/shattered-lands/mini-cultists.jpg';
+import masts from '../../assets/projects/shattered-lands/ship-masts.jpg';
+
+<Chapter n="01 · World" title="Welcome to" light="Pangros">
+  <p>Pangros is an ocean of broken islands circling a cyclone that has never stopped. The idea came from two places: how much I love collaborative storytelling, and the sense of wonder in One Piece. I wanted a world that begs to be explored, where every island holds a mystery. I wrote the lore, geography, factions and history, then handed the story to five players and a set of dice.</p>
+  <Fig img={map} alt="Painted world map of Pangros: islands circling a central storm" caption="Pangros world map" num="Fig. 01" ratio="16/9" fit="contain" />
+  <Row cols="1fr 1fr 1fr 1fr 1fr">
+    <Fig img={artAtlas} alt="Atlas, a Mist Genasi wizard" caption="Atlas" ratio="2/3" fit="contain" />
+    <Fig img={artIlvana} alt="Illvana, a changeling rogue" caption="Illvana" ratio="2/3" fit="contain" />
+    <Fig img={artMortimer} alt="Mortimer, a human paladin" caption="Mortimer" ratio="2/3" fit="contain" />
+    <Fig img={artQuinn} alt="Quinn, a half-elf fighter" caption="Quinn" ratio="2/3" fit="contain" />
+    <Fig img={artSalu} alt="Salu, an aarakocra cleric and ranger" caption="Salu" ratio="2/3" fit="contain" />
+  </Row>
+  <p class="mono soft">Character art by AJ Jelekov</p>
+</Chapter>
+
+<Chapter n="02 · Set" title="A room" light="you sit inside">
+  <p>The players didn't sit at a kitchen table. I designed a filming set that put them on the deck of a ship: plank walls, fishing nets, a painted DM screen with a ship sailing into the sun, and a sculpted sea where the fights happen. The crew built it. Three to four cameras and a boom covered the table, and an overhead rig caught the battle maps.</p>
+  <Row cols="1.4fr 1fr">
+    <Fig img={cast} alt="The cast posing behind the sea battle set and painted DM screen" caption="The cast on set" num="Fig. 02" ratio="4/3" />
+    <Fig img={empty} alt="The empty filming set: plank backdrop, nets and table" caption="The set before call time" ratio="3/4" />
+  </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={overhead} alt="Overhead view of a session in progress" caption="Overhead camera" ratio="4/5" />
+    <Fig img={dmScreen} alt="The DM behind the painted screen" caption="DM screen by me and Moe Collins" mark="ship into the sun" markAt="tr" ratio="4/5" />
+    <Fig img={rig} alt="Camera on a tripod filming the table" caption="The camera rig" ratio="4/5" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Battle" title="Fights at" light="sea level">
+  <p>Battles play out on physical sets I designed for each arc: a sea battle with a galleon and a leviathan-skeleton ship over a hand-sculpted ocean, a red-rock desert, and more in progress (Last Bastion, Mount Agrobora). The ships are printed and painted from licensed models. B-roll of each set is filmed separately and cut in during post.</p>
+  <Row cols="minmax(0,.55fr) 1fr">
+    <Clip src="/video/sl-masts.mp4" poster={masts} ratio="9/16" caption="Set b-roll, cut in during post" />
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <Fig img={seaWide} alt="The galleon on the sculpted sea" caption="The galleon" ratio="16/10" />
+      <Row cols="1fr 1fr">
+        <Fig img={leviathan} alt="Leviathan skeleton ship beside the galleon" caption="Leviathan ship" ratio="1/1" />
+        <Fig img={deck} alt="Minis on the galleon deck" caption="On deck" ratio="1/1" />
+      </Row>
+    </div>
+  </Row>
+</Chapter>
+
+<Chapter n="04 · Minis" title="Every hero" light="in miniature">
+  <p>Each player character got a matching miniature, painted by Mariah Ruff to match AJ's art, along with the villains and crowds they fight.</p>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={miniAtlas} alt="Painted miniature of Atlas" caption="Atlas" ratio="4/5" />
+    <Fig img={miniMortimer} alt="Painted miniature of Mortimer" caption="Mortimer" ratio="4/5" />
+    <Fig img={miniParty} alt="A line of painted party miniatures" caption="The party" ratio="4/5" />
+  </Row>
+  <Row cols="1fr 1fr">
+    <Fig img={statAtlas} alt="On-screen stat card overlay for Atlas" caption="On-screen stat overlays" ratio="16/9" fit="contain" />
+    <Fig img={miniCultists} alt="Three painted cultist miniatures" caption="The cult" ratio="16/9" />
+  </Row>
+</Chapter>
+
+<Chapter n="05 · Production" title="Running" light="the show">
+  <p>Eight sessions are filmed: about fifteen hours of footage across up to four cameras. Episode 1 is frame-locked. Episodes 2 through 5 are in rough cut. Kaeden Tilak wrote a theme for every character, from "The Ship Sails!" to "The Storm Surges" for the Pirate King. At its peak, 25 people worked on the show across editing, music, art, sets, film and writing. I ran it with a production tracker, monthly meetings and a written post-production workflow.</p>
+  <Fig img={overheadSea} alt="Players leaning over the sea battle set mid-session" caption="Mid-session on the sea set" ratio="21/9" />
+</Chapter>

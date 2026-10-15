@@ -1,0 +1,85 @@
+/* Spec & Sticker — paper + ink, one project color at a time.
+   Single deliberate light look; every color is set explicitly. */
+@import '@fontsource/sofia-sans-extra-condensed/300.css';
+@import '@fontsource/sofia-sans-extra-condensed/800.css';
+@import '@fontsource/sofia-sans-extra-condensed/900.css';
+@import '@fontsource/sofia-sans/400.css';
+@import '@fontsource/sofia-sans/600.css';
+@import '@fontsource/sofia-sans/400-italic.css';
+@import '@fontsource/spline-sans-mono/400.css';
+@import '@fontsource/spline-sans-mono/500.css';
+@import '@fontsource/permanent-marker/400.css';
+
+:root {
+  color-scheme: light;
+  --paper: #fbfaf6;
+  --paper-2: #efede6;
+  --ink: #0b0b0c;
+  --ink-soft: #57554f;
+  --rule: #c9c6bc;
+  /* active project color (set per page / per slide) */
+  --p: #0b0b0c;
+  --p-ink: #fbfaf6;
+  --font-display: 'Sofia Sans Extra Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body: 'Sofia Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+  --font-hand: 'Permanent Marker', 'Comic Sans MS', cursive;
+  --gutter: clamp(16px, 3vw, 40px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+/* black & white mode: every project color collapses to ink */
+html.bw { --p: #0b0b0c !important; --p-ink: #fbfaf6 !important; }
+html.bw img, html.bw video { filter: grayscale(1) contrast(1.04); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: .88; margin: 0; text-wrap: balance; font-weight: 900; }
+.mono { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; }
+.soft { color: var(--ink-soft); }
+.light { font-weight: 300; }
+.hand { font-family: var(--font-hand); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ruler (A's dimension lines / Nite Riot slider) */
+.ruler { height: 20px; position: relative; color: inherit; background:
+  repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 10px) bottom / 100% 7px no-repeat,
+  repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 50px) bottom / 100% 13px no-repeat; }
+.ruler.flip { transform: scaleY(-1); }
+
+/* stickers + marker notes */
+.sticker {
+  position: absolute; z-index: 4; background: var(--p); color: var(--p-ink);
+  font-family: var(--font-display); font-weight: 900; text-transform: uppercase; text-align: center; line-height: .86;
+  border-radius: 50%; display: grid; place-items: center; aspect-ratio: 1;
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5.5px var(--ink); text-decoration: none;
+  transition: background .4s, color .4s, transform .3s var(--ease);
+}
+a.sticker:hover { transform: rotate(0deg) scale(1.05) !important; }
+.mark {
+  position: absolute; z-index: 2; font-family: var(--font-hand); color: var(--p);
+  font-size: clamp(.95rem, 1.8vw, 1.35rem); line-height: 1.05; transform: rotate(-5deg);
+  background: var(--paper); padding: 3px 9px; box-shadow: 2px 2px 0 var(--ink);
+}
+html.bw .mark { color: var(--ink); }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid currentColor; background: transparent; color: inherit;
+  font-family: var(--font-mono); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: 8px 14px; cursor: pointer; text-decoration: none;
+}
+.btn:hover { box-shadow: 3px 3px 0 currentColor; transform: translate(-1px, -1px); }
+.btn[aria-pressed='true'] { border-width: 2px; font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,320 @@
+<title>Portfolio 2026 Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Bowlby+One+SC&family=Permanent+Marker&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@300;500&display=swap">
+<style>
+/* Layout: a working design board. Narrow reading column for notes, wide mockup frames per direction, stacked on phones. */
+:root {
+  --bg: #f3f4f7;
+  --surface: #ffffff;
+  --fg: #171a24;
+  --muted: #5b6072;
+  --rule: #d9dce5;
+  --accent: #2f45d6;
+  --accent-soft: #e4e8ff;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12141b; --surface: #1b1e28; --fg: #e9ebf2; --muted: #9aa0b4;
+    --rule: #2c3040; --accent: #8c9bff; --accent-soft: #252c55; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12141b; --surface: #1b1e28; --fg: #e9ebf2; --muted: #9aa0b4;
+  --rule: #2c3040; --accent: #8c9bff; --accent-soft: #252c55; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 80px; display: flex; flex-direction: column; gap: 64px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+p { margin: 0; max-width: 65ch; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.brief { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.brief > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.brief strong { font-family: var(--font-display); font-size: 1.05rem; }
+.brief span { color: var(--muted); font-size: 0.95rem; }
+
+.direction { display: flex; flex-direction: column; gap: 24px; padding-top: 40px; border-top: 2px solid var(--fg); }
+.dir-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+.dir-head .tag { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.cols > * { min-width: 0; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+li { max-width: 60ch; }
+.refs li span { color: var(--muted); }
+.label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+
+/* Mockup frames: each holds a fixed, single-look palette for its direction */
+.frame { border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); background: #0c0c0c; box-shadow: 0 10px 30px rgba(10, 12, 30, 0.12); }
+.chrome { display: flex; gap: 6px; align-items: center; padding: 9px 12px; background: #24262e; }
+.chrome i { width: 9px; height: 9px; border-radius: 50%; background: #50535e; display: block; }
+.chrome b { margin-left: 10px; font: 400 11px var(--font-mono); color: #9a9db0; }
+.mock { position: relative; aspect-ratio: 16 / 8.2; max-width: 100%; overflow: hidden; }
+@media (max-width: 560px) { .mock { aspect-ratio: 4 / 4.4; } }
+
+/* A: Backstage */
+.mock-a { background-color: #0d1b2e; background-image: linear-gradient(rgba(120,170,230,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,170,230,.12) 1px, transparent 1px); background-size: 24px 24px; color: #dfe9f7; font-family: "IBM Plex Mono", monospace; padding: 5%; display: grid; grid-template-columns: 1.1fr 1fr; gap: 5%; }
+.mock-a .titleblock { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; }
+.mock-a .name { font-weight: 500; font-size: clamp(1.1rem, 3.4vw, 2.1rem); letter-spacing: 0.06em; line-height: 1.05; }
+.mock-a .sub { font-weight: 300; font-size: clamp(.6rem, 1.3vw, .8rem); color: #8fb3e0; letter-spacing: .12em; }
+.mock-a .sheet { border: 1px solid #8fb3e0; position: relative; display: flex; flex-direction: column; }
+.mock-a .sheet .art { flex: 1; border-bottom: 1px solid #8fb3e0; position: relative; background: repeating-linear-gradient(45deg, rgba(143,179,224,.08) 0 6px, transparent 6px 12px); }
+.mock-a .sheet .art::after { content: "ECHO — TABLE FIGURE  ·  H 18in"; position: absolute; left: 8px; bottom: 6px; font-size: clamp(.45rem, 1vw, .62rem); color: #8fb3e0; }
+.mock-a .dim { position: absolute; top: 12%; bottom: 12%; right: 10px; border-right: 1px solid #ffb547; width: 8px; }
+.mock-a .dim::before, .mock-a .dim::after { content: ""; position: absolute; right: -5px; width: 9px; border-top: 1px solid #ffb547; }
+.mock-a .dim::before { top: 0; } .mock-a .dim::after { bottom: 0; }
+.mock-a .rows { display: grid; grid-template-columns: 1fr 1fr 1fr; font-size: clamp(.42rem, .95vw, .6rem); }
+.mock-a .rows span { padding: 5px 7px; border-right: 1px solid #8fb3e0; }
+.mock-a .rows span:last-child { border-right: 0; color: #ffb547; }
+.mock-a .nav { display: flex; gap: 14px; font-size: clamp(.5rem, 1.1vw, .7rem); color: #8fb3e0; flex-wrap: wrap; }
+
+/* B: Zine */
+.mock-b { background: #ff3d7f; color: #111; padding: 5%; }
+.mock-b::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(#111 1.1px, transparent 1.3px); background-size: 9px 9px; opacity: .18; }
+.mock-b .big { position: relative; font-family: "Bowlby One SC", Impact, sans-serif; font-size: clamp(2rem, 8.5vw, 5.4rem); line-height: .86; letter-spacing: -.01em; }
+.mock-b .big em { font-style: normal; color: #fff; -webkit-text-stroke: 2px #111; }
+.mock-b .tagline { position: relative; font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: clamp(.8rem, 2vw, 1.25rem); margin-top: 3%; transform: rotate(-2deg); display: inline-block; background: #fff200; padding: 2px 10px; }
+.mock-b .sticker { position: absolute; right: 6%; top: 12%; width: 27%; aspect-ratio: 1; border-radius: 50%; background: #111; color: #fff200; display: grid; place-items: center; text-align: center; font-family: "Bowlby One SC", Impact, sans-serif; font-size: clamp(.55rem, 1.5vw, 1rem); line-height: 1; transform: rotate(12deg); border: 4px solid #fff; padding: 8px; }
+.mock-b .card { position: absolute; bottom: 7%; right: 10%; width: 20%; aspect-ratio: 2.5 / 3.5; background: #fff; border: 3px solid #111; transform: rotate(-8deg); padding: 6px; font-family: "Bowlby One SC", Impact, sans-serif; font-size: clamp(.38rem, .9vw, .62rem); display: flex; flex-direction: column; gap: 4px; }
+.mock-b .card div { flex: 1; background: #2bd1ff; border: 2px solid #111; }
+.mock-b .tape { position: absolute; bottom: 21%; right: 22%; width: 13%; height: 7%; background: rgba(255,255,255,.65); transform: rotate(28deg); }
+
+/* C: World map */
+.mock-c { background: radial-gradient(ellipse at 40% 45%, #1d4a4a 0%, #0e2526 70%); color: #ead9b0; font-family: "IM Fell English", Georgia, serif; }
+.mock-c .title { position: absolute; left: 5%; top: 6%; font-family: "IM Fell English SC", Georgia, serif; font-size: clamp(1rem, 3.2vw, 2rem); letter-spacing: .04em; }
+.mock-c .title small { display: block; font-family: "IM Fell English", Georgia, serif; font-style: italic; font-size: .45em; letter-spacing: 0; opacity: .8; }
+.mock-c .isle { position: absolute; background: #c9b27c; border: 2px solid #ead9b0; box-shadow: 0 0 0 6px rgba(234,217,176,.08), 0 0 0 14px rgba(234,217,176,.04); }
+.mock-c .i1 { left: 14%; top: 50%; width: 20%; height: 26%; border-radius: 58% 42% 50% 50% / 50% 60% 40% 50%; }
+.mock-c .i2 { left: 46%; top: 30%; width: 17%; height: 22%; border-radius: 40% 60% 55% 45% / 60% 40% 60% 40%; }
+.mock-c .i3 { left: 72%; top: 55%; width: 14%; height: 18%; border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%; }
+.mock-c .i4 { left: 70%; top: 14%; width: 9%; height: 12%; border-radius: 50%; }
+.mock-c .lbl { position: absolute; font-style: italic; font-size: clamp(.5rem, 1.25vw, .82rem); white-space: nowrap; }
+.mock-c svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mock-c .compass { position: absolute; right: 4%; bottom: 6%; font-family: "IM Fell English SC", Georgia, serif; font-size: clamp(.5rem, 1.1vw, .75rem); border: 1px solid #ead9b0; padding: 4px 8px; }
+
+.featured { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+.featured > * { min-width: 0; }
+@media (max-width: 760px) { .featured { grid-template-columns: 1fr; } }
+.callout { background: var(--accent-soft); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.status { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 0.95rem; }
+.status dt { font-family: var(--font-mono); font-size: 0.78rem; padding-top: 3px; }
+.status dd { margin: 0; }
+.ok { color: #1f8a4c; } .part { color: #b7791f; } .no { color: #c0392b; }
+:root[data-theme="dark"] .ok { color: #5fd68f; } :root[data-theme="dark"] .part { color: #f0b85a; } :root[data-theme="dark"] .no { color: #ff7f72; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ok { color: #5fd68f; } :root:not([data-theme="light"]) .part { color: #f0b85a; } :root:not([data-theme="light"]) .no { color: #ff7f72; } }
+ol.qs { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 10px; }
+footer { font-size: .85rem; color: var(--muted); }
+</style>
+
+<div class="wrap">
+
+  <header class="stack">
+    <span class="eyebrow">peterburke.co · 2026 redesign · step 1 of the process</span>
+    <h1>Three directions for the new portfolio</h1>
+    <p class="lede">The site is for themed entertainment studios, animation studios and freelance clients, and we're starting from a blank slate. Each direction below has a rough look, the references behind it, and what it means for Echo Was Here. Pick one, or mix parts of them.</p>
+  </header>
+
+  <section class="stack">
+    <h2>Rules for any direction</h2>
+    <div class="brief">
+      <div><strong>Show the work within 5 seconds</strong><span>Studio recruiters skim. A reel clip or the best image should play or show above the fold, before any concept intro.</span></div>
+      <div><strong>Concept → build → audience</strong><span>Themed entertainment studios hire people who can take an idea through fabrication and see it in front of guests. Every case study follows that arc.</span></div>
+      <div><strong>Breakdowns, not only beauty shots</strong><span>Animation studios want to see rigs, shader graphs and blocking-vs-final comparisons. Your process material is a selling point.</span></div>
+      <div><strong>Resume and contact always one click away</strong><span>Freelance clients need to reach you without searching. Keep a persistent contact link and a fast path past any interactive layer.</span></div>
+    </div>
+  </section>
+
+  <!-- A -->
+  <section class="direction">
+    <div class="dir-head"><span class="tag">Direction A</span><h2>Backstage</h2></div>
+    <div class="frame" aria-label="Rough mockup of the Backstage direction">
+      <div class="chrome"><i></i><i></i><i></i><b>peterburke.co</b></div>
+      <div class="mock mock-a">
+        <div class="titleblock">
+          <div class="nav"><span>WORK</span><span>PROCESS</span><span>ABOUT</span><span>CONTACT</span></div>
+          <div>
+            <div class="name">PETER<br>BURKE</div>
+            <div class="sub">SHOW · ANIMATION · FABRICATION</div>
+          </div>
+          <div class="sub">REV 2026.10 — DRAWN BY P. BURKE</div>
+        </div>
+        <div class="sheet">
+          <div class="art"><div class="dim"></div></div>
+          <div class="rows"><span>SHEET 01</span><span>ECHO WAS HERE</span><span>VIEW →</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="stack">
+        <p>The site reads like a production package: show-set elevations, spec sheets, title blocks and work-light amber on blueprint navy. Each project is a "sheet" with real dimensions, materials and crew size. The polish comes from precision instead of decoration.</p>
+        <div>
+          <span class="label">Why it fits</span>
+          <ul>
+            <li>Speaks the language of themed entertainment, where ride elevations and show-set drawings are everyday documents.</li>
+            <li>Puts your fabrication work (battle sets, laser-cut enclosures, the table Echo) on equal footing with screen work.</li>
+            <li>Ages well. It won't look dated in two years.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack">
+        <div>
+          <span class="label">References</span>
+          <ul class="refs">
+            <li><a href="https://thinkwellgroup.com" target="_blank" rel="noopener">Thinkwell Group</a> <span>how a themed entertainment studio presents projects</span></li>
+            <li><a href="https://credits.meowwolf.com" target="_blank" rel="noopener">Meow Wolf credits</a> <span>how experience designers credit their roles</span></li>
+            <li>Imagineering show-set elevations and concept boards <span>the visual vocabulary to borrow</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label">Risk</span>
+          <p>It can feel cold. It needs one warm, human element, like a photo of you in the workshop or Echo's color breaking the blueprint.</p>
+        </div>
+        <div>
+          <span class="label">What it does for Echo</span>
+          <p>An unfinished animation fits naturally here. Unshaded backgrounds become "Rev B" sheets beside finished shots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section class="direction">
+    <div class="dir-head"><span class="tag">Direction B</span><h2>Gig Poster</h2></div>
+    <div class="frame" aria-label="Rough mockup of the Gig Poster direction">
+      <div class="chrome"><i></i><i></i><i></i><b>peterburke.co</b></div>
+      <div class="mock mock-b">
+        <div class="big">PETER<br><em>BURKE</em><br>WAS HERE</div>
+        <div class="tagline">animation · toys · worlds · stuff you can touch</div>
+        <div class="sticker">ECHO<br>WAS<br>HERE</div>
+        <div class="tape"></div>
+        <div class="card"><div></div>ECHO · 01/04</div>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="stack">
+        <p>Punk zine and gig-flyer energy taken straight from Echo's world: halftone, stickers, tape, collectible cards scattered over the layout, and loud flat color that matches your cel-shading. The site feels like something you'd pick up at a merch table.</p>
+        <div>
+          <span class="label">Why it fits</span>
+          <ul>
+            <li>The most memorable of the three. Recruiters will remember "the pink one with the stickers."</li>
+            <li>Shows you can build a visual identity, which is the core skill for character IP and collectibles.</li>
+            <li>Uses the trading cards and blind-box idea in the site's own interactions, such as flipping a card to open a project.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack">
+        <div>
+          <span class="label">References</span>
+          <ul class="refs">
+            <li><a href="https://superplastic.co" target="_blank" rel="noopener">Superplastic</a> <span>vinyl toys and animated characters as one IP</span></li>
+            <li><a href="https://www.gorillaz.com" target="_blank" rel="noopener">Gorillaz</a> <span>a virtual band with a world around it</span></li>
+            <li>Jet Set Radio and Hi-Fi Rush <span>cel-shading, roller skates, beat-synced motion</span></li>
+            <li>Spider-Verse <span>halftone, comic layout and mixed frame rates</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label">Risk</span>
+          <p>One project's look takes over the whole site, and Shattered Lands' storm-and-magic fantasy doesn't fit it. This could be a problem for more conservative studios.</p>
+        </div>
+        <div>
+          <span class="label">What it does for Echo</span>
+          <p>Echo becomes the face of the whole site. That's great exposure for the IP, but the case study has to hold up to it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section class="direction">
+    <div class="dir-head"><span class="tag">Direction C</span><h2>The Map</h2></div>
+    <div class="frame" aria-label="Rough mockup of The Map direction">
+      <div class="chrome"><i></i><i></i><i></i><b>peterburke.co</b></div>
+      <div class="mock mock-c">
+        <div class="title">The Works of Peter Burke<small>a chart of things built, told and played</small></div>
+        <svg viewBox="0 0 100 52" preserveAspectRatio="none" aria-hidden="true"><path d="M26 33 C 36 25, 44 20, 54 21 S 74 30, 79 33" fill="none" stroke="#ead9b0" stroke-width=".35" stroke-dasharray="1.2 1"/><path d="M54 21 C 62 14, 70 11, 74 10" fill="none" stroke="#ead9b0" stroke-width=".35" stroke-dasharray="1.2 1"/></svg>
+        <div class="isle i1"></div><div class="lbl" style="left:13%;top:79%">The Shattered Isles</div>
+        <div class="isle i2"></div><div class="lbl" style="left:45%;top:54%">Echo's Stage</div>
+        <div class="isle i3"></div><div class="lbl" style="left:69%;top:75%">Laugh Bucket Cove</div>
+        <div class="isle i4"></div><div class="lbl" style="left:80%;top:17%">The Workshop</div>
+        <div class="compass">N · skip to list ↓</div>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="stack">
+        <p>The portfolio is a world you explore. Projects are places on a hand-drawn chart, the about page is a character sheet, and the writing lives in a library. This draws on your strongest instinct as a DM and worldbuilder, and is the approach most likely to make people say "who made this?"</p>
+        <div>
+          <span class="label">Why it fits</span>
+          <ul>
+            <li>Themed entertainment is about placemaking. A site that is a place makes that point before anyone reads a word.</li>
+            <li>Brings Shattered Lands, the writing and the tabletop work together naturally.</li>
+            <li>Has room to grow. New projects become new islands.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack">
+        <div>
+          <span class="label">References</span>
+          <ul class="refs">
+            <li><a href="https://bruno-simon.com" target="_blank" rel="noopener">Bruno Simon</a> <span>the well-known drivable 3D portfolio</span></li>
+            <li><a href="https://www.awwwards.com/inspiration/crazy-interactive-portfolio" target="_blank" rel="noopener">Mireia Ortega on Awwwards</a> <span>sound, gesture and WebGL as navigation</span></li>
+            <li>One Piece and Pangros maps <span>your own world as the source material</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label">Risk</span>
+          <p>A recruiter with 90 seconds may not want to explore. It needs a plain list view always visible, and it's the most build time of the three.</p>
+        </div>
+        <div>
+          <span class="label">What it does for Echo</span>
+          <p>Echo becomes one place among several. That's balanced, but it puts less spotlight on your flagship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" style="padding-top:40px;border-top:2px solid var(--fg)">
+    <span class="eyebrow">The headline project</span>
+    <h2>Echo Was Here as the flagship</h2>
+    <div class="featured">
+      <div class="stack">
+        <p>Echo is still the right lead. It's your most recent work, it covers the widest range of skills (directing, rigging, shading, pipeline, hardware, product design), and an original character with physical merchandise is exactly what themed entertainment and animation studios look for.</p>
+        <p>An unfinished film is fine if we frame it honestly. Present it as an IP and pipeline case study, not as a finished short. The table Echo and the card set are the physical proof. The unshaded backgrounds become a "where the pipeline stands" breakdown, which animation leads like to see anyway.</p>
+        <p><strong>One concrete ask:</strong> fully finish 10–20 seconds, your best moment from the song. That clip becomes the hero video at the top of the case study and probably the top of the whole site.</p>
+      </div>
+      <div class="callout">
+        <span class="label" style="margin:0">What we have</span>
+        <dl class="status">
+          <dt class="ok">HAVE</dt><dd>Full song, most of the animation, demo video, photos</dd>
+          <dt class="ok">HAVE</dt><dd>Large table Echo figure and a set of cards</dd>
+          <dt class="part">PARTIAL</dt><dd>Background shading across shots</dd>
+          <dt class="no">MISSING</dt><dd>The blind-box figurines (still trying to get one)</dd>
+        </dl>
+        <span class="label" style="margin:8px 0 0">Supporting projects</span>
+        <p style="font-size:.95rem">Shattered Lands (team of 25, built sets, worldbuilding) and Laugh Bucket (shown at a festival, interactive) as the other two featured projects. Everything else goes in a smaller archive grid.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" style="padding-top:40px;border-top:2px solid var(--fg)">
+    <h2>Tell me</h2>
+    <ol class="qs">
+      <li>Which direction pulls at you, or which parts of each would you combine? A common combination is A's structure with B's color and stickers on the Echo pages.</li>
+      <li>Any reference above you actively dislike?</li>
+      <li>Do you want your face and voice on the site (a photo, a short intro clip), or should the work speak for itself?</li>
+      <li>Is finishing a 10–20 second hero clip of Echo realistic in the next few weeks?</li>
+    </ol>
+  </section>
+
+  <footer>Mockups are rough sketches drawn in HTML to show the feel, not final designs. Saved at Portfolio-2026/inspiration/inspiration-board.html.</footer>
+</div>

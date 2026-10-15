@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env*
+# large original media stays in Dropbox only; the site uses optimized copies in src/assets + public/video
+content/**/media/

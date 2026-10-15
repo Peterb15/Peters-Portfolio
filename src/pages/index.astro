@@ -1,0 +1,210 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const first = projects[0].data;
+const pad = (n: number) => String(n).padStart(2, '0');
+const slides = projects.map((p) => ({
+  id: p.id,
+  title: p.data.short ?? p.data.title,
+  color: p.data.color,
+  ink: p.data.colorInk,
+  scrawl: p.data.scrawl ?? '',
+  meta: [p.data.tier === 'archive' ? 'Archive' : p.data.tier === 'headliner' ? 'Headliner' : 'Feature', ...p.data.tags.slice(0, 3)],
+}));
+---
+<Base color={first.color} colorInk={first.colorInk} flood>
+  <div slot="head" class="home-head">
+    <div class="stage">
+      <p class="stmt"><b>Built worlds.</b><br /><span>Told stories.</span></p>
+
+      <div class="fan" data-fan>
+        {projects.map((p, i) => (
+          <a class:list={['slide', { on: i === 0 }]} href={`/work/${p.id}`} data-slide={i} aria-label={`Open ${p.data.title}`} tabindex={i === 0 ? 0 : -1}>
+            {p.data.fan.a && (
+              <figure class="a"><Image src={p.data.fan.a} alt="" widths={[360, 640]} sizes="22vw" loading={i === 0 ? 'eager' : 'lazy'} /></figure>
+            )}
+            {p.data.fan.b && (
+              <figure class="b"><Image src={p.data.fan.b} alt="" widths={[360, 640]} sizes="22vw" loading={i === 0 ? 'eager' : 'lazy'} /></figure>
+            )}
+            <figure class="c">
+              {p.data.heroVideo ? (
+                <video data-src={p.data.heroVideo} muted loop playsinline preload="none" aria-hidden="true"></video>
+              ) : null}
+              <Image src={p.data.fan.c} alt={p.data.title} widths={[480, 800, 1200]} sizes="(max-width: 760px) 80vw, 34vw" loading={i === 0 ? 'eager' : 'lazy'} />
+            </figure>
+          </a>
+        ))}
+      </div>
+
+      <p class="stmt r"><span>Animation. Fabrication.</span><br /><b>Show design.</b></p>
+      <p class="scrawl" data-scrawl aria-hidden="true">{slides[0].scrawl}</p>
+      <a class="sticker" href="#contact">Open for freelance</a>
+    </div>
+
+    <div class="slider" aria-label="Projects">
+      <div class="ruler"></div>
+      <div class="track"><ol class="names" data-names>
+        {slides.map((s, i) => <li><button type="button" class:list={{ on: i === 0 }} data-go={i}>{s.title}</button></li>)}
+      </ol></div>
+      <div class="ruler flip"></div>
+      <div class="foot">
+        <span class="mono l">©2026 · Last update Oct 2026</span>
+        <div class="ctrl mono">
+          <button type="button" data-prev aria-label="Previous project">◂◂</button>
+          <span data-idx>01</span><span>//</span><span>{pad(slides.length)}</span>
+          <button type="button" data-next aria-label="Next project">▸▸</button>
+        </div>
+        <span class="mono r">Click the photo to open</span>
+      </div>
+      <ul class="meta mono" data-meta>{slides[0].meta.map((m) => <li>{m}</li>)}</ul>
+    </div>
+  </div>
+
+  <section class="index" id="work" aria-labelledby="index-title">
+    <div class="index-head">
+      <h2 id="index-title">Index</h2>
+      <span class="mono soft">{pad(projects.length)} projects · 2023 – 2026</span>
+    </div>
+    <ol class="rows">
+      {projects.map((p, i) => (
+        <li>
+          <a href={`/work/${p.id}`} style={`--rc:${p.data.color};--rc-ink:${p.data.colorInk}`}>
+            <span class="mono n">{pad(i + 1)}</span>
+            <span class="t">{p.data.title}</span>
+            <span class="mono tg">{p.data.tags.slice(0, 3).join(' · ')}</span>
+            <span class="mono y">{p.data.year}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>
+
+<script define:vars={{ slides }}>
+  const root = document.documentElement;
+  const slideEls = [...document.querySelectorAll('[data-slide]')];
+  const nameBtns = [...document.querySelectorAll('[data-go]')];
+  const names = document.querySelector('[data-names]');
+  const idx = document.querySelector('[data-idx]');
+  const meta = document.querySelector('[data-meta]');
+  const scrawl = document.querySelector('[data-scrawl]');
+  let i = 0;
+
+  const place = () => {
+    const el = nameBtns[i].parentElement;
+    const track = names.parentElement;
+    names.style.transform = `translateX(${-(el.offsetLeft - (track.clientWidth - el.offsetWidth) / 2)}px)`;
+  };
+  const playActive = () => {
+    slideEls.forEach((s, k) => {
+      const v = s.querySelector('video');
+      if (!v) return;
+      if (k === i) {
+        if (!v.src) v.src = v.dataset.src;
+        v.play().then(() => v.classList.add('playing')).catch(() => {});
+      } else { v.pause(); }
+    });
+  };
+  const render = () => {
+    const s = slides[i];
+    root.style.setProperty('--p', s.color);
+    root.style.setProperty('--p-ink', s.ink);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', s.color);
+    slideEls.forEach((el, k) => { el.classList.toggle('on', k === i); el.tabIndex = k === i ? 0 : -1; });
+    nameBtns.forEach((b, k) => b.classList.toggle('on', k === i));
+    idx.textContent = String(i + 1).padStart(2, '0');
+    meta.innerHTML = s.meta.map((m) => `<li>${m}</li>`).join('');
+    scrawl.textContent = s.scrawl;
+    place();
+    playActive();
+  };
+  const go = (k) => { i = (k + slides.length) % slides.length; render(); };
+
+  document.querySelector('[data-prev]').addEventListener('click', () => go(i - 1));
+  document.querySelector('[data-next]').addEventListener('click', () => go(i + 1));
+  nameBtns.forEach((b) => b.addEventListener('click', () => go(Number(b.dataset.go))));
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest && e.target.closest('input, textarea')) return;
+    if (e.key === 'ArrowRight') go(i + 1);
+    if (e.key === 'ArrowLeft') go(i - 1);
+  });
+  // swipe on the photos
+  let x0 = null;
+  const fan = document.querySelector('[data-fan]');
+  fan.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  fan.addEventListener('touchend', (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1);
+  });
+  window.addEventListener('resize', place);
+  if (document.fonts) document.fonts.ready.then(place);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) playActive();
+  place();
+</script>
+
+<style>
+  .home-head { padding-bottom: 10px; }
+  .stage { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 1.5fr) 1fr; align-items: center; padding: 12px var(--gutter) 0; }
+  .stmt { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.4rem, 3vw, 2.7rem); line-height: .92; z-index: 3; }
+  .stmt b { font-weight: 900; } .stmt span { font-weight: 300; }
+  .stmt.r { text-align: right; }
+
+  .fan { position: relative; aspect-ratio: 1 / 1; max-height: 74vh; width: 100%; justify-self: center; }
+  .slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .35s; }
+  .slide.on { opacity: 1; pointer-events: auto; }
+  .slide figure { position: absolute; margin: 0; overflow: hidden; background: var(--paper-2); box-shadow: 0 16px 34px rgba(0, 0, 0, .28); transition: transform .6s var(--ease); }
+  .slide figure :global(img), .slide video { width: 100%; height: 100%; object-fit: cover; }
+  .slide .c { left: 20%; top: 3%; width: 60%; height: 86%; z-index: 2; }
+  .slide .a { left: -5%; top: 16%; width: 42%; height: 62%; transform: rotate(-11deg); z-index: 1; }
+  .slide .b { right: -5%; top: 16%; width: 42%; height: 62%; transform: rotate(11deg); z-index: 1; }
+  .slide:not(.on) .a { transform: rotate(-3deg) translateX(30%); }
+  .slide:not(.on) .b { transform: rotate(3deg) translateX(-30%); }
+  .slide video { position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity .4s; }
+  .slide video:global(.playing) { opacity: 1; }
+  .slide:hover .c { transform: translateY(-6px); }
+
+  .scrawl { position: absolute; z-index: 4; left: var(--gutter); bottom: 4%; max-width: 14ch; font-family: var(--font-hand); font-size: clamp(1.1rem, 2.3vw, 1.9rem); line-height: 1; transform: rotate(-6deg); }
+  .sticker { width: clamp(86px, 10vw, 130px); right: 24%; top: 4%; transform: rotate(12deg); font-size: clamp(1rem, 1.7vw, 1.4rem); padding: 10px; background: var(--p-ink); color: var(--p); }
+  @media (max-width: 760px) {
+    .stage { grid-template-columns: 1fr 1fr; row-gap: 14px; }
+    .fan { grid-column: 1 / -1; grid-row: 2; width: 88%; }
+    .stmt.r { grid-row: 1; grid-column: 2; }
+    .sticker { right: 4%; top: 30%; }
+    .scrawl { bottom: 0; }
+  }
+
+  .slider { padding: 22px 0 14px; display: flex; flex-direction: column; gap: 8px; }
+  .track { overflow: hidden; }
+  .names { list-style: none; margin: 0; padding: 4px 0; display: flex; gap: 56px; white-space: nowrap; transition: transform .5s var(--ease); }
+  .names button {
+    background: none; border: 0; padding: 0; cursor: pointer; color: color-mix(in srgb, currentColor 32%, transparent);
+    font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.4rem, 6.4vw, 4.8rem); line-height: 1;
+  }
+  .names button.on { color: inherit; }
+  .foot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; padding: 8px var(--gutter) 4px; }
+  .foot .r { text-align: right; }
+  .ctrl { display: flex; gap: 20px; align-items: center; font-size: .85rem; }
+  .ctrl button { background: none; border: 0; font: inherit; color: inherit; cursor: pointer; padding: 6px 8px; }
+  [data-idx] { font-weight: 500; font-variant-numeric: tabular-nums; }
+  .meta { list-style: none; margin: 0; padding: 6px 16px 0; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .meta :global(li) { border: 1px solid currentColor; padding: 2px 8px; }
+  @media (max-width: 600px) { .foot { grid-template-columns: 1fr; justify-items: center; } .foot .l, .foot .r { display: none; } }
+
+  .index { padding: 72px var(--gutter) 0; display: flex; flex-direction: column; gap: 18px; }
+  .index-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+  .index h2 { font-size: clamp(3rem, 8vw, 6rem); }
+  .rows { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+  .rows a {
+    display: grid; grid-template-columns: 48px minmax(0, 1fr) minmax(0, auto) 90px; gap: 16px; align-items: baseline;
+    padding: 14px 10px; border-bottom: 1px solid var(--rule); text-decoration: none; transition: background .25s, color .25s, padding .25s;
+  }
+  .rows a:hover, .rows a:focus-visible { background: var(--rc); color: var(--rc-ink); padding-left: 18px; }
+  :global(html.bw) .rows a:hover, :global(html.bw) .rows a:focus-visible { background: var(--ink); color: var(--paper); }
+  .t { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.7rem, 3.6vw, 2.8rem); line-height: 1; }
+  .y { text-align: right; }
+  @media (max-width: 700px) { .rows a { grid-template-columns: 34px minmax(0, 1fr) 64px; } .tg { display: none; } }
+</style>

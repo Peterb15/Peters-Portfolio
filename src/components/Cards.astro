@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+interface Props { cards: { img: ImageMetadata; alt: string }[]; caption?: string }
+const { cards, caption } = Astro.props;
+---
+<figure class="cards-fig">
+  <div class="cards">
+    {cards.map((c, i) => (
+      <Image class="card" src={c.img} alt={c.alt} widths={[240, 400]} sizes="180px" style={`--r:${(i - (cards.length - 1) / 2) * 7}deg;--y:${Math.abs(i - (cards.length - 1) / 2) * 10}px`} loading="lazy" />
+    ))}
+  </div>
+  {caption && <figcaption class="mono soft">{caption}</figcaption>}
+</figure>
+<style>
+  .cards-fig { margin: 0; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .cards { display: flex; justify-content: center; padding: 18px 0 26px; }
+  .card {
+    width: clamp(92px, 17vw, 180px); height: auto; margin-inline: -12px; border: 1.5px solid var(--ink); background: #fff;
+    box-shadow: 0 12px 24px rgba(11, 11, 12, .16); transform: rotate(var(--r)) translateY(var(--y)); transition: transform .3s var(--ease);
+  }
+  .card:hover { transform: rotate(0) translateY(-16px) scale(1.07); z-index: 2; }
+</style>

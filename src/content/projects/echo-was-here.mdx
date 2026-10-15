@@ -1,0 +1,150 @@
+---
+title: Echo
+short: Echo Was Here
+handTitle: was here
+order: 1
+tier: headliner
+color: '#1b43f0'
+colorInk: '#fbfaf6'
+year: Dec 2025 – Apr 2026
+role: Director · Lead Animator · Technical Artist
+tagline: An original character built from nothing into a music video, four RFID blind-box figurines, a speaker that plays her band, and a booth dressed as her apartment.
+tags: [Animation, Character IP, Collectibles, Show design]
+scrawl: she robs banks to make rent
+fan:
+  a: ../../assets/projects/echo-was-here/figurines-close-1.jpg
+  b: ../../assets/projects/echo-was-here/card-guitarist.jpg
+  c: ../../assets/projects/echo-was-here/film-tag.jpg
+heroVideo: /video/echo-hero.mp4
+heroHasSound: true
+spec:
+  - { label: Runtime, value: '2:07' }
+  - { label: Shots, value: '51' }
+  - { label: Figurines, value: '4' }
+  - { label: Song, value: '4 stems → 1' }
+  - { label: Shown, value: 'ATLAS EXPO' }
+credits: 'Directed, rigged and animated by Peter Burke. Character design, packaging and the song "Breaking In" by Raphaelle Lepere. RFID speaker built by Zeke Thoreson. Senior capstone, ATLAS Institute, CU Boulder. Advisor: Annie Margaret.'
+links:
+  - { label: echo-was-here.com, href: 'https://echo-was-here.com' }
+  - { label: Speaker demo, href: 'https://vimeo.com/1169750811' }
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import Cards from '../../components/Cards.astro';
+
+import turnaround from '../../assets/projects/echo-was-here/turnaround.jpg';
+import poseSketches from '../../assets/projects/echo-was-here/pose-sketches.jpg';
+import filmMirror from '../../assets/projects/echo-was-here/film-mirror.jpg';
+import filmStreet from '../../assets/projects/echo-was-here/film-street-greybox.jpg';
+import filmVault from '../../assets/projects/echo-was-here/film-vault.jpg';
+import filmCash from '../../assets/projects/echo-was-here/film-vault-cash.jpg';
+import filmWall from '../../assets/projects/echo-was-here/film-wallride.jpg';
+import filmTag from '../../assets/projects/echo-was-here/film-tag.jpg';
+import tvBank from '../../assets/projects/echo-was-here/tv-bank-shot.jpg';
+import fig1 from '../../assets/projects/echo-was-here/figurines-close-1.jpg';
+import lineup from '../../assets/projects/echo-was-here/speaker-lineup-1.jpg';
+import paintedDrummer from '../../assets/projects/echo-was-here/painted-drummer.jpg';
+import paintedGuitarist from '../../assets/projects/echo-was-here/painted-guitarist.jpg';
+import printWip from '../../assets/projects/echo-was-here/print-wip-table.jpg';
+import printTest from '../../assets/projects/echo-was-here/print-test-guitarist.jpg';
+import cardSinger from '../../assets/projects/echo-was-here/card-singer.jpg';
+import cardGuitarist from '../../assets/projects/echo-was-here/card-guitarist.jpg';
+import cardBassist from '../../assets/projects/echo-was-here/card-bassist.jpg';
+import cardDrummer from '../../assets/projects/echo-was-here/card-drummer.jpg';
+import boxBack from '../../assets/projects/echo-was-here/box-back-note.jpg';
+import packInside from '../../assets/projects/echo-was-here/pack-inside.jpg';
+import unboxFigure from '../../assets/projects/echo-was-here/unbox-figure.jpg';
+import boothWide from '../../assets/projects/echo-was-here/booth-wide.jpg';
+import boothDrums from '../../assets/projects/echo-was-here/booth-drums.jpg';
+import boothBag from '../../assets/projects/echo-was-here/booth-moneybag-skates.jpg';
+import banner from '../../assets/projects/echo-was-here/banner.jpg';
+import visitor from '../../assets/projects/echo-was-here/visitor-table-echo.jpg';
+import tableEcho from '../../assets/projects/echo-was-here/table-echo-moneybag.jpg';
+import boxTower from '../../assets/projects/echo-was-here/box-tower.jpg';
+
+<Chapter n="01 · Character" title="Meet" light="Echo">
+  <p>Echo is 22 and lives in the poverty apartments of Notting, a city we based on Chicago. She plays every instrument herself because she refuses to need a band. Rent is due, guitars cost money, so she robs banks on roller skates and leaves her tag behind. The locals cheer when she skates past.</p>
+
+  > Everyone has a side hustle. Mine's just more fun.
+
+  <Row cols="1.2fr 1fr">
+    <Fig img={turnaround} alt="Echo turnaround: head front and side, body front and side" caption="Turnaround, the target for the 3D model" num="Fig. 01" fit="contain" ratio="4/3" />
+    <Fig img={poseSketches} alt="Pencil sketches of Echo's four band poses" caption="Pose sketches for the four figurines" num="Fig. 02" fit="contain" ratio="4/3" />
+  </Row>
+</Chapter>
+
+<Chapter n="02 · Directing" title="Cut to" light="the song">
+  <p>The song landed on March 28, and from then on every edit decision answered to it. I built the animatic in Blender's VSE: 51 shots timed to the frame against the track. The first 17 seconds play in total silence while Echo suits up. The music hits on the mirror reveal (shot 018), the full band drops at the skate launch (023), and the solo breakdown lands on the guitar shot (040).</p>
+  <p>On April 6 I cut two whole sequences, the apartment intro and the aftermath, to protect the heist. Two minutes of polished animation beats three minutes of rough.</p>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={filmMirror} alt="Echo in sunglasses, close-up mirror shot" caption="Sh. 018 · the music enters" ratio="16/9" />
+    <Fig img={filmWall} alt="Echo skating up the side of the bank" caption="Skating up the bank" ratio="16/9" />
+    <Fig img={filmCash} alt="Echo in the vault surrounded by cash" caption="The vault" ratio="16/9" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Pipeline" title="Building" light="the look">
+  <ul>
+    <li><b>Cel-shading:</b> Diffuse → Shader to RGB → three-step ColorRamp → Emission in EEVEE, with Grease Pencil line art per shot.</li>
+    <li><b>Rig:</b> retopologized the sculpt, Rigify body, and a face rig that swaps hand-drawn eye and mouth sprites through drivers, so expressions keyframe like poses.</li>
+    <li><b>Outfit:</b> modeled the heist gear (jacket, goggles, skates, guards) and all four instruments. The layered clothing broke normal weight painting until Voxel Heat Diffuse Skinning solved it.</li>
+    <li><b>Shots:</b> every shot links the rig through Library Overrides. A $30 bank asset pack replaced an estimated 15+ hours of environment modeling.</li>
+  </ul>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={filmStreet} alt="Echo skating on a grey, unshaded street" caption="Rev A · street still greybox" mark="bg = greybox" markAt="tr" ratio="16/9" />
+    <Fig img={filmVault} alt="Top-down shot of the vault door, fully shaded" caption="Rev B · bank interiors final" ratio="16/9" />
+    <Fig img={tvBank} alt="The finished film playing on a TV at the EXPO" caption="Rev B on screen at the EXPO" ratio="16/9" />
+  </Row>
+  <p class="soft">Echo and the bank are final. The exterior street and sky shots are still greybox and are next on the list.</p>
+</Chapter>
+
+<Chapter n="04 · Physical" title="Music you" light="can play with">
+  <p>Every blind box holds one of four figurines. Set her in a slot on the speaker and her part of "Breaking In" plays on its own: vocals, guitar, bass or drums. Collect the band and the whole song builds. I posed Echo from the animation rig for each figurine and for the table-size statue. Zeke built the RFID speaker, and the team printed and airbrushed every piece.</p>
+  <Row cols="1.3fr 1fr">
+    <Clip src="/video/echo-speaker-demo.mp4" poster={fig1} ratio="1/1" sound autoplay={false} caption="Speaker demo: place a figurine, hear her part" />
+    <Fig img={lineup} alt="The four painted figurines standing on the black speaker, with cards in front" caption="The band on the speaker" mark="drop her on the slot →<br/>hear her part" markAt="bl" ratio="1/1" />
+  </Row>
+  <Row cols="1fr 1fr 1fr 1fr">
+    <Fig img={printWip} alt="Unpainted pink 3D print of the table-size Echo" caption="Table Echo, raw print" ratio="3/4" />
+    <Fig img={printTest} alt="Black test print of the guitarist figurine" caption="Guitarist test print" ratio="3/4" />
+    <Fig img={paintedGuitarist} alt="Painted guitarist figurine" caption="Painted guitarist" ratio="3/4" />
+    <Fig img={paintedDrummer} alt="Painted drummer figurine" caption="Painted drummer" ratio="3/4" />
+  </Row>
+</Chapter>
+
+<Chapter n="05 · Unboxing" title="The" light="blind box">
+  <p>One sealed figure and one collectible card per box. The back of every box has a note from Echo herself. An expert in collectibles told us the chase is the product, so the design leaves room for rare variants later.</p>
+  <Cards caption="One card per box · hover to pull a card" cards={[
+    { img: cardSinger, alt: 'Singer card' },
+    { img: cardGuitarist, alt: 'Guitarist card' },
+    { img: cardBassist, alt: 'Bassist card' },
+    { img: cardDrummer, alt: 'Drummer card' },
+  ]} />
+  <Row cols="1fr 1.6fr">
+    <Fig img={boxBack} alt="The back of a blind box with Echo's handwritten note" caption="Box back: “hey! like what you see?”" ratio="3/4" />
+    <Clip src="/video/echo-unboxing.mp4" poster={unboxFigure} sound autoplay={false} caption="The unboxing, from the final cut" />
+  </Row>
+  <Fig img={packInside} alt="Black marker doodles printed inside the box" caption="Inside the box: Echo's doodles, the same hand as the site's marker notes" ratio="21/9" fit="contain" />
+</Chapter>
+
+<Chapter n="06 · Show design" title="The booth was" light="her apartment">
+  <p>At the ATLAS EXPO we didn't set up a table. We dressed the space as Echo's apartment: a drum kit and amps, a leather couch, a record player, a merch rack with her shirts, the hand-painted banner, the blind-box tower, the money bag and her roller skates. The film ran on a TV in the middle of it. Visitors walked into her world before they knew who she was.</p>
+  <Fig img={boothWide} alt="Wide view of the EXPO booth dressed as Echo's apartment" caption="ATLAS EXPO · Apr 24 2026" num="Fig. 12" ratio="16/9" />
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={boothDrums} alt="Drum kit, amps and art in the booth" caption="Her gear" ratio="4/5" />
+    <Fig img={boothBag} alt="Money bag and roller skates on a rug" caption="Props from the heist" ratio="4/5" />
+    <Fig img={banner} alt="The hand-painted ECHO was here banner above the booth" caption="The banner" ratio="4/5" />
+  </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={visitor} alt="A visitor holding the table-size Echo statue" caption="Visitors kept picking her up" mark="people hugged her" markAt="br" ratio="4/5" />
+    <Fig img={tableEcho} alt="Table-size Echo lounging on a money bag" caption="Table Echo" ratio="4/5" />
+    <Fig img={boxTower} alt="A tower of blue blind boxes" caption="The box tower" ratio="4/5" />
+  </Row>
+</Chapter>
+
+<Chapter n="07 · Notes" title="What the experts" light="said">
+  <p>We pitched Echo to people who make this for a living. The Design Director at Toys for Bob, the studio behind Skylanders, told us the products that last have three things: accessibility, ease of use and one design across every medium. He also told us to establish the rules of the world. A consumer-products veteran pushed us to think about the chase: rarity, ratios and the one you can't find.</p>
+  <p class="soft">Next for Echo: finish the exterior backgrounds, then a rare variant figure.</p>
+</Chapter>

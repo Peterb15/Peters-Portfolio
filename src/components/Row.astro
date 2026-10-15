@@ -1,0 +1,10 @@
+---
+interface Props { cols?: string; align?: 'start' | 'center' | 'end' }
+const { cols = '1fr 1fr', align = 'start' } = Astro.props;
+---
+<div class="row" style={`--cols:${cols};--align:${align}`}><slot /></div>
+<style>
+  .row { display: grid; grid-template-columns: var(--cols); gap: 16px; align-items: var(--align); }
+  .row > :global(*) { min-width: 0; }
+  @media (max-width: 760px) { .row { grid-template-columns: 1fr; } }
+</style>

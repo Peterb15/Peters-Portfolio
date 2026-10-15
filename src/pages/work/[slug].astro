@@ -1,0 +1,125 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Clip from '../../components/Clip.astro';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+  return all.map((p, i) => ({
+    params: { slug: p.id },
+    props: { project: p, index: i, total: all.length, next: all[(i + 1) % all.length] },
+  }));
+}
+
+const { project, index, total, next } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+const pad = (n: number) => String(n).padStart(2, '0');
+const tierLabel = { headliner: 'Headliner', feature: 'Feature', archive: 'Archive' }[d.tier];
+const big = d.tier !== 'archive';
+---
+<Base title={d.title} description={d.tagline} color={d.color} colorInk={d.colorInk} flood={big}>
+  <div slot="head" class:list={['band', { big }]}>
+    <div class="band-row mono">
+      <span>Sheet {pad(index + 1)} / {pad(total)} · {tierLabel}</span>
+      <span>{d.year}</span>
+    </div>
+    <h1>
+      {d.title}
+      {d.handTitle && <span class="hand-title">{d.handTitle}</span>}
+    </h1>
+    <p class="tagline">{d.tagline}</p>
+  </div>
+
+  <article class="case">
+    <div class:list={['hero', { vertical: d.heroVideoVertical }]}>
+      {d.heroVideo ? (
+        d.heroVideoVertical ? (
+          <>
+            <Clip src={d.heroVideo} poster={d.fan.c} ratio="9/16" sound={d.heroHasSound} />
+            <div class="hero-still">
+              <Image src={d.fan.c} alt={`${d.title}`} widths={[600, 1000, 1400]} sizes="(max-width: 760px) 100vw, 55vw" />
+            </div>
+          </>
+        ) : (
+          <Clip src={d.heroVideo} poster={d.fan.c} sound={d.heroHasSound} caption={d.heroHasSound ? 'Animation cut to the song. Turn the sound on.' : undefined} />
+        )
+      ) : (
+        <div class="hero-still solo">
+          <Image src={d.fan.c} alt={d.title} widths={[600, 1000, 1600]} sizes="(max-width: 760px) 100vw, 80vw" loading="eager" />
+        </div>
+      )}
+    </div>
+
+    {d.spec.length > 0 && (
+      <dl class="spec">
+        {d.spec.map((s) => (
+          <div><dt class="mono soft">{s.label}</dt><dd>{s.value}</dd></div>
+        ))}
+      </dl>
+    )}
+
+    <div class="meta">
+      <p><span class="mono soft">Role</span> {d.role}</p>
+      {d.tags.length > 0 && <ul class="tags mono">{d.tags.map((t) => <li>{t}</li>)}</ul>}
+    </div>
+
+    <div class="content">
+      <Content />
+    </div>
+
+    {(d.credits || d.links.length > 0) && (
+      <section class="credits">
+        {d.credits && <p><span class="mono soft">Credits</span><br />{d.credits}</p>}
+        {d.links.length > 0 && (
+          <div class="links">{d.links.map((l) => <a class="btn" href={l.href} target="_blank" rel="noopener"><span>{l.label} ↗</span></a>)}</div>
+        )}
+      </section>
+    )}
+
+    <a class="next" href={`/work/${next.id}`} style={`--n:${next.data.color};--n-ink:${next.data.colorInk}`}>
+      <span class="mono">Next · Sheet {pad(((index + 1) % total) + 1)}</span>
+      <span class="next-title">{next.data.title} →</span>
+    </a>
+  </article>
+</Base>
+
+<style>
+  .band { padding: 18px var(--gutter) 34px; display: flex; flex-direction: column; gap: 14px; }
+  .band-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  h1 { font-size: clamp(3.4rem, 12vw, 10rem); letter-spacing: -.015em; line-height: .8; }
+  .band:not(.big) h1 { font-size: clamp(2.8rem, 8vw, 6rem); }
+  .hand-title { display: inline-block; font-family: var(--font-hand); font-weight: 400; text-transform: none; font-size: .42em; transform: rotate(-4deg); margin-left: .15em; vertical-align: .2em; }
+  .tagline { max-width: 48ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+
+  .case { padding: 28px var(--gutter) 0; display: flex; flex-direction: column; gap: 36px; max-width: 1280px; margin: 0 auto; }
+  .hero.vertical { display: grid; grid-template-columns: minmax(0, .42fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+  .hero-still { border: 1.5px solid var(--ink); overflow: hidden; background: var(--paper-2); }
+  .hero-still :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .hero-still.solo { max-height: 78vh; }
+  @media (max-width: 760px) { .hero.vertical { grid-template-columns: 1fr; } .hero.vertical .hero-still { display: none; } }
+
+  .spec { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); margin: 0; }
+  .spec div { padding: 12px 14px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .spec div:last-child { border-right: 0; }
+  .spec dd { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+
+  .meta { display: flex; flex-wrap: wrap; gap: 14px 30px; align-items: baseline; justify-content: space-between; }
+  .meta p { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; line-height: 1.1; }
+  .meta p .mono { margin-right: 8px; vertical-align: .25em; }
+  .tags { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tags li { border: 1px solid var(--ink); padding: 2px 8px; }
+
+  .content { display: flex; flex-direction: column; gap: 56px; }
+  .content > :global(p) { max-width: 64ch; font-size: 1.12rem; }
+
+  .credits { border-top: 1.5px solid var(--ink); padding-top: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .credits p { max-width: 70ch; }
+  .links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .next { display: flex; flex-direction: column; gap: 8px; text-decoration: none; background: var(--n); color: var(--n-ink); padding: 28px; margin-top: 30px; transition: transform .3s var(--ease); }
+  :global(html.bw) .next { background: var(--ink); color: var(--paper); }
+  .next:hover { transform: translateY(-4px); }
+  .next-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: .9; }
+</style>

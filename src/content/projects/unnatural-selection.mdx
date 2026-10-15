@@ -1,0 +1,39 @@
+---
+title: Unnatural Selection
+order: 3
+tier: feature
+color: '#2f9e44'
+colorInk: '#fbfaf6'
+year: Fall 2024
+role: Hardware Designer · Creative Coder · Fabricator
+tagline: A two-player arcade fighter where you physically spin your creature's head, torso and legs mid-fight to evolve on the fly.
+tags: [Arcade, Custom controllers, Physical computing]
+scrawl: spin the body, change the fight
+fan:
+  b: ../../assets/projects/unnatural-selection/shot1.jpg
+  c: ../../assets/projects/unnatural-selection/hero.jpg
+spec:
+  - { label: Players, value: '2' }
+  - { label: Controllers, value: '2 × 3 drums' }
+  - { label: Sensing, value: 'IR → Teensy' }
+  - { label: Built with, value: '3D print + laser' }
+credits: 'Built with William Balliete and Adam Yoder.'
+links:
+  - { label: Gameplay demo, href: 'https://youtu.be/aMWo43-s8-Q' }
+  - { label: Technical breakdown, href: 'https://www.youtube.com/watch?v=l0jT3rYz4l0' }
+  - { label: GitHub, href: 'https://github.com/btx4/unnatural_selection' }
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import shot1 from '../../assets/projects/unnatural-selection/shot1.jpg';
+
+<Chapter n="01 · Play" title="Evolution" light="you do with your hands">
+  <p>What if evolution wasn't something that happened to you, but something you physically did? Each player gets a controller with three spinning drums: head, torso and legs. Spin one mid-fight and your creature's body swaps on screen, along with its abilities.</p>
+  <ul>
+    <li>Co-designed the spin-to-evolve interaction</li>
+    <li>Engineered the sensing: IR sensors inside multicolored 3D-printed drums read each rotation</li>
+    <li>Wrote the Teensy firmware that turns drum positions into game input</li>
+    <li>Fabricated the controllers: cardboard → wood → printed cores with laser-cut panels</li>
+  </ul>
+  <Fig img={shot1} alt="Unnatural Selection controllers and gameplay" caption="Controllers and gameplay" ratio="16/9" />
+</Chapter>

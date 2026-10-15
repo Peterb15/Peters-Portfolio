@@ -1,0 +1,151 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  color?: string;
+  colorInk?: string;
+  /** flood the header area with the project color */
+  flood?: boolean;
+}
+const {
+  title,
+  description = 'Peter Burke: animation, fabrication and show design. Built worlds, told stories.',
+  color = '#0b0b0c',
+  colorInk = '#fbfaf6',
+  flood = false,
+} = Astro.props;
+const workCount = (await getCollection('projects')).length;
+const pageTitle = title ? `${title} | Peter Burke` : 'Peter Burke | Animation, Fabrication, Show Design';
+const email = 'burke.pete15@gmail.com';
+---
+<!doctype html>
+<html lang="en" style={`--p:${color};--p-ink:${colorInk}`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content={color} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      try { if (localStorage.getItem('pb-bw') === '1') document.documentElement.classList.add('bw'); } catch (e) {}
+    </script>
+  </head>
+  <body class:list={[{ flood }]}>
+    <header class="site-head">
+      <nav class="nav" aria-label="Main">
+        <div class="l">
+          <span class="hide-sm">Los Angeles, CA</span>
+          <span class="hide-sm" aria-hidden="true">//</span>
+          <span class="hide-sm clock" data-clock>--:--</span>
+          <a href="/#work">Work<sup>({String(workCount).padStart(2, '0')})</sup></a>
+        </div>
+        <a class="logo" href="/" aria-label="Peter Burke, home">Peter<br />Burke<sup>®</sup></a>
+        <div class="r">
+          <button type="button" class="bw-toggle" data-bw aria-pressed="false" title="Black and white mode">◐ B&amp;W</button>
+          <a href="/about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <slot name="head" />
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-foot" id="contact">
+      <div class="cta">
+        <p class="mono">Open for freelance + full-time · themed entertainment · animation</p>
+        <h2>Let's build <span class="light">something</span> <span class="hand">people can walk into.</span></h2>
+        <div class="contact-row">
+          <span class="email" data-email>{email}</span>
+          <button type="button" class="btn" data-copy={email}><span>Copy email</span></button>
+          <a class="btn" href="https://linkedin.com/in/PeterBurke15" target="_blank" rel="noopener"><span>LinkedIn</span></a>
+          <a class="btn" href="https://github.com/Peterb15" target="_blank" rel="noopener"><span>GitHub</span></a>
+          <a class="btn" href="/ResumeFinal2025.pdf" target="_blank" rel="noopener"><span>Resume</span></a>
+        </div>
+      </div>
+      <div class="ruler"></div>
+      <div class="foot-row mono">
+        <span>©2026 Peter Burke</span>
+        <span>Los Angeles, CA</span>
+        <span>Design + build by P.B.</span>
+      </div>
+    </footer>
+
+    <script>
+      // LA clock
+      const clock = document.querySelector<HTMLElement>('[data-clock]');
+      const tick = () => {
+        if (!clock) return;
+        try {
+          clock.textContent = new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Los_Angeles' }).format(new Date());
+        } catch {}
+      };
+      tick();
+      setInterval(tick, 30000);
+
+      // B&W mode, remembered per viewer
+      const bw = document.querySelector<HTMLButtonElement>('[data-bw]');
+      const sync = () => bw?.setAttribute('aria-pressed', String(document.documentElement.classList.contains('bw')));
+      sync();
+      bw?.addEventListener('click', () => {
+        const on = document.documentElement.classList.toggle('bw');
+        try { localStorage.setItem('pb-bw', on ? '1' : '0'); } catch {}
+        sync();
+        document.dispatchEvent(new CustomEvent('pb:bw', { detail: on }));
+      });
+
+      // copy email
+      document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => {
+        b.addEventListener('click', async () => {
+          const label = b.querySelector('span');
+          try {
+            await navigator.clipboard.writeText(b.dataset.copy || '');
+            if (label) label.textContent = 'Copied';
+          } catch {
+            const el = document.querySelector('[data-email]');
+            if (el) { const r = document.createRange(); r.selectNodeContents(el); getSelection()?.removeAllRanges(); getSelection()?.addRange(r); }
+            if (label) label.textContent = 'Selected, press ⌘C';
+          }
+          setTimeout(() => { if (label) label.textContent = 'Copy email'; }, 2200);
+        });
+      });
+    </script>
+
+    <style>
+      .site-head { transition: background .5s, color .5s; }
+      body.flood .site-head { background: var(--p); color: var(--p-ink); }
+      .nav {
+        display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px;
+        padding: 22px var(--gutter) 10px; font-family: var(--font-display); text-transform: uppercase; font-size: 1.2rem;
+      }
+      .nav a { text-decoration: none; }
+      .nav a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+      .l, .r { display: flex; gap: clamp(12px, 2.6vw, 40px); align-items: center; flex-wrap: wrap; }
+      .r { justify-content: flex-end; }
+      sup { font-family: var(--font-mono); font-size: .58rem; }
+      .logo { font-weight: 900; font-style: italic; font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: .78; text-align: center; letter-spacing: -.01em; }
+      .logo sup { font-style: normal; }
+      .clock { font-variant-numeric: tabular-nums; }
+      .bw-toggle { background: none; border: 1px solid currentColor; color: inherit; font: inherit; font-size: 1rem; padding: 1px 8px; cursor: pointer; text-transform: uppercase; }
+      .bw-toggle[aria-pressed='true'] { border-width: 2px; font-weight: 900; }
+      @media (max-width: 760px) { .hide-sm { display: none; } .nav { font-size: 1.05rem; } }
+
+      .site-foot { padding: 96px var(--gutter) 28px; display: flex; flex-direction: column; gap: 28px; }
+      .cta { display: flex; flex-direction: column; gap: 18px; }
+      .cta h2 { font-size: clamp(3rem, 9vw, 7.4rem); }
+      .cta h2 .hand { display: block; text-transform: none; font-weight: 400; font-size: .42em; line-height: 1.1; color: var(--p); transform: rotate(-2deg); margin-top: .2em; }
+      html.bw .cta h2 .hand { color: var(--ink); }
+      .contact-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+      .email { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.4rem, 3vw, 2rem); text-transform: uppercase; margin-right: 8px; overflow-wrap: anywhere; }
+      .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    </style>
+  </body>
+</html>

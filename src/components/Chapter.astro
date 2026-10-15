@@ -1,0 +1,22 @@
+---
+interface Props { n: string; title: string; light?: string }
+const { n, title, light } = Astro.props;
+---
+<section class="chapter">
+  <div class="head">
+    <span class="mono soft">{n}</span>
+    <h2>{title} {light && <span class="light">{light}</span>}</h2>
+  </div>
+  <div class="body"><slot /></div>
+</section>
+<style>
+  .chapter { display: flex; flex-direction: column; gap: 22px; padding-top: 30px; border-top: 1.5px solid var(--ink); }
+  .head { display: flex; flex-direction: column; gap: 10px; }
+  h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); }
+  .body { display: flex; flex-direction: column; gap: 22px; }
+  .body > :global(p) { max-width: 64ch; font-size: 1.08rem; }
+  .body > :global(ul) { max-width: 64ch; margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+  .body :global(blockquote) { margin: 0; max-width: 40ch; font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(1.6rem, 3.6vw, 2.6rem); line-height: .95; border-left: 6px solid var(--p); padding-left: 18px; }
+  .body :global(blockquote p) { max-width: none; }
+  html.bw .body :global(blockquote) { border-color: var(--ink); }
+</style>

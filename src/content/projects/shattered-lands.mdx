@@ -28,6 +28,7 @@ import Chapter from '../../components/Chapter.astro';
 import Fig from '../../components/Fig.astro';
 import Row from '../../components/Row.astro';
 import Clip from '../../components/Clip.astro';
+import WritingList from '../../components/WritingList.astro';
 
 import map from '../../assets/projects/shattered-lands/map-pangros.jpg';
 import artAtlas from '../../assets/projects/shattered-lands/art-atlas.jpg';
@@ -118,4 +119,9 @@ import tabletTop from '../../assets/projects/shattered-lands/secrets-tablet-top.
     <Fig img={tablet} alt="3D render of a carved stone tablet" caption="The stone tablet, modeled in Adobe Dimension" ratio="4/3" fit="contain" />
     <Fig img={tabletTop} alt="Top view of the stone tablet" caption="Copy 1 of 1 · April 2024" ratio="4/3" fit="contain" />
   </Row>
+</Chapter>
+
+<Chapter n="07 · Writing" title="The world," light="on paper">
+  <p>Pangros existed in writing before it existed on a table: a world bible of islands, peoples, gods and factions, plus pieces written from inside the world. The history book and the artifact report tell two different stories about the same war, and that disagreement is the point.</p>
+  <WritingList ids={['shattered', 'report-1047', 'sorellia']} />
 </Chapter>

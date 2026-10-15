@@ -33,3 +33,8 @@ Drop one good image per kept project in `archive-media/`, named after the projec
 - One plain background (paper sweep or a blank wall) and soft window light
 - Shoot wide, so the site can crop
 - Phone is fine; keep the original resolution and don't send screenshots of photos
+
+## Writing (placeholders to fill)
+- [ ] **Sorellia** short story (Pangros): currently "Coming soon" in `src/data/writing.ts`. Plan: excerpt only
+- [ ] **The Cthulhu Journals** novel: currently "Coming soon". Plan: excerpt only
+Drop the files in `content/writing/`.

@@ -25,6 +25,7 @@ import Fig from '../../components/Fig.astro';
 import Row from '../../components/Row.astro';
 import Clip from '../../components/Clip.astro';
 import Play from '../../components/Play.astro';
+import WritingList from '../../components/WritingList.astro';
 
 import f0 from '../../assets/projects/arnold-exe/frame-0.jpg';
 import f10 from '../../assets/projects/arnold-exe/frame-10.jpg';
@@ -52,4 +53,9 @@ import f8 from '../../assets/projects/arnold-exe/frame-8.jpg';
     <Fig img={f8} alt="Arnold asks where am I, the voice says you are in my lab" caption="“Where am I?”" ratio="16/9" />
   </Row>
   <Clip src="/video/arnold-playthrough.mp4" poster={f0} sound autoplay={false} caption="Full playthrough, for anyone who'd rather watch" />
+</Chapter>
+
+<Chapter n="03 · Source" title="It started" light="as a story">
+  <p>ARNOLD.EXE is the first chapter of a short story I wrote, "Awake." The game plays out the day Arnold is born in Teddy's lab. The story picks up weeks after he escapes, still unable to sleep.</p>
+  <WritingList ids={['awake']} />
 </Chapter>

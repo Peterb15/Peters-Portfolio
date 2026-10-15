@@ -1,0 +1,43 @@
+---
+import { writing, byId, type Piece } from '../data/writing';
+interface Props { ids?: string[]; showProject?: boolean }
+const { ids, showProject = false } = Astro.props;
+const items: Piece[] = ids ? byId(ids) : writing;
+const fmt = (n?: number) => (n ? `${n.toLocaleString('en-US')} words` : '');
+---
+<ol class="pieces">
+  {items.map((w) => (
+    <li class:list={['piece', w.status]}>
+      <div class="meta mono">
+        <span>{w.kind}</span>
+        {w.words && <span>{fmt(w.words)}</span>}
+        {showProject && w.project && <a href={`/work/${w.project.slug}`}>↳ {w.project.name}</a>}
+      </div>
+      <h3>{w.title}</h3>
+      <p class="blurb">{w.blurb}</p>
+      {w.excerpt && <blockquote>{w.excerpt}</blockquote>}
+      <div class="actions">
+        {w.status === 'full' && w.pdf && <a class="btn" href={w.pdf} target="_blank" rel="noopener"><span>Read it ↗</span></a>}
+        {w.status === 'excerpt' && <span class="mono soft">Excerpt only · full manuscript on request</span>}
+        {w.status === 'coming' && <span class="tag mono">Coming soon</span>}
+      </div>
+    </li>
+  ))}
+</ol>
+<style>
+  .pieces { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 1.5px solid var(--ink); }
+  .piece { padding: 20px 22px 24px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  @media (min-width: 700px) { .piece { padding-left: 22px; border-left: 1px solid var(--rule); } }
+  .meta { display: flex; gap: 14px; flex-wrap: wrap; color: var(--ink-soft); }
+  .meta a { color: var(--ink); }
+  h3 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+  .blurb { max-width: 56ch; }
+  blockquote {
+    margin: 0; max-width: 56ch; font-family: var(--font-body); font-style: italic; font-size: 1.02rem; line-height: 1.55;
+    border-left: 4px solid var(--p); padding-left: 14px; color: var(--ink-soft);
+  }
+  :global(html.bw) blockquote { border-color: var(--ink); }
+  .actions { margin-top: auto; padding-top: 4px; }
+  .tag { border: 1px dashed var(--ink-soft); padding: 3px 8px; color: var(--ink-soft); }
+  .coming h3 { color: var(--ink-soft); }
+</style>

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import WritingList from '../components/WritingList.astro';
+import { writing } from '../data/writing';
+const total = writing.reduce((n, w) => n + (w.words ?? 0), 0);
+---
+<Base title="Writing" description="Fiction and in-world writing by Peter Burke, much of it the source material behind his projects.">
+  <section class="writing">
+    <div class="head">
+      <span class="mono soft">Writing · {writing.length} pieces · {Math.round(total / 1000)}k+ words</span>
+      <h1>Told <span class="light">stories.</span></h1>
+      <p>Most of my projects start as writing. ARNOLD.EXE began as a short story. Pangros has its own history books and artifacts. The Cthulhu Journals were a novel before they were a comic. This is the writing behind the work, linked back to the projects it became.</p>
+    </div>
+    <WritingList showProject />
+  </section>
+</Base>
+<style>
+  .writing { padding: 40px var(--gutter) 0; max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+  .head { display: flex; flex-direction: column; gap: 14px; }
+  h1 { font-size: clamp(3.4rem, 10vw, 8rem); }
+  .head p { max-width: 62ch; font-size: 1.12rem; }
+</style>

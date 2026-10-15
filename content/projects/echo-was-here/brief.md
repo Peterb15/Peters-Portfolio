@@ -66,7 +66,7 @@ An original IP built from scratch as a senior capstone: Echo, a 22-year-old punk
 - Raphaelle Lepere: character design, modeling, speaker enclosure, packaging, 2D face sprites, **wrote and produced the song "Breaking In"**
 - Zeke Thoreson: built the RFID speaker circuit, 3D printing, airbrushing, packaging
 - Faculty advisor: Annie Margaret
-- **CHECK:** Should "Playing in Puddles" (the brand on the site and boxes) appear?
+- Playing in Puddles = the capstone team's brand name, now inactive. Credited in one line only. Peter is the only team member continuing Echo.
 
 ## Honest status
 - The animation is complete at 2:07, with Echo fully shaded. The EXPO TV shows shaded bank interiors, because the Heist Pack is pre-shaded.

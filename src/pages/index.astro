@@ -104,7 +104,7 @@ const slides = projects.map((p) => ({
       if (!v) return;
       if (k === i) {
         if (!v.src) v.src = v.dataset.src;
-        v.play().then(() => v.classList.add('playing')).catch(() => {});
+        v.play().catch(() => {});
       } else { v.pause(); }
     });
   };
@@ -142,7 +142,15 @@ const slides = projects.map((p) => ({
   });
   window.addEventListener('resize', place);
   if (document.fonts) document.fonts.ready.then(place);
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) playActive();
+  // reveal a video only once it is actually playing; if the browser blocked autoplay, retry on the first interaction
+  slideEls.forEach((s) => s.querySelector('video')?.addEventListener('playing', (e) => e.target.classList.add('playing')));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    playActive();
+    const retry = () => playActive();
+    ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((t) => window.addEventListener(t, retry, { once: true, passive: true }));
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) playActive(); });
+  }
   place();
 </script>
 

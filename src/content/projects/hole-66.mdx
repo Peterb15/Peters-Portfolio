@@ -1,6 +1,7 @@
 ---
 title: Hole 66
 order: 3
+font: hole66
 tier: feature
 color: '#f5c400'
 colorInk: '#0b0b0c'
@@ -18,18 +19,22 @@ spec:
   - { label: Event, value: 'Whaaat!? Fest 2025' }
   - { label: Obstacles, value: '3 + highway' }
   - { label: Vehicles, value: '2 custom trucks' }
-  - { label: Prototype, value: 'Cardboard → wood' }
-credits: 'Designed and built by Peter Burke, with help from Paul Bailey. Made in the Whaaat!? Studio Lab at CU Boulder for the Whaaat!? Festival 2025 mini-golf course.'
+  - { label: Prototype, value: 'Cardboard → mat board' }
+credits: 'Designed and built by Peter Burke, with help from Paul Bailey. Prototyped with Vani. Made in the Whaaat!? Studio Lab at CU Boulder for the Whaaat!? Festival 2025 mini-golf course.'
 ---
 import Chapter from '../../components/Chapter.astro';
 import Fig from '../../components/Fig.astro';
 import Row from '../../components/Row.astro';
 import Clip from '../../components/Clip.astro';
-import Play from '../../components/Play.astro';
 
 import notes from '../../assets/projects/hole-66/notes-sketch.jpg';
 import trackSketch from '../../assets/projects/hole-66/track-sketch.jpg';
 import protoCardboard from '../../assets/projects/hole-66/proto-cardboard.jpg';
+import protoHallway from '../../assets/projects/hole-66/proto-hallway.jpg';
+import protoRampCardboard from '../../assets/projects/hole-66/proto-ramp-cardboard.jpg';
+import protoRampHole from '../../assets/projects/hole-66/proto-ramp-hole.jpg';
+import protoRampBoard from '../../assets/projects/hole-66/proto-ramp-board.jpg';
+import protoPlan from '../../assets/projects/hole-66/proto-layout-plan.jpg';
 import protoCurve from '../../assets/projects/hole-66/proto-curve.jpg';
 import protoTurf from '../../assets/projects/hole-66/proto-turf.jpg';
 import peterBuild from '../../assets/projects/hole-66/peter-build.jpg';
@@ -54,12 +59,18 @@ import kids from '../../assets/projects/hole-66/festival-kids.jpg';
   </Row>
 </Chapter>
 
-<Chapter n="02 · Prototype" title="Cardboard" light="first">
-  <p>I wrote a spec with three obstacles (a ramp, a second ramp with a sand trap, and a tilt section that takes precision) and estimated the lumber at 91 square feet: three 4×8 sheets. Before buying any of it, I built the whole thing in interlocking cardboard so I could drive it, crash it and change it.</p>
+<Chapter n="02 · Prototype" title="Rough" light="first">
+  <p>I wrote a spec with three obstacles (a ramp, a second ramp with a sand trap, and a tilt section that takes precision) and estimated the lumber at 91 square feet. Before committing to any of it, Vani and I threw together a rough obstacle course in the hallway out of cardboard, scrap wood and tape, and drove it until we knew which obstacles were fun and which just broke the ball's balance.</p>
   <Row cols="1fr 1fr 1fr">
-    <Fig img={protoCardboard} alt="Interlocking cardboard track pieces with wooden blocks" caption="Interlocking cardboard track" ratio="3/4" />
-    <Fig img={protoCurve} alt="Curved cardboard track section on the floor" caption="The curve" ratio="3/4" />
-    <Fig img={protoTurf} alt="Turf and sand-trap shapes laid on cardboard" caption="Turf and sand traps" ratio="3/4" />
+    <Fig img={protoHallway} alt="Rough cardboard and wood obstacle course laid out down a hallway" caption="The hallway course" ratio="3/4" />
+    <Fig img={protoRampCardboard} alt="Cardboard ramp held together with orange tape" caption="Cardboard ramp" ratio="3/4" />
+    <Fig img={protoRampBoard} alt="Wooden plank ramp with turf at the base" caption="Plank ramp test" ratio="3/4" />
+  </Row>
+  <p>From there the course moved to laser-cut pieces. For the final version we switched to mat board: light enough to move and set up, and cheap enough to cut again when something didn't work.</p>
+  <Row cols="1.4fr 1fr 1fr">
+    <Fig img={protoPlan} alt="Photo of the space with the course layout drawn over it in red" caption="Planning the course in the space" ratio="4/3" />
+    <Fig img={protoCardboard} alt="Interlocking laser-cut mat board track pieces" caption="Laser-cut mat board pieces" ratio="3/4" />
+    <Fig img={protoCurve} alt="Curved interlocking track section on the floor" caption="The curve" ratio="3/4" />
   </Row>
 </Chapter>
 
@@ -82,18 +93,14 @@ import kids from '../../assets/projects/hole-66/festival-kids.jpg';
 </Chapter>
 
 <Chapter n="04 · Festival" title="Not how" light="I intended">
-  <p>The rules sign told players: left stick forward and back, right stick turns. Work over the barriers, take it easy on rough terrain, count a stroke every time the ball falls off, then rev it up on the highway and slam into the barrier to finish. The kids at the festival had other ideas.</p>
+  <p>The rules sign told players: left stick forward and back, right stick turns. Work over the barriers, take it easy on rough terrain, count a stroke every time the ball falls off, then rev it up on the highway and slam into the barrier to finish. Here's a clean run of the whole hole.</p>
+  <Clip src="/video/hole66-full-run.mp4" poster={courseWide} autoplay={false} caption="A full run, tee to cup" />
   <Row cols="minmax(0,.55fr) 1fr">
-    <Clip src="/video/hole66-play.mp4" poster={kids} ratio="9/16" sound autoplay={false} caption="Festival day" />
+    <Clip src="/video/hole66-play.mp4" poster={kids} ratio="9/16" sound autoplay={false} caption="Festival day. The kids had other ideas" />
     <div style="display:flex;flex-direction:column;gap:16px">
       <Fig img={rules} alt="Handwritten rules sign for the hole" caption="The rules (mostly ignored)" ratio="4/3" fit="contain" />
-      <Clip src="/video/hole66-ramming.mp4" ratio="16/9" sound autoplay={false} caption="Ramming, the fun part" />
+      <Fig img={peterBuild} alt="Peter giving a thumbs up next to the build" caption="Me, mid-build" ratio="4/3" />
     </div>
   </Row>
-  <Fig img={peterBuild} alt="Peter giving a thumbs up next to the build" caption="Me, mid-build" ratio="16/9" />
 </Chapter>
 
-<Chapter n="05 · Bonus" title="The festival" light="personality test">
-  <p>For the same festival I wrote a short interactive "personality test" in Ink that sorts festival-goers into groups based on how they answer. And whether they hold the door. Play it below.</p>
-  <Play src="/play/personality-test/index.html" title="the test" ratio="4/3" note="Written in Ink · runs in your browser" />
-</Chapter>

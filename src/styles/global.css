@@ -9,6 +9,12 @@
 @import '@fontsource/spline-sans-mono/400.css';
 @import '@fontsource/spline-sans-mono/500.css';
 @import '@fontsource/permanent-marker/400.css';
+@import '@fontsource/rubik-wet-paint/400.css';
+@import '@fontsource/pirata-one/400.css';
+@import '@fontsource/overpass/900.css';
+@import '@fontsource/alfa-slab-one/400.css';
+@import '@fontsource/silkscreen/400.css';
+@import '@fontsource/vt323/400.css';
 
 :root {
   color-scheme: light;
@@ -47,6 +53,7 @@ h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-h
 .soft { color: var(--ink-soft); }
 .light { font-weight: 300; }
 .hand { font-family: var(--font-hand); }
+.pf { font-family: var(--pf, var(--font-display)); font-weight: var(--pf-w, 900); text-transform: var(--pf-tt, uppercase); font-size: calc(1em * var(--pf-scale, 1)); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ruler (A's dimension lines / Nite Riot slider) */

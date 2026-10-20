@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Clip from '../../components/Clip.astro';
+import { fontVars } from '../../data/fonts';
 
 export async function getStaticPaths() {
   const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
@@ -25,7 +26,7 @@ const big = d.tier !== 'archive';
       <span>Sheet {pad(index + 1)} / {pad(total)} · {tierLabel}</span>
       <span>{d.year}</span>
     </div>
-    <h1>
+    <h1 class="pf" style={fontVars(d.font)}>
       {d.title}
       {d.handTitle && <span class="hand-title">{d.handTitle}</span>}
     </h1>
@@ -80,7 +81,7 @@ const big = d.tier !== 'archive';
 
     <a class="next" href={`/work/${next.id}`} style={`--n:${next.data.color};--n-ink:${next.data.colorInk}`}>
       <span class="mono">Next · Sheet {pad(((index + 1) % total) + 1)}</span>
-      <span class="next-title">{next.data.title} →</span>
+      <span class="next-title pf" style={fontVars(next.data.font)}>{next.data.title} →</span>
     </a>
   </article>
 </Base>
@@ -90,6 +91,9 @@ const big = d.tier !== 'archive';
   .band-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   h1 { font-size: clamp(3.4rem, 12vw, 10rem); letter-spacing: -.015em; line-height: .8; }
   .band:not(.big) h1 { font-size: clamp(2.8rem, 8vw, 6rem); }
+  h1.pf { padding-bottom: .12em; font-family: var(--pf, var(--font-display)); font-weight: var(--pf-w, 900); text-transform: var(--pf-tt, uppercase); font-size: calc(clamp(3.4rem, 12vw, 10rem) * var(--pf-scale, 1)); }
+  .band:not(.big) h1.pf { font-size: clamp(2.8rem, 8vw, 6rem); }
+  .next-title.pf { font-family: var(--pf, var(--font-display)); font-weight: var(--pf-w, 900); text-transform: var(--pf-tt, uppercase); font-size: calc(clamp(2.2rem, 6vw, 4.6rem) * var(--pf-scale, 1)); }
   .hand-title { display: inline-block; font-family: var(--font-hand); font-weight: 400; text-transform: none; font-size: .42em; transform: rotate(-4deg); margin-left: .15em; vertical-align: .2em; }
   .tagline { max-width: 48ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
 

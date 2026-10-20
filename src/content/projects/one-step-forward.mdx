@@ -1,6 +1,7 @@
 ---
 title: One Step Forward
 order: 4
+font: robot
 tier: feature
 color: '#a8661f'
 colorInk: '#fbfaf6'
@@ -19,7 +20,7 @@ spec:
   - { label: Renderer, value: 'Cycles' }
   - { label: Rig, value: 'IK legs · FK arms' }
   - { label: Physical, value: 'Printed + painted' }
-credits: 'Final project for Computer Animation and ART 1010, CU Boulder, Spring 2025.'
+credits: 'Everything except the music was made from scratch by Peter Burke: modeling, rigging, animation, materials, lighting, editing and the physical figure. Final project for Computer Animation and ART 1010, CU Boulder, Spring 2025.'
 ---
 import Chapter from '../../components/Chapter.astro';
 import Fig from '../../components/Fig.astro';
@@ -36,15 +37,20 @@ import f7 from '../../assets/projects/one-step-forward/film-7.jpg';
 import f9 from '../../assets/projects/one-step-forward/film-9.jpg';
 import f10 from '../../assets/projects/one-step-forward/film-10.jpg';
 import f11 from '../../assets/projects/one-step-forward/film-11.jpg';
-import ship from '../../assets/projects/one-step-forward/ship-in-sea.jpg';
+import archWalk from '../../assets/projects/one-step-forward/film-arch-walk.jpg';
+import robotWall from '../../assets/projects/one-step-forward/film-robot-wall.jpg';
+import robotDoor from '../../assets/projects/one-step-forward/film-robot-door.jpg';
+import pedal from '../../assets/projects/one-step-forward/lightning-bug-lit.jpg';
+import sculpt from '../../assets/projects/one-step-forward/sculpt-aaargh.jpg';
+import ocean from '../../assets/projects/one-step-forward/midterm-ocean.jpg';
 
 <Chapter n="01 · Film" title="One step" light="forward">
   <p>A worn-down robot wanders the outskirts of a ruined city and reaches a sealed door. It triggers a time-rewinding ability, glitches the barrier backward and steps through. The piece is about memory, decay and forgotten motion, told entirely through how the robot moves.</p>
   <Clip src="/video/robot-film.mp4" poster={f10} sound autoplay={false} caption="The full short · sound on" />
   <Row cols="1fr 1fr 1fr">
-    <Fig img={f4} alt="Wide shot of the ruined city outskirts" caption="The outskirts" ratio="16/9" />
-    <Fig img={f6} alt="The robot standing by the stone wall" caption="Approach" ratio="16/9" />
-    <Fig img={f9} alt="The door being rewound open" caption="The rewind" ratio="16/9" />
+    <Fig img={archWalk} alt="The robot walking out through a stone arch" caption="Through the arch" ratio="16/9" />
+    <Fig img={robotWall} alt="The robot standing by the gear wall" caption="At the wall" ratio="16/9" />
+    <Fig img={robotDoor} alt="The robot beside the toppled slab as the rewind begins" caption="The rewind" ratio="16/9" />
   </Row>
 </Chapter>
 
@@ -56,7 +62,6 @@ import ship from '../../assets/projects/one-step-forward/ship-in-sea.jpg';
     <li>Scattered rubble with Geometry Nodes, weight-painted to keep the path clear</li>
     <li>Procedural metal, rust and stone materials. HDRI plus area lights, rendered in Cycles, cut in Premiere</li>
   </ul>
-  <p>The plan was two scenes. Halfway through I cut to one so the approach and the rewind could get real polish. That's the same call I made on Echo a year later.</p>
   <Row cols="1fr 1fr">
     <Fig img={poster} alt="Concept board for the steampunk rewind robot" caption="Concept board" ratio="16/10" fit="contain" />
     <Fig img={titleCard} alt="One Step Forward title card with the robot and a clock" caption="Title card" ratio="16/10" fit="contain" />
@@ -71,6 +76,10 @@ import ship from '../../assets/projects/one-step-forward/ship-in-sea.jpg';
   </Row>
 </Chapter>
 
-<Chapter n="04 · Also" title="Other" light="Blender work">
-  <Fig img={ship} alt="A sailing ship riding a stormy ocean simulation" caption="Ship in a storm · ocean simulation study" ratio="21/9" />
+<Chapter n="04 · Also" title="More" light="Blender work">
+  <Clip src="/video/anim-midterm.mp4" poster={ocean} caption="Computer Animation midterm: ocean simulation, rigid bodies and a shader-driven pillar" />
+  <Row cols="1.4fr 1fr">
+    <Fig img={pedal} alt="Product render of the Lightning Bug guitar effects pedal with glowing knobs" caption="Lightning Bug: product render of a guitar pedal" ratio="16/9" />
+    <Fig img={sculpt} alt="Grey clay sculpt of a horned creature" caption="Creature sculpt" ratio="16/9" fit="contain" />
+  </Row>
 </Chapter>

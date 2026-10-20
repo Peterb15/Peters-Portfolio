@@ -19,6 +19,8 @@ const projects = defineCollection({
       tagline: z.string(),
       tags: z.array(z.string()).default([]),
       scrawl: z.string().optional(),
+      // per-project display face (see src/data/fonts.ts)
+      font: z.enum(['echo', 'sl', 'hole66', 'robot', 'us', 'arnold']).optional(),
       handTitle: z.string().optional(),
       fan: z.object({
         a: image().optional(),

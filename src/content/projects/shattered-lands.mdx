@@ -2,24 +2,25 @@
 title: The Shattered Lands
 short: The Shattered Lands
 order: 2
+font: sl
 tier: headliner
 color: '#6a1fb8'
 colorInk: '#fbfaf6'
 year: 2023 – now · in post
-role: Showrunner · Dungeon Master · Set Designer
+role: Creative Director · Showrunner · Dungeon Master · Set Designer
 tagline: A D&D actual-play series set in Pangros, a world of broken islands around a cyclone that never stops. I built the world, ran the table, designed the sets and led the crew that filmed it.
 tags: [Worldbuilding, Set design, Production, Actual play]
 scrawl: 25 people, 1 world
 fan:
-  a: ../../assets/projects/shattered-lands/ship-leviathan.jpg
+  a: ../../assets/projects/shattered-lands/lb-tower.jpg
   b: ../../assets/projects/shattered-lands/mini-atlas.jpg
-  c: ../../assets/projects/shattered-lands/cast-at-set.jpg
-heroVideo: /video/sl-hero.mp4
+  c: ../../assets/projects/shattered-lands/lb-city-wide.jpg
+heroVideo: /video/sl-last-bastion.mp4
 heroVideoVertical: true
 spec:
-  - { label: Sessions filmed, value: '8 + solo' }
-  - { label: Footage, value: '~15 hrs' }
+  - { label: Sessions filmed, value: '8+' }
   - { label: Crew at peak, value: '25 · 6 depts' }
+  - { label: Battle sets, value: '3 built + 1' }
   - { label: Cameras, value: '3–4 + boom' }
   - { label: Score, value: '8 themes' }
 credits: 'A Players Win Ties production. Sets designed by Peter Burke, built by the Players Win Ties crew. DM screen by Peter Burke and Moe Collins. Minis painted by Mariah Ruff. Character art by AJ Jelekov. Score by Kaeden Tilak. Players: Jacob Monroe, Mariah Ruff, Avery Krier, Rowan Wileke, Kaeden Tilak. Editing: Kaden Geier. Writing: William Tuck, Jason Pasquale. Film crew: Moe Collins, Morgan Burke, William Tuck. Operations: Jacob Monroe.'
@@ -30,7 +31,7 @@ import Row from '../../components/Row.astro';
 import Clip from '../../components/Clip.astro';
 import WritingList from '../../components/WritingList.astro';
 
-import map from '../../assets/projects/shattered-lands/map-pangros.jpg';
+import map from '../../assets/projects/shattered-lands/map-pangros-moe.jpg';
 import artAtlas from '../../assets/projects/shattered-lands/art-atlas.jpg';
 import artIlvana from '../../assets/projects/shattered-lands/art-ilvana.jpg';
 import artMortimer from '../../assets/projects/shattered-lands/art-mortimer.jpg';
@@ -39,25 +40,40 @@ import artSalu from '../../assets/projects/shattered-lands/art-salu.jpg';
 import statAtlas from '../../assets/projects/shattered-lands/statcard-atlas.jpg';
 import statMortimer from '../../assets/projects/shattered-lands/statcard-mortimer.jpg';
 import cast from '../../assets/projects/shattered-lands/cast-at-set.jpg';
-import dmScreen from '../../assets/projects/shattered-lands/dm-behind-screen.jpg';
-import overhead from '../../assets/projects/shattered-lands/overhead-wide.jpg';
-import overheadSea from '../../assets/projects/shattered-lands/overhead-sea.jpg';
-import rig from '../../assets/projects/shattered-lands/camera-rig.jpg';
 import empty from '../../assets/projects/shattered-lands/set-empty.jpg';
-import leviathan from '../../assets/projects/shattered-lands/ship-leviathan.jpg';
-import deck from '../../assets/projects/shattered-lands/ship-deck.jpg';
+import tableBuild from '../../assets/projects/shattered-lands/table-build.jpg';
+import overhead from '../../assets/projects/shattered-lands/overhead-wide.jpg';
+import dmScreen from '../../assets/projects/shattered-lands/dm-behind-screen.jpg';
+import rig from '../../assets/projects/shattered-lands/camera-rig.jpg';
+import phoneRig from '../../assets/projects/shattered-lands/filming-phone-rig.jpg';
+import lbCity from '../../assets/projects/shattered-lands/lb-city-wide.jpg';
+import lbWall from '../../assets/projects/shattered-lands/lb-city-wall.jpg';
+import lbTower from '../../assets/projects/shattered-lands/lb-tower.jpg';
+import lbTavern from '../../assets/projects/shattered-lands/lb-tavern.jpg';
+import lbYellow from '../../assets/projects/shattered-lands/lb-yellow-tower.jpg';
+import lbTop from '../../assets/projects/shattered-lands/lb-topdown-lit.jpg';
+import lbRed from '../../assets/projects/shattered-lands/lb-interior-red.jpg';
+import lbMinis from '../../assets/projects/shattered-lands/lb-interior-minis.jpg';
 import seaWide from '../../assets/projects/shattered-lands/ship-sea-wide.jpg';
+import leviathan from '../../assets/projects/shattered-lands/ship-leviathan.jpg';
+import masts from '../../assets/projects/shattered-lands/ship-masts.jpg';
+import desert from '../../assets/projects/shattered-lands/sl-set-desert.jpg';
 import miniAtlas from '../../assets/projects/shattered-lands/mini-atlas.jpg';
 import miniMortimer from '../../assets/projects/shattered-lands/mini-mortimer.jpg';
 import miniParty from '../../assets/projects/shattered-lands/mini-party.jpg';
-import miniCultists from '../../assets/projects/shattered-lands/mini-cultists.jpg';
-import masts from '../../assets/projects/shattered-lands/ship-masts.jpg';
-import tablet from '../../assets/projects/shattered-lands/secrets-tablet.jpg';
-import tabletTop from '../../assets/projects/shattered-lands/secrets-tablet-top.jpg';
+import overheadSea from '../../assets/projects/shattered-lands/overhead-sea.jpg';
+import music from '../../assets/projects/shattered-lands/music-recording.jpg';
+import music2 from '../../assets/projects/shattered-lands/music-recording-2.jpg';
+import buildCity from '../../assets/projects/shattered-lands/build-city-early.jpg';
+import buildWall from '../../assets/projects/shattered-lands/build-lb-wall.jpg';
+import buildDesert from '../../assets/projects/shattered-lands/build-desert.jpg';
+import buildSea from '../../assets/projects/shattered-lands/build-sea.jpg';
 
 <Chapter n="01 · World" title="Welcome to" light="Pangros">
-  <p>Pangros is an ocean of broken islands circling a cyclone that has never stopped. The idea came from two places: how much I love collaborative storytelling, and the sense of wonder in One Piece. I wanted a world that begs to be explored, where every island holds a mystery. I wrote the lore, geography, factions and history, then handed the story to five players and a set of dice.</p>
-  <Fig img={map} alt="Painted world map of Pangros: islands circling a central storm" caption="Pangros world map" num="Fig. 01" ratio="16/9" fit="contain" />
+  <p>Pangros is an ocean of broken islands circling a cyclone that has never stopped. It pulls from a lot of things I love: the wonder of One Piece, Critical Role's Calamity, and Worlds Beyond Number's <i>The Wizard, the Witch and the Wild One</i> above all, plus steampunk, Tolkien, Treasure Planet and adventure stories in general.</p>
+  > I wanted a world that begs to be explored, where every island holds a mystery and anything could be possible.
+  <p>I also wanted something other people could add to. So as I wrote the lore, geography, factions and history, I worked with each player to build their character's culture, race and backstory deep into the world.</p>
+  <Fig img={map} alt="Painted world map of Pangros: islands circling a central storm" caption="The world of Pangros" num="Fig. 01" ratio="2/1" fit="contain" />
   <Row cols="1fr 1fr 1fr 1fr 1fr">
     <Fig img={artAtlas} alt="Atlas, a Mist Genasi wizard" caption="Atlas" ratio="2/3" fit="contain" />
     <Fig img={artIlvana} alt="Illvana, a changeling rogue" caption="Illvana" ratio="2/3" fit="contain" />
@@ -69,10 +85,10 @@ import tabletTop from '../../assets/projects/shattered-lands/secrets-tablet-top.
 </Chapter>
 
 <Chapter n="02 · Set" title="A room" light="you sit inside">
-  <p>The players didn't sit at a kitchen table. I designed a filming set that put them on the deck of a ship: plank walls, fishing nets, a painted DM screen with a ship sailing into the sun, and a sculpted sea where the fights happen. The crew built it. Three to four cameras and a boom covered the table, and an overhead rig caught the battle maps.</p>
+  <p>I designed a film set that puts the players on the deck of a ship: plank walls, fishing nets, and a painted DM screen with a ship sailing into the sun. At the center is a table we built for the shoot. It's shaped so the cameras can catch me and every player from the angles we needed, with an inlay in the middle where the battle sets drop in. Three to four cameras and a boom covered the table, and an overhead rig caught the fights.</p>
   <Row cols="1.4fr 1fr">
     <Fig img={cast} alt="The cast posing behind the sea battle set and painted DM screen" caption="The cast on set" num="Fig. 02" ratio="4/3" />
-    <Fig img={empty} alt="The empty filming set: plank backdrop, nets and table" caption="The set before call time" ratio="3/4" />
+    <Fig img={tableBuild} alt="Sitting inside the center cutout of the custom filming table during the build" caption="Building the table, with the battle-set inlay" ratio="3/4" />
   </Row>
   <Row cols="1fr 1fr 1fr">
     <Fig img={overhead} alt="Overhead view of a session in progress" caption="Overhead camera" ratio="4/5" />
@@ -81,43 +97,70 @@ import tabletTop from '../../assets/projects/shattered-lands/secrets-tablet-top.
   </Row>
 </Chapter>
 
-<Chapter n="03 · Battle" title="Fights at" light="sea level">
-  <p>Battles play out on physical sets I designed for each arc: a sea battle with a galleon and a leviathan-skeleton ship over a hand-sculpted ocean, a red-rock desert, and more in progress (Last Bastion, Mount Agrobora). The ships are printed and painted from licensed models. B-roll of each set is filmed separately and cut in during post.</p>
+<Chapter n="03 · Battle sets" title="The Last" light="Bastion">
+  <p>Every major fight happens on a physical set I designed. Three are finished: the ocean, the desert and the Last Bastion. Mount Agrobora is in progress. The Last Bastion is the biggest of them: a walled harbor city of towers, a tavern and lit streets, with rooms that open up for fights inside. B-roll of each set is filmed separately and cut in during post.</p>
   <Row cols="minmax(0,.55fr) 1fr">
-    <Clip src="/video/sl-masts.mp4" poster={masts} ratio="9/16" caption="Set b-roll, cut in during post" />
+    <Clip src="/video/sl-last-bastion-2.mp4" poster={lbTower} ratio="9/16" caption="Last Bastion B-roll" />
     <div style="display:flex;flex-direction:column;gap:16px">
-      <Fig img={seaWide} alt="The galleon on the sculpted sea" caption="The galleon" ratio="16/10" />
+      <Fig img={lbCity} alt="The Last Bastion city set: colorful towers behind a harbor wall" caption="The Last Bastion" num="Fig. 03" ratio="4/3" />
       <Row cols="1fr 1fr">
-        <Fig img={leviathan} alt="Leviathan skeleton ship beside the galleon" caption="Leviathan ship" ratio="1/1" />
-        <Fig img={deck} alt="Minis on the galleon deck" caption="On deck" ratio="1/1" />
+        <Fig img={lbTavern} alt="The Old Mill Tavern building on the set" caption="The Old Mill Tavern" ratio="1/1" />
+        <Fig img={lbYellow} alt="A yellow tower above the harbor wall" caption="Harbor towers" ratio="1/1" />
       </Row>
     </div>
   </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={lbTop} alt="Top-down view of the lit city streets" caption="Lit from inside" ratio="3/4" />
+    <Fig img={lbRed} alt="Top-down view of a red-carpeted hex room interior" caption="Rooms that open up" ratio="3/4" />
+    <Fig img={lbMinis} alt="Minis fighting inside a stone hex room" caption="A fight inside" ratio="3/4" />
+  </Row>
+  <Row cols="minmax(0,.55fr) 1fr">
+    <Clip src="/video/sl-masts.mp4" poster={masts} ratio="9/16" caption="The ocean set" />
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <Fig img={seaWide} alt="The galleon on the sculpted sea" caption="The ocean: galleon and sculpted sea" ratio="16/10" />
+      <Row cols="1fr 1fr">
+        <Fig img={leviathan} alt="Leviathan skeleton ship beside the galleon" caption="Leviathan ship" ratio="1/1" />
+        <Fig img={desert} alt="Red rock desert battle set with a watchtower" caption="The desert" ratio="1/1" />
+      </Row>
+    </div>
+  </Row>
+  <p class="soft">The ships and many minis are printed from licensed models and painted. The terrain, buildings and layouts are ours.</p>
 </Chapter>
 
-<Chapter n="04 · Minis" title="Every hero" light="in miniature">
-  <p>Each player character got a matching miniature, painted by Mariah Ruff to match AJ's art, along with the villains and crowds they fight.</p>
-  <Row cols="1fr 1fr 1fr">
-    <Fig img={miniAtlas} alt="Painted miniature of Atlas" caption="Atlas" ratio="4/5" />
-    <Fig img={miniMortimer} alt="Painted miniature of Mortimer" caption="Mortimer" ratio="4/5" />
-    <Fig img={miniParty} alt="A line of painted party miniatures" caption="The party" ratio="4/5" />
+<Chapter n="04 · Minis" title="Every hero," light="on the table and on screen">
+  <p>Each player character has a matching mini, painted by Mariah Ruff to match AJ's art, and an on-screen stat card that appears in the episodes.</p>
+  <Row cols="1fr 1.5fr" align="center">
+    <Fig img={miniAtlas} alt="Painted miniature of Atlas" caption="Atlas, the mini" ratio="4/5" />
+    <Fig img={statAtlas} alt="On-screen stat card for Atlas" caption="Atlas, on screen" ratio="16/9" fit="contain" />
   </Row>
-  <Row cols="1fr 1fr">
-    <Fig img={statAtlas} alt="On-screen stat card overlay for Atlas" caption="On-screen stat overlays" ratio="16/9" fit="contain" />
-    <Fig img={miniCultists} alt="Three painted cultist miniatures" caption="The cult" ratio="16/9" />
+  <Row cols="1.5fr 1fr" align="center">
+    <Fig img={statMortimer} alt="On-screen stat card for Mortimer" caption="Mortimer, on screen" ratio="16/9" fit="contain" />
+    <Fig img={miniMortimer} alt="Painted miniature of Mortimer" caption="Mortimer, the mini" ratio="4/5" />
   </Row>
+  <Fig img={miniParty} alt="A line of painted party miniatures" caption="The party" ratio="21/9" />
 </Chapter>
 
 <Chapter n="05 · Production" title="Running" light="the show">
-  <p>Eight sessions are filmed: about fifteen hours of footage across up to four cameras. Episode 1 is frame-locked. Episodes 2 through 5 are in rough cut. Kaeden Tilak wrote a theme for every character, from "The Ship Sails!" to "The Storm Surges" for the Pirate King. At its peak, 25 people worked on the show across editing, music, art, sets, film and writing. I ran it with a production tracker, monthly meetings and a written post-production workflow.</p>
-  <Fig img={overheadSea} alt="Players leaning over the sea battle set mid-session" caption="Mid-session on the sea set" ratio="21/9" />
+  <p>Episode 1 is complete. Episodes 2 through 5 are in various stages of editing. Kaeden Tilak wrote a theme for every character, from "The Ship Sails!" to "The Storm Surges" for the Pirate King, and recorded the score live with a full band. At its peak, 25 people worked on the show across editing, music, art, sets, film and writing. I ran it with a production tracker, regular editing meetings and a written post-production workflow.</p>
+  <Row cols="1fr 1fr">
+    <Fig img={music} alt="Musicians recording the score on a concert hall stage" caption="Recording the score" ratio="16/10" />
+    <Fig img={music2} alt="The band rehearsing the score on stage" caption="Rehearsal" ratio="16/10" />
+  </Row>
+  <Row cols="1fr 1fr">
+    <Fig img={phoneRig} alt="Phone camera rig filming the players at the table" caption="Filming a session" ratio="4/3" />
+    <Fig img={overheadSea} alt="Players leaning over the sea battle set mid-session" caption="Mid-session on the sea set" ratio="4/3" />
+  </Row>
 </Chapter>
 
-<Chapter n="06 · Beyond the table" title="Secrets that" light="run the world">
-  <p>Pangros doesn't only live on camera. For my English capstone I made a one-of-one artifact book set in the world: a conspiracy board of burned, crumpled and aged pages, yarn and a stone tablet, following one person whose beliefs come apart when they discover that the history they were taught was rewritten. It's about how propaganda uses history as a weapon. It was published under Players Win Ties, the company name behind the show.</p>
+<Chapter n="06 · Beyond the table" title="A world" light="people build together">
+  <p>The Shattered Lands grew past the episodes. Everyone pitched in to build the battle sets, from the first cardboard city to the finished Last Bastion. We did a photo shoot with the players in costume as their characters. I've written short stories set in Pangros, and my English capstone, "Secrets That Run the World," is a one-of-one artifact from inside the world: a conspiracy board of burned and aged papers and yarn that follows one person as the history they were taught comes apart. It's about how propaganda turns history into a weapon.</p>
   <Row cols="1fr 1fr">
-    <Fig img={tablet} alt="3D render of a carved stone tablet" caption="The stone tablet, modeled in Adobe Dimension" ratio="4/3" fit="contain" />
-    <Fig img={tabletTop} alt="Top view of the stone tablet" caption="Copy 1 of 1 · April 2024" ratio="4/3" fit="contain" />
+    <Fig img={buildCity} alt="An early cardboard city build for the Last Bastion" caption="The Last Bastion, early build" ratio="4/3" />
+    <Fig img={buildWall} alt="Building the Last Bastion harbor wall on a workbench" caption="Building the harbor wall" ratio="4/3" />
+  </Row>
+  <Row cols="1fr 1fr">
+    <Fig img={buildSea} alt="The ocean set mid-build with a dock and blue terrain" caption="Building the ocean" ratio="4/3" />
+    <Fig img={buildDesert} alt="The desert set mid-build with red rock terrain" caption="Building the desert" ratio="4/3" />
   </Row>
 </Chapter>
 

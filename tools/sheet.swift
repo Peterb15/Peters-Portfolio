@@ -7,7 +7,7 @@ img.lockFocus(); NSColor.white.setFill(); NSRect(x: 0, y: 0, width: img.size.wid
 for (i, f) in files.enumerated() {
   let r = i / cols, c = i % cols
   let cell = NSRect(x: CGFloat(c) * w, y: img.size.height - CGFloat(r + 1) * h, width: w, height: h)
-  if let im = NSImage(contentsOfFile: f) {
+  if let im = NSImage(contentsOfFile: f), im.size.width > 0, im.size.height > 0 {
     let s = min((w - 4) / im.size.width, (h - 4) / im.size.height); let dw = im.size.width * s, dh = im.size.height * s
     im.draw(in: NSRect(x: cell.midX - dw / 2, y: cell.midY - dh / 2, width: dw, height: dh))
   }

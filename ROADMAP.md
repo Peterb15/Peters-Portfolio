@@ -89,7 +89,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 
 ### Smaller fabrication → new **Workshop** page
 - [x] 🛠 DM Case, Tree Lamp (all images) and Stat Tracker (Instructables + video links) merged into one Workshop page, with a "more from the shop" slot
-- [ ] 📦 Material studies final project photos (unstained is fine for now) · bookshelf later
+- [x] Material studies final = **the bookshelf**, added to Workshop with the real story from your Notion write-up
 
 ### Laugh Bucket
 - [x] 🛠 Expanded: the festival video with sound, cabinet/panel/screen/sign photos, how it works, how people used it
@@ -114,8 +114,14 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 
 ### All projects
 - [~] 🛠 Documentation links added where found (Smart Distribution, Where I Belong, comic, Narcissus script, Stat Tracker Instructables, US breakdown, Last Bastion YouTube videos ×2). Each is checked for sensitive info before linking
-- [ ] 📦 Your written briefs/project descriptions. I only found a few in Dropbox (Smart Distribution, Hole 66 pitch, Echo docs). **Where do the rest live?** (Google Drive? Notion?)
-- [ ] 📦 **Apple Photos:** macOS blocks me from reading your Photos library. Export the relevant albums to a Dropbox folder (e.g. `Dropbox/Portfolio Photos/`) and I'll go through them
+- [~] Briefs: Notion searched. Used the **Material Studies final write-up** (the bookshelf: poplar + heat-molded acrylic, Perriand-inspired, Onshape). The Laugh Bucket doc page is empty, and the Game Dev "proposal" is only the assignment prompt. **No Google Drive connection here.** Share specific Drive PDFs to Dropbox or paste links
+  - Also in Notion: a Material Studies **Documentation Log** (joinery, "Cardboard Couture: Shoes", etc.). Could feed more Workshop entries
+- [x] **Apple Photos:** access works through the Photos app. Project albums reviewed (Material Studies Final, Unnatural Selection, Shat, Studio Art, Art, Players Win Ties, Capstone, WhaatFest25, 2025Highlights). Personal albums untouched
+  - Added: conspiracy board, character photo shoot (B&W), hand-drawn Pangros maps, the logo with character items, the table build, the desert tower, sets on display, crew building pieces, Peter building, the physical robot (2 new angles), Echo figurine test prints, the material studies bookshelf
+  - [ ] ❓ **Pink furry creatures** in 2025Highlights: what project are they from?
+  - [ ] ❓ Unnatural Selection album: the "final" showcase footage shows drums wrapped in printed animal art, not fur. Are the fuzzy covers a later version (Atlas's photos)?
+  - [ ] ❓ "Shat" album has a 4-min "Welcome to the World of…" video. Is it a Shattered Lands intro/trailer, and OK to use?
+  - [ ] ❓ **About photo:** is the workbench photo (cutting a tube) you? If so, it'll be the About photo
 
 ## Still to review (notes coming)
 Writing page

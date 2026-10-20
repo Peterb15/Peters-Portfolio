@@ -1,0 +1,58 @@
+---
+title: Workshop
+short: The Workshop
+order: 10
+tier: archive
+year: 2023 – now
+role: Designer · Fabricator
+tagline: 'Smaller builds from the shop: woodworking, laser cutting, 3D printing and electronics.'
+tags: [Woodworking, Fabrication, Electronics]
+fan:
+  c: ../../assets/projects/workshop/stat-hero.jpg
+links:
+  - { label: Stat Tracker on Instructables, href: 'https://www.instructables.com/Digital-DD-Stat-Tracker/' }
+  - { label: Stat Tracker video, href: 'https://www.youtube.com/watch?v=v8IM6B2NaPY' }
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import statHero from '../../assets/projects/workshop/stat-hero.jpg';
+import stat1 from '../../assets/projects/workshop/stat-image1.jpg';
+import stat2 from '../../assets/projects/workshop/stat-image2.jpg';
+import stat3 from '../../assets/projects/workshop/stat-image3.jpg';
+import tree1 from '../../assets/projects/tree-lamp/TreeImage1.jpg';
+import tree2 from '../../assets/projects/tree-lamp/TreeImage2.jpg';
+import treePieces from '../../assets/projects/tree-lamp/TreePieces.jpg';
+import dm1 from '../../assets/projects/workshop/dm-01.jpg';
+import dm6 from '../../assets/projects/workshop/dm-06.jpg';
+
+<Chapter n="01 · Electronics" title="D&D" light="Stat Tracker">
+  <p>A handheld tracker for hit points and spell slots at the table: an OLED for HP and spells, an LCD for character info and a joystick for input, hand-soldered to a protoboard in a laser-cut, engraved wood enclosure with room for a battery. My first fully documented electronics project, written up step by step on Instructables.</p>
+  <Row cols="1fr 1fr 1fr 1fr">
+    <Fig img={statHero} alt="The finished stat tracker in its engraved wooden case" caption="Finished" ratio="1/1" />
+    <Fig img={stat1} alt="Breadboard prototype of the display logic" caption="Breadboard prototype" ratio="1/1" />
+    <Fig img={stat2} alt="OLED showing HP and spell slots" caption="OLED readout" ratio="1/1" />
+    <Fig img={stat3} alt="The laser-cut wooden enclosure assembled" caption="Enclosure" ratio="1/1" />
+  </Row>
+</Chapter>
+
+<Chapter n="02 · Laser + light" title="Tree" light="Lamp">
+  <p>Modeled in Blender, sliced into vertical sections, laser cut from wood and assembled into a hollow form, with colored acrylic panels diffusing the LEDs inside.</p>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={tree1} alt="The tree lamp lit" caption="Lit" ratio="3/4" />
+    <Fig img={tree2} alt="The tree lamp from another angle" caption="Assembled" ratio="3/4" />
+    <Fig img={treePieces} alt="Laser-cut wooden slices laid out" caption="The slices" ratio="3/4" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Woodworking" title="DM" light="Carrying Case">
+  <p>My first major woodworking project: a wooden case for a Dungeon Master's kit with a 3D-printed insert for dice, minis and notes. It taught me to keep 3D printing small and to plan for a lot of cuts.</p>
+  <Row cols="1fr 1fr">
+    <Fig img={dm1} alt="Design drawing of the carrying case open" caption="Design" ratio="4/3" fit="contain" />
+    <Fig img={dm6} alt="Dimensioned drawing of the case" caption="Dimensions" ratio="4/3" fit="contain" />
+  </Row>
+</Chapter>
+
+<Chapter n="04 · Coming soon" title="More" light="from the shop">
+  <p class="mono soft">Material studies final project · bookshelf · more on the way.</p>
+</Chapter>

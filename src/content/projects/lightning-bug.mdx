@@ -1,0 +1,32 @@
+---
+title: Lightning Bug
+order: 9
+tier: archive
+year: Spring 2025
+role: 3D Artist · Product Renders
+tagline: Final product renders for a friend's capstone guitar pedal, rebuilt from scratch in Blender.
+tags: [Blender, Product visualization, Lighting]
+fan:
+  c: ../../assets/projects/lightning-bug/shot04.jpg
+credits: 'Pedal designed by a friend for their capstone. 3D model, materials, lighting and final renders by Peter Burke.'
+---
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import s1 from '../../assets/projects/lightning-bug/shot01.jpg';
+import s2 from '../../assets/projects/lightning-bug/shot02.jpg';
+import s3 from '../../assets/projects/lightning-bug/shot03.jpg';
+import s4 from '../../assets/projects/lightning-bug/shot04.jpg';
+import s5 from '../../assets/projects/lightning-bug/shot05.jpg';
+
+A friend designed the Lightning Bug, a guitar effects pedal, for their capstone. I recreated it in Blender and made the final renders: the enclosure, knobs and printed faceplate art, then lighting passes that bring up the glowing controls one at a time.
+
+<Fig img={s4} alt="Render of the Lightning Bug pedal with all knobs glowing" caption="Hero render" ratio="16/9" />
+
+<Row cols="1fr 1fr">
+  <Fig img={s1} alt="Pedal render with one control lit" caption="Lighting pass" ratio="16/9" />
+  <Fig img={s2} alt="Pedal render with another control lit" caption="Lighting pass" ratio="16/9" />
+</Row>
+<Row cols="1fr 1fr">
+  <Fig img={s3} alt="Pedal render, third lighting pass" caption="Lighting pass" ratio="16/9" />
+  <Fig img={s5} alt="Pedal render, final pass" caption="Final pass" ratio="16/9" />
+</Row>

@@ -1,6 +1,6 @@
 ---
 title: Balance Board Pong
-order: 7
+order: 14
 tier: archive
 year: Fall 2024
 role: Designer · Builder · Programmer
@@ -11,7 +11,20 @@ fan:
 ---
 import Clip from '../../components/Clip.astro';
 import still from '../../assets/projects/balance-pong/play-2.jpg';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import ideas from '../../assets/projects/balance-pong/ideas-30.jpg';
+import sketch from '../../assets/projects/balance-pong/sketch.jpg';
+import cad from '../../assets/projects/balance-pong/cad.jpg';
 
 An MPU-6050 tilt sensor under a balance board reads how far you lean. An Arduino sends that over serial to a Pong game in Godot, so your paddle is your balance. Built for Alt Arcades, the class where I also made Laugh Bucket and Unnatural Selection.
 
 <Clip src="/video/pong.mp4" poster={still} ratio="9/16" maxWidth="420px" caption="Playing it" />
+
+It started as a page of thirty ideas for a strange Pong controller. The balance board won.
+
+<Row cols="1fr 1fr 1fr">
+  <Fig img={ideas} alt="Notebook page listing 30 ideas for Pong controllers" caption="30 ideas for Pong" ratio="3/4" />
+  <Fig img={sketch} alt="Notebook sketch of the balance board mechanism" caption="Balance board sketch" ratio="3/4" />
+  <Fig img={cad} alt="CAD view of the sensor enclosure" caption="Enclosure CAD" ratio="3/4" fit="contain" />
+</Row>

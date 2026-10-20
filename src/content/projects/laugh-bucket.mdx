@@ -1,0 +1,51 @@
+---
+title: The Laugh Bucket
+order: 7
+tier: archive
+year: Nov 2024
+role: Lead Designer · Developer · Fabricator
+tagline: An interactive installation that collects visitors' laughs, then dumps all of them on the people in the next room.
+tags: [Installation, Arduino, NDI, Festival]
+fan:
+  c: ../../assets/projects/laugh-bucket/display.jpg
+credits: 'Exhibited at the Whaaat!? Festival 2024, ATLAS Institute, CU Boulder. Supported by the Whaaat!? Lab.'
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import display from '../../assets/projects/laugh-bucket/display.jpg';
+import panel from '../../assets/projects/laugh-bucket/panel.jpg';
+import screen from '../../assets/projects/laugh-bucket/screen.jpg';
+import sign from '../../assets/projects/laugh-bucket/sign.jpg';
+import couch from '../../assets/projects/laugh-bucket/couch.jpg';
+
+<Chapter n="01 · Idea" title="Fill the" light="bucket">
+  <p>I wanted something strange and attention-grabbing that left people confused but intrigued. The Laugh Bucket is a retro TV cabinet with a big button and a microphone. Press the button, laugh when it lights up, and your laugh goes into the bucket. On the screen you can watch a live feed of a living room down the hall. When the bucket is full, you pull the lever and every laugh it's collected gets dumped on whoever is sitting there.</p>
+  <Row cols="minmax(0,.6fr) 1fr">
+    <Clip src="/video/laugh-bucket.mp4" poster={display} ratio="9/16" sound autoplay={false} caption="The Laugh Bucket at the festival" />
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <Fig img={display} alt="The Laugh Bucket cabinet: a retro TV with a red control box" caption="The cabinet" ratio="4/3" />
+      <Row cols="1fr 1fr">
+        <Fig img={panel} alt="Control panel reading Press the button to record, Laugh when button is lit" caption="Press, then laugh" ratio="1/1" />
+        <Fig img={screen} alt="The screen showing the living room feed" caption="The live feed" ratio="1/1" />
+      </Row>
+    </div>
+  </Row>
+</Chapter>
+
+<Chapter n="02 · Build" title="How it" light="works">
+  <ul>
+    <li>Arduino inputs trigger recording and playback, layering each new laugh over the last</li>
+    <li>NDI carries the audio and the live video between the two rooms in real time</li>
+    <li>I designed and fabricated the cabinet, control box and display stand</li>
+  </ul>
+  <Row cols="1fr 1fr">
+    <Fig img={sign} alt="The Laugh Bucket sign with the cabinet and lever note" caption="Pull down lever when full" ratio="4/3" />
+    <Fig img={couch} alt="The floral couch in the living-room set with a question mark sign" caption="The receiving end" ratio="4/3" />
+  </Row>
+</Chapter>
+
+<Chapter n="03 · Festival" title="People came" light="back for more">
+  <p>The most interesting part was how people's behavior changed over the festival. Once visitors figured out what it did, many came back to record more laughs and used them to ambush whoever sat on the couch next.</p>
+</Chapter>

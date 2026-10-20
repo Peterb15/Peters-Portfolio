@@ -6,12 +6,12 @@ tier: feature
 color: '#2f9e44'
 colorInk: '#fbfaf6'
 year: Fall 2024
-role: Hardware Designer · Creative Coder · Fabricator
+role: Electronics · Controller Co-designer · Fabricator
 tagline: A two-player arcade fighter where you physically spin your creature's head, torso and legs mid-fight to evolve on the fly.
 tags: [Arcade, Custom controllers, Physical computing]
 scrawl: spin the body, change the fight
 fan:
-  a: ../../assets/projects/unnatural-selection/frame-5.jpg
+  a: ../../assets/projects/unnatural-selection/proto-play.jpg
   b: ../../assets/projects/unnatural-selection/shot1.jpg
   c: ../../assets/projects/unnatural-selection/hero.jpg
 heroVideo: /video/us-hero.mp4
@@ -20,7 +20,7 @@ spec:
   - { label: Controllers, value: '2 × 3 drums' }
   - { label: Sensing, value: 'IR → Teensy' }
   - { label: Built with, value: '3D print + laser' }
-credits: 'Built with William Balliete and Adam Yoder.'
+credits: 'Game built by William Balliete. Lead controller design by Adam Yoder. Electronics, controller co-design and all of the final aesthetic build (including the fuzzy animal covers) by Peter Burke. Alt Arcades, CU Boulder, Fall 2024.'
 links:
   - { label: Gameplay demo, href: 'https://youtu.be/aMWo43-s8-Q' }
   - { label: Technical breakdown, href: 'https://www.youtube.com/watch?v=l0jT3rYz4l0' }
@@ -28,29 +28,41 @@ links:
 ---
 import Chapter from '../../components/Chapter.astro';
 import Fig from '../../components/Fig.astro';
-import shot1 from '../../assets/projects/unnatural-selection/shot1.jpg';
 import Row from '../../components/Row.astro';
 import Clip from '../../components/Clip.astro';
+
+import shot1 from '../../assets/projects/unnatural-selection/shot1.jpg';
+import protoPlay from '../../assets/projects/unnatural-selection/proto-play.jpg';
+import sensorTube from '../../assets/projects/unnatural-selection/sensor-tube.jpg';
+import drumInside from '../../assets/projects/unnatural-selection/drum-inside.jpg';
+import sensorRing from '../../assets/projects/unnatural-selection/sensor-ring.jpg';
+import gameplay from '../../assets/projects/unnatural-selection/gameplay.jpg';
 import g5 from '../../assets/projects/unnatural-selection/frame-5.jpg';
-import g7 from '../../assets/projects/unnatural-selection/frame-7.jpg';
-import tech from '../../assets/projects/unnatural-selection/frame-9.jpg';
 
 <Chapter n="01 · Play" title="Evolution" light="you do with your hands">
-  <p>What if evolution wasn't something that happened to you, but something you physically did? Each player gets a controller with three spinning drums: head, torso and legs. Spin one mid-fight and your creature's body swaps on screen, along with its abilities.</p>
-  <ul>
-    <li>Co-designed the spin-to-evolve interaction</li>
-    <li>Engineered the sensing: IR sensors inside multicolored 3D-printed drums read each rotation</li>
-    <li>Wrote the Teensy firmware that turns drum positions into game input</li>
-    <li>Fabricated the controllers: cardboard → wood → printed cores with laser-cut panels</li>
-  </ul>
-  <Fig img={shot1} alt="Unnatural Selection controllers and gameplay" caption="Controllers and gameplay" ratio="16/9" />
+  <p>Remember the playground toys where you spin a panel to swap an animal's head, body and feet? We built a fighting game around that feeling. Each player gets a controller with three spinning drums: head, torso and legs. Spin one mid-fight and your creature's body swaps on screen. The head sets your attacks, the torso your defense, the legs how you move.</p>
+  <Fig img={shot1} alt="The spinning-drum controllers next to gameplay" caption="The controllers and the game" ratio="16/9" />
 </Chapter>
 
 <Chapter n="02 · Build" title="Spin" light="to evolve">
-  <Clip src="/video/us-video.mp4" poster={g5} sound autoplay={false} caption="Gameplay and technical breakdown" />
-  <Row cols="1fr 1fr 1fr">
-    <Fig img={g5} alt="Gameplay beside a spinning controller" caption="Swap parts mid-fight" ratio="16/9" />
-    <Fig img={g7} alt="Creature fight with controller in frame" caption="Head attacks, torso defends, legs move" ratio="16/9" />
-    <Fig img={tech} alt="Technical footage of the sensor drum" caption="Inside the drum" ratio="16/9" />
+  <p>I built the electronics. Each drum hides a ring of IR sensors that read colored zones on the 3D-printed core as it turns, and a Teensy turns those readings into the game's input. The controllers went from cardboard to wood to printed cores with laser-cut panels. I worked closely with Adam on the controller design throughout.</p>
+  <Row cols="minmax(0,.55fr) 1fr">
+    <Clip src="/video/us-prototype.mp4" poster={protoPlay} ratio="9/16" caption="Prototype controller driving the game" />
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <Row cols="1fr 1fr">
+        <Fig img={sensorTube} alt="IR sensors mounted along the inner tube of a drum" caption="Sensors on the inner tube" ratio="3/4" />
+        <Fig img={drumInside} alt="Looking down into a drum at the sensor wiring" caption="Inside a drum" ratio="3/4" />
+      </Row>
+      <Row cols="1fr 1fr">
+        <Fig img={sensorRing} alt="Sensor ring at the base of the drum assembly" caption="The sensor ring" ratio="3/4" />
+        <Fig img={gameplay} alt="Two creatures fighting in the arena" caption="In game" ratio="3/4" />
+      </Row>
+    </div>
   </Row>
+  <Clip src="/video/us-video.mp4" poster={g5} sound autoplay={false} caption="Gameplay and technical breakdown" />
+</Chapter>
+
+<Chapter n="03 · Final" title="The" light="fuzzy finals">
+  <p>For the final version I built the whole look of the controllers: fuzzy animal covers on the outside of each drum that match the creatures in the game, so players can see what they're becoming before it hits the screen.</p>
+  <p class="mono soft">Photos and video of the final controllers coming soon.</p>
 </Chapter>

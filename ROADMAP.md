@@ -22,7 +22,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 - [x] 🛠 Headline → "builds the thing, and tells you its story."
 - [x] 🛠 "punk records" → "punk aesthetics"
 - [x] 🛠 Animation + sculpting · Fabrication + woodworking · Hardware: Arduino · ESP32 · sensors (no Teensy)
-- [~] 🛠❓ Programming row added: C++ · JavaScript · GDScript · Ink. **Confirm or edit the languages**
+- [~] 🛠❓ Programming row: C++ · JavaScript · HTML/CSS · GDScript (Ink removed). Based on what's in the files (Arduino/Teensy C++, web class and Ink/JS games, Godot). **Add anything missing (Python? MATLAB from APPM?)**
 - [ ] 📦 Bookshelf / woodworking project (later)
 - [ ] 📦 Photo
 
@@ -58,7 +58,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 - [x] 🛠 03 Highway image rotated 180°
 - [x] 🛠 04 Ramming video removed
 - [x] 🛠 05 Personality test removed (page and game files)
-- [ ] ❓ Credit says "Prototyped with Vani". Add Vani's last name?
+- [x] Credit: "Prototyped with Vani Chhay"
 
 ## 04 · One Step Forward
 - [x] 🛠 Credit: everything except the music made from scratch by Peter
@@ -66,10 +66,59 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 - [x] 🛠 02: "planned two scenes" line removed
 - [ ] 📦 03 Physical: better photos of the printed robot. **The other photos in ART 1010 are broken 12-byte files**, so this needs your camera roll
 - [x] 🛠 04: boat replaced with the animation midterm (video), the Lightning Bug pedal render and the creature sculpt
-- [ ] ❓ Lightning Bug pedal: what was it (client, class, personal)? Credit as needed
+- [x] Lightning Bug: a friend's capstone pedal that Peter recreated and rendered in Blender, now **its own archive page**. ❓ Friend's name for the credit?
+
+## Round 2 notes (Oct 20)
+
+### Unnatural Selection
+- [x] 🛠 Credits made clear: Will Balliete built the game, Adam Yoder was lead controller designer, Peter did the electronics, co-designed the controllers and built all the final aesthetics (fuzzy animal covers)
+- [x] 🛠 01 Play: playground spinning-toy inspiration in the copy
+- [ ] 📦 An example photo of a playground spinner toy to pair with the prototype (needs a licensed or own photo)
+- [x] 🛠 02 Build: prototype test video, sensor/drum build stills, gameplay + technical breakdown video
+- [ ] 📦 03 Final: photos of the fuzzy final controllers (Atlas/Jacob has some) + a video if you can make one. Section is in place with a "coming soon" line
+- [ ] 📦 More build photos (offered)
+
+### ARNOLD.EXE
+- [x] 🛠 "Multiple branching dialogue trees"
+- [x] ❓ Finish the game loop? **Claude: no.** It reads as a polished narrative prototype, and the story "Awake" carries the depth. Leave Wizards vs Aliens out
+
+### Balance Board Pong
+- [x] 🛠 Moved to the bottom of the list
+- [x] 🛠 Added the "30 ideas" notebook page, sketch and enclosure CAD
+- [ ] 📦 Better hero image + a better play video (likely in Apple Photos, see note)
+
+### Smaller fabrication → new **Workshop** page
+- [x] 🛠 DM Case, Tree Lamp (all images) and Stat Tracker (Instructables + video links) merged into one Workshop page, with a "more from the shop" slot
+- [ ] 📦 Material studies final project photos (unstained is fine for now) · bookshelf later
+
+### Laugh Bucket
+- [x] 🛠 Expanded: the festival video with sound, cabinet/panel/screen/sign photos, how it works, how people used it
+- [ ] ❓ Check "NDI carries the audio and the live video between the two rooms" is accurate
+
+### Smart Distribution
+- [x] 🛠 Documentation PDF linked (checked: only the demo hotspot's default password, which is fine), GitHub link, demo video, drawings and build photos, team credited
+
+### Tree Lamp
+- [x] 🛠 Other images added (in Workshop)
+
+### Cthulhu Journals
+- [x] 🛠 Comic linked (PDF)
+- [ ] 📦 Novel (excerpt only)
+
+### Where I Belong
+- [x] 🛠 Full photo book linked (PDF) + covers and 5 spreads
+
+### Remaking the Renaissance → **"Narcissus & Echo"** (working title)
+- [x] 🛠 Renamed (it was the assignment name), the full 11-minute video embedded, and the text conversation linked
+- [ ] ❓ Confirm the title
+
+### All projects
+- [~] 🛠 Documentation links added where found (Smart Distribution, Where I Belong, comic, Narcissus script, Stat Tracker Instructables, US breakdown, Last Bastion YouTube videos ×2). Each is checked for sensitive info before linking
+- [ ] 📦 Your written briefs/project descriptions. I only found a few in Dropbox (Smart Distribution, Hole 66 pitch, Echo docs). **Where do the rest live?** (Google Drive? Notion?)
+- [ ] 📦 **Apple Photos:** macOS blocks me from reading your Photos library. Export the relevant albums to a Dropbox folder (e.g. `Dropbox/Portfolio Photos/`) and I'll go through them
 
 ## Still to review (notes coming)
-Unnatural Selection · ARNOLD.EXE · Writing · archive pages
+Writing page
 
 ## Launch prep (after review)
 Old-URL redirects · share/preview images · 404 page · accessibility + speed pass · Netlify production branch

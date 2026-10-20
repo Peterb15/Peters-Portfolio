@@ -1,0 +1,53 @@
+---
+title: Smart Distribution
+order: 8
+tier: archive
+year: Spring 2025
+role: System Designer · Fabricator · Web Interface
+tagline: A modular off-grid water system you can monitor and control from a browser.
+tags: [ESP32, IoT, Fabrication]
+fan:
+  c: ../../assets/projects/smart-distribution/hero.jpg
+credits: 'Built with Lily Dykstra, Rystan Qualls and Pocket for Hacking the Apocalypse, ATLAS Institute, CU Boulder.'
+links:
+  - { label: Full documentation (PDF), href: '/docs/smart-distribution.pdf' }
+  - { label: GitHub, href: 'https://github.com/Hacking-The-Apocalypse/2025-spring-SmartDistribution' }
+---
+import Chapter from '../../components/Chapter.astro';
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
+import hero from '../../assets/projects/smart-distribution/hero.jpg';
+import d1 from '../../assets/projects/smart-distribution/drawn1.jpg';
+import d3 from '../../assets/projects/smart-distribution/drawn3.jpg';
+import d5 from '../../assets/projects/smart-distribution/drawn5.jpg';
+import d7 from '../../assets/projects/smart-distribution/drawn7.jpg';
+import i1 from '../../assets/projects/smart-distribution/image1.jpg';
+import i3 from '../../assets/projects/smart-distribution/image3.jpg';
+import i4 from '../../assets/projects/smart-distribution/image4.jpg';
+
+<Chapter n="01 · System" title="Water," light="from a browser">
+  <p>A distribution network built around four principles: track how much water is available, control where it goes (drinking or other outputs), adjust it all from a distance, and stay modular so it plugs into the class's storage, collection and treatment projects. An ESP32 hosts a live website. Solenoid gates open and close the lines, pumps sit inside each bucket, and inline flow sensors count every rotation to measure what moves.</p>
+  <Clip src="/video/smart-distribution.mp4" poster={hero} ratio="9/16" maxWidth="420px" caption="The system running" />
+  <ul>
+    <li>Collaborated on the system architecture and the modular piping paths</li>
+    <li>Built and wired the ESP32 control unit and the Ethernet relay setup</li>
+    <li>Coded the onboard web server for remote valve and pump control</li>
+    <li>Helped fabricate and assemble the physical system</li>
+  </ul>
+</Chapter>
+
+<Chapter n="02 · Build" title="Drawn," light="then built">
+  <Row cols="1fr 1fr 1fr 1fr">
+    <Fig img={d1} alt="Illustration of the modular distribution layout" caption="Layout" ratio="1/1" fit="contain" />
+    <Fig img={d3} alt="Illustration of a distribution module" caption="Module" ratio="1/1" fit="contain" />
+    <Fig img={d5} alt="Illustration of the wiring" caption="Wiring" ratio="1/1" fit="contain" />
+    <Fig img={d7} alt="Illustration of the control unit" caption="Control" ratio="1/1" fit="contain" />
+  </Row>
+  <Row cols="1fr 1fr 1fr">
+    <Fig img={i1} alt="Buckets connected by pipes and valves" caption="Bucket 1" ratio="4/3" />
+    <Fig img={i3} alt="Flow gates wired to the power module" caption="Gates to power" ratio="4/3" />
+    <Fig img={i4} alt="The assembled system" caption="Assembled" ratio="4/3" />
+  </Row>
+  <p>Balancing the ESP32's 5V logic with 12V pumps and valves was the hardest part. Relays switch the high-voltage side safely and prevent backflow and misfires. The full build guide, wiring and code are in the documentation.</p>
+</Chapter>

@@ -1,0 +1,35 @@
+---
+title: Where I Belong
+order: 12
+tier: archive
+year: '2023'
+role: Photographer · Editor · Designer
+tagline: A photo book about not fitting in, built from photography and manipulated images.
+tags: [Photography, Photoshop, InDesign]
+fan:
+  c: ../../assets/projects/where-i-belong/covers.jpg
+links:
+  - { label: Read the full photo book (PDF), href: '/docs/where-i-belong-photobook.pdf' }
+---
+import Fig from '../../components/Fig.astro';
+import Row from '../../components/Row.astro';
+import covers from '../../assets/projects/where-i-belong/covers.jpg';
+import r1 from '../../assets/projects/where-i-belong/rf-01.jpg';
+import r2 from '../../assets/projects/where-i-belong/rf-02.jpg';
+import r3 from '../../assets/projects/where-i-belong/rf-03.jpg';
+import r4 from '../../assets/projects/where-i-belong/rf-04.jpg';
+import r5 from '../../assets/projects/where-i-belong/rf-05.jpg';
+
+A visual diary about the feeling of not fitting in, set to lyrics and memories. I shot, edited and laid out every spread, using layering, collage and heavy contrast to move between quiet frames and surreal composites. Made for Visual Design Studio at CU Boulder.
+
+<Fig img={covers} alt="Front and back covers of the photo book" caption="Covers" ratio="16/9" fit="contain" />
+
+<Row cols="1fr 1fr 1fr">
+  <Fig img={r1} alt="Spread from the photo book" caption="Spread" ratio="1/1" />
+  <Fig img={r2} alt="Spread from the photo book" caption="Spread" ratio="1/1" />
+  <Fig img={r3} alt="Spread from the photo book" caption="Spread" ratio="1/1" />
+</Row>
+<Row cols="1fr 1fr">
+  <Fig img={r4} alt="Spread from the photo book" caption="Spread" ratio="1/1" />
+  <Fig img={r5} alt="Spread from the photo book" caption="Spread" ratio="1/1" />
+</Row>

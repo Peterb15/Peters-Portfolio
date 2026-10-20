@@ -66,7 +66,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 - [x] 🛠 02: "planned two scenes" line removed
 - [ ] 📦 03 Physical: better photos of the printed robot. **The other photos in ART 1010 are broken 12-byte files**, so this needs your camera roll
 - [x] 🛠 04: boat replaced with the animation midterm (video), the Lightning Bug pedal render and the creature sculpt
-- [x] Lightning Bug: a friend's capstone pedal that Peter recreated and rendered in Blender, now **its own archive page**. ❓ Friend's name for the credit?
+- [x] Lightning Bug: a friend's capstone pedal that Peter recreated and rendered in Blender, now **its own archive page**. Credited to Lindsey Trussel.
 
 ## Round 2 notes (Oct 20)
 
@@ -93,7 +93,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 
 ### Laugh Bucket
 - [x] 🛠 Expanded: the festival video with sound, cabinet/panel/screen/sign photos, how it works, how people used it
-- [ ] ❓ Check "NDI carries the audio and the live video between the two rooms" is accurate
+- [x] NDI description confirmed accurate
 
 ### Smart Distribution
 - [x] 🛠 Documentation PDF linked (checked: only the demo hotspot's default password, which is fine), GitHub link, demo video, drawings and build photos, team credited
@@ -110,7 +110,7 @@ Status: `[x]` done · `[~]` partly done · `[ ]` open
 
 ### Remaking the Renaissance → **"Narcissus & Echo"** (working title)
 - [x] 🛠 Renamed (it was the assignment name), the full 11-minute video embedded, and the text conversation linked
-- [ ] ❓ Confirm the title
+- [ ] ❓ Title still open. Keeping "Narcissus & Echo" for now
 
 ### All projects
 - [~] 🛠 Documentation links added where found (Smart Distribution, Where I Belong, comic, Narcissus script, Stat Tracker Instructables, US breakdown, Last Bastion YouTube videos ×2). Each is checked for sensitive info before linking
